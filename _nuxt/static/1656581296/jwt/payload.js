@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/jwt", {data:[{}],fetch:{},mutations:void 0});

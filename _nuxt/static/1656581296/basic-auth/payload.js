@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/basic-auth", {data:[{}],fetch:{},mutations:void 0});

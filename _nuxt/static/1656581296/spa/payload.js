@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/spa", {data:[{}],fetch:{},mutations:void 0});

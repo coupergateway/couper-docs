@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/running-couper", {data:[{}],fetch:{},mutations:void 0});

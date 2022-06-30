@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/proxy", {data:[{}],fetch:{},mutations:void 0});
