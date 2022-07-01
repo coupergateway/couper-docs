@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/configuration-file", {data:[{}],fetch:{},mutations:void 0});

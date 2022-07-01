@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/multiple-files", {data:[{}],fetch:{},mutations:void 0});

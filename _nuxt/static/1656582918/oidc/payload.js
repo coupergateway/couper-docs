@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/oidc", {data:[{}],fetch:{},mutations:void 0});

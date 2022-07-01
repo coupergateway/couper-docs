@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/oauth2-_beta_", {data:[{}],fetch:{},mutations:void 0});
