@@ -1,0 +1,1 @@
+import{_ as n,o,c as _,p as c,v as a}from"./entry-165d5779.mjs";const r={};function s(e,p){const t=a;return o(),_("div",null,[c(t,{path:`${e.$route.path}`},null,8,["path"])])}var u=n(r,[["render",s]]);export{u as default};
