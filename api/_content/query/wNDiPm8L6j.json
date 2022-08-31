@@ -1,0 +1,1 @@
+{"url":"/api/_content/query/wNDiPm8L6j.json","statusCode":404,"statusMessage":"Document not found!","message":"Document not found!","stack":"","data":{"description":"Could not find document for the given query.","query":{"first":true,"where":[{"_path":"/configuration/block/beta_oauth2"}],"sort":[{"_file":1,"$numeric":true}]}}}
