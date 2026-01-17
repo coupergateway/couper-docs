@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Getting Started on Couper Documentation</title><link>https://docs.couper.io/getting-started/</link><description>Recent content in Getting Started on Couper Documentation</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://docs.couper.io/getting-started/index.xml" rel="self" type="application/rss+xml"/><item><title>Running Couper</title><link>https://docs.couper.io/getting-started/running-couper/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/getting-started/running-couper/</guid><description>&lt;h1 id="running-couper"&gt;Running Couper&lt;/h1&gt;
+&lt;p&gt;Couper is available as &lt;em&gt;docker
+image&lt;/em&gt; from &lt;a href="https://hub.docker.com/r/coupergateway/couper"&gt;Docker Hub&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Running Couper requires a working &lt;a href="https://www.docker.com/"&gt;Docker&lt;/a&gt; setup on your
+computer. Please visit the &lt;a href="https://docs.docker.com/get-started/"&gt;get started guide&lt;/a&gt; to get prepared.&lt;/p&gt;
+&lt;p&gt;To download/install Couper, open a terminal and execute:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ docker pull coupergateway/couper
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Couper needs a configuration file to know what to do.&lt;/p&gt;
+&lt;p&gt;Create a directory with an empty &lt;code&gt;couper.hcl&lt;/code&gt; file.&lt;/p&gt;
+&lt;p&gt;Copy/paste the following configuration to the file and save it.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-hcl" data-lang="hcl"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;server&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;hello&amp;#34;&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;endpoint&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;/**&amp;#34;&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;response&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; body &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;Hello World!&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now &lt;code&gt;cd&lt;/code&gt; into the directory with the configuration file and start Couper in a docker container:&lt;/p&gt;</description></item><item><title>Examples</title><link>https://docs.couper.io/getting-started/examples/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/getting-started/examples/</guid><description>&lt;h1 id="examples"&gt;Examples&lt;/h1&gt;
+&lt;h2 id="file-and-web-serving"&gt;File and Web Serving&lt;/h2&gt;
+&lt;p&gt;Couper contains a Web server for simple file serving and also takes care of the more complex web serving of SPA assets.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-hcl" data-lang="hcl"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;server&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;example&amp;#34;&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;files&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; document_root &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;htdocs&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;spa&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; bootstrap_file &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;htdocs/index.html&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; paths &lt;span style="color:#f92672"&gt;=&lt;/span&gt; [&lt;span style="color:#e6db74"&gt;&amp;#34;/**&amp;#34;&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The &lt;code&gt;files&lt;/code&gt; block configures Couper&amp;rsquo;s file server. It needs to know which directory to serve (&lt;code&gt;document_root&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;spa&lt;/code&gt; block is responsible for serving the bootstrap document for all paths that match the paths list.&lt;/p&gt;</description></item><item><title>Beta Features</title><link>https://docs.couper.io/getting-started/beta-features/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/getting-started/beta-features/</guid><description>&lt;h1 id="about-beta-features"&gt;About &lt;em&gt;beta&lt;/em&gt; features&lt;/h1&gt;
+&lt;p&gt;We use &lt;em&gt;beta&lt;/em&gt; features to have the possibility to develop new, complex features for you while still being able to maintain our compatibility promise.&lt;/p&gt;
+&lt;p&gt;You can see beta features as a feature preview. We will announce new beta features in the &lt;a href="https://github.com/coupergateway/couper/blob/master/CHANGELOG.md"&gt;Changelog&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We will keep features in beta as long as we collect feedback and are actively working on it. You can expect beta features to evolve.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;They can change with every release.&lt;/em&gt;&lt;/p&gt;</description></item><item><title>Introduction</title><link>https://docs.couper.io/getting-started/welcome/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/getting-started/welcome/</guid><description>&lt;h1 id="introduction"&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;Couper is a lightweight open-source API gateway that acts as an entry point for clients to your application (frontend API gateway) and an exit point to upstream services (upstream API gateway).&lt;/p&gt;
+&lt;p&gt;It adds access control, observability, and back-end connectivity on a separate layer. This will keep your core application code more simple.&lt;/p&gt;
+&lt;p&gt;Couper does not need any special development skills and offers easy configuration and integration.&lt;/p&gt;
+&lt;h2 id="architectural-overview"&gt;Architectural Overview&lt;/h2&gt;
+&lt;p&gt;&lt;img src="https://docs.couper.io/img/architecture.png" alt="architecture"&gt;&lt;/p&gt;</description></item></channel></rss>

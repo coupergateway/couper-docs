@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Observation on Couper Documentation</title><link>https://docs.couper.io/observation/</link><description>Recent content in Observation on Couper Documentation</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://docs.couper.io/observation/index.xml" rel="self" type="application/rss+xml"/><item><title>Health Check</title><link>https://docs.couper.io/observation/health/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/observation/health/</guid><description>&lt;h1 id="health-check"&gt;Health Check&lt;/h1&gt;
+&lt;p&gt;The health check will answer with status &lt;code&gt;200 OK&lt;/code&gt; on every port with the configured
+&lt;a href="https://docs.couper.io/configuration/block/settings"&gt;&lt;code&gt;health_path&lt;/code&gt; setting&lt;/a&gt; or the
+&lt;a href="https://docs.couper.io/configuration/command-line#observation-options"&gt;&lt;code&gt;COUPER_HEALTH_PATH&lt;/code&gt; environment variable&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;As soon as the gateway instance receives a &lt;code&gt;SIGINT&lt;/code&gt; or &lt;code&gt;SIGTERM&lt;/code&gt; the check will return a status
+&lt;code&gt;500 Internal Server Error&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;A shutdown delay (&lt;a href="https://docs.couper.io/configuration/command-line#timing-environment-variables"&gt;environment variable &lt;code&gt;COUPER_TIMING_SHUTDOWN_DELAY&lt;/code&gt;&lt;/a&gt;)
+allows the server to finish all running requests and gives a load balancer time to pick another gateway instance.
+After this delay the server goes into shutdown mode and no new requests will be accepted.&lt;/p&gt;</description></item><item><title>Metrics</title><link>https://docs.couper.io/observation/metrics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/observation/metrics/</guid><description>&lt;h1 id="metrics"&gt;Metrics&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#metrics"&gt;Metrics&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#prometheus"&gt;Prometheus&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#grafana-dashboard"&gt;Grafana Dashboard&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#preview"&gt;Preview&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#developers"&gt;Developers&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Our metrics feature is &lt;a href="https://docs.couper.io/getting-started/beta-features"&gt;beta&lt;/a&gt; for now. However, we want to provide some core metrics which can be directly collected from Couper.&lt;/p&gt;
+&lt;h2 id="prometheus"&gt;Prometheus&lt;/h2&gt;
+&lt;p&gt;Couper provides a built-in &lt;a href="https://prometheus.io/"&gt;Prometheus&lt;/a&gt; exporter. It is configurable with &lt;a href="https://docs.couper.io/configuration/block/settings"&gt;settings&lt;/a&gt; like port or &lt;code&gt;service_name&lt;/code&gt; label. If enabled the default scrape target port is &lt;code&gt;9090&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id="grafana-dashboard"&gt;Grafana Dashboard&lt;/h2&gt;
+&lt;p&gt;Couper provides a maintained Grafana dashboard which you can find here: &lt;a href="https://github.com/coupergateway/couper/blob/master/grafana.json"&gt;grafana.json&lt;/a&gt;
+and import this JSON model to your grafana instance.
+You may have to set your Datasource to your Prometheus one.&lt;/p&gt;</description></item><item><title>Logging</title><link>https://docs.couper.io/observation/logging/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/observation/logging/</guid><description>&lt;h1 id="logging"&gt;Logging&lt;/h1&gt;
+&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Upon the execution of Couper all log events are sent to the standard output. You can adjust the appearance and verbosity of the logs with a variety of &lt;a href="https://docs.couper.io/observation/logging#settings"&gt;Settings&lt;/a&gt;. There are different &lt;a href="#log-types"&gt;Log Types&lt;/a&gt; and &lt;a href="#fields"&gt;Fields&lt;/a&gt; containing useful information.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We aspire to make Couper as stable as possible so these logs are still subject to change.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="log-types"&gt;Log Types&lt;/h2&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th style="text-align: left"&gt;Type&lt;/th&gt;
+ &lt;th style="text-align: left"&gt;Description&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;&lt;code&gt;couper_access&lt;/code&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;Provides information about the frontend side of things. Compare &lt;a href="#access-fields"&gt;Access Fields&lt;/a&gt;.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;&lt;code&gt;couper_access_tls&lt;/code&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;Provides information about connections via configured &lt;a href="https://docs.couper.io/configuration/block/settings"&gt;https_dev_proxy&lt;/a&gt;. Compare &lt;a href="#access-fields"&gt;Access Fields&lt;/a&gt;.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;&lt;code&gt;couper_backend&lt;/code&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;Provides information about the backend side of things. Compare &lt;a href="#backend-fields"&gt;Backend Fields&lt;/a&gt;.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;&lt;code&gt;couper_daemon&lt;/code&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;Provides background information about the execution of Couper. Each printed log of this type contains a &lt;code&gt;message&lt;/code&gt; entry describing the current actions of Couper. Compare &lt;a href="#daemon-fields"&gt;Daemon Fields&lt;/a&gt;.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;&lt;code&gt;couper_job&lt;/code&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;Provides information about &lt;a href="https://docs.couper.io/configuration/block/job"&gt;jobs&lt;/a&gt;. See &lt;a href="#job-fields"&gt;Job Fields&lt;/a&gt;.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id="fields"&gt;Fields&lt;/h2&gt;
+&lt;p&gt;Given the large amount of information contained in some logs, it might come handy to change the format or log level (see &lt;a href="https://docs.couper.io/configuration/block/settings"&gt;Settings&lt;/a&gt;).&lt;/p&gt;</description></item></channel></rss>
