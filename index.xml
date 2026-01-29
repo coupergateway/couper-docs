@@ -32,11 +32,11 @@ image&lt;/em&gt; from &lt;a href="https://hub.docker.com/r/coupergateway/couper"
 &lt;p&gt;Running Couper requires a working &lt;a href="https://www.docker.com/"&gt;Docker&lt;/a&gt; setup on your
 computer. Please visit the &lt;a href="https://docs.docker.com/get-started/"&gt;get started guide&lt;/a&gt; to get prepared.&lt;/p&gt;
 &lt;p&gt;To download/install Couper, open a terminal and execute:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ docker pull coupergateway/couper
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ docker pull coupergateway/couper
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Couper needs a configuration file to know what to do.&lt;/p&gt;
 &lt;p&gt;Create a directory with an empty &lt;code&gt;couper.hcl&lt;/code&gt; file.&lt;/p&gt;
 &lt;p&gt;Copy/paste the following configuration to the file and save it.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-hcl" data-lang="hcl"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;server&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;hello&amp;#34;&lt;/span&gt; {
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-hcl" data-lang="hcl"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;server&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;hello&amp;#34;&lt;/span&gt; {
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;endpoint&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;/**&amp;#34;&lt;/span&gt; {
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;response&lt;/span&gt; {
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; body &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;Hello World!&amp;#34;&lt;/span&gt;
@@ -46,7 +46,7 @@ computer. Please visit the &lt;a href="https://docs.docker.com/get-started/"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now &lt;code&gt;cd&lt;/code&gt; into the directory with the configuration file and start Couper in a docker container:&lt;/p&gt;</description></item><item><title>Examples</title><link>https://docs.couper.io/getting-started/examples/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/getting-started/examples/</guid><description>&lt;h1 id="examples"&gt;Examples&lt;/h1&gt;
 &lt;h2 id="file-and-web-serving"&gt;File and Web Serving&lt;/h2&gt;
 &lt;p&gt;Couper contains a Web server for simple file serving and also takes care of the more complex web serving of SPA assets.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-hcl" data-lang="hcl"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;server&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;example&amp;#34;&lt;/span&gt; {
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-hcl" data-lang="hcl"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;server&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;example&amp;#34;&lt;/span&gt; {
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;files&lt;/span&gt; {
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; document_root &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;htdocs&amp;#34;&lt;/span&gt;
@@ -535,7 +535,7 @@ Couper specifies some generic error categories (like &lt;code&gt;configuration&l
 &lt;p&gt;Error messages are only sent to the client as a summary.
 Detailed information is provided via log message. This way, all information can be viewed without accidentally revealing confidential information.&lt;/p&gt;</description></item><item><title>Expressions</title><link>https://docs.couper.io/configuration/expressions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/expressions/</guid><description>&lt;h1 id="expressions"&gt;Expressions&lt;/h1&gt;
 &lt;p&gt;Since we use &lt;a href="https://github.com/hashicorp/hcl/tree/hcl2#information-model-and-syntax"&gt;HCL 2.0&lt;/a&gt; for our configuration, we are able to use attribute values as expression.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-hcl" data-lang="hcl"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#960050;background-color:#1e0010"&gt;//&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;Arithmetic&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;with&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;literals&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;and&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;application&lt;/span&gt;&lt;span style="color:#960050;background-color:#1e0010"&gt;-&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;provided&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;variables&lt;/span&gt;.
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-hcl" data-lang="hcl"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#960050;background-color:#1e0010"&gt;//&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;Arithmetic&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;with&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;literals&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;and&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;application&lt;/span&gt;&lt;span style="color:#960050;background-color:#1e0010"&gt;-&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;provided&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;variables&lt;/span&gt;.
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sum &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;+&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;addend&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#960050;background-color:#1e0010"&gt;//&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;String&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;interpolation&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;and&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;templates&lt;/span&gt;.
@@ -884,7 +884,7 @@ purposes.&lt;/p&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id="example"&gt;Example&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-hcl" data-lang="hcl"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# ...
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-hcl" data-lang="hcl"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# ...
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;definitions&lt;/span&gt; {
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;beta_job&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;update_data&amp;#34;&lt;/span&gt; {&lt;span style="color:#75715e"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt; # Execute once at the start of Couper and then every minute
@@ -1199,7 +1199,7 @@ In this case the response validation will fail if not ignored, too.&lt;/p&gt;</d
 &lt;a href="https://docs.couper.io/configuration/block/definitions"&gt;&lt;code&gt;definitions&lt;/code&gt; block&lt;/a&gt; and can be referenced in all access control attributes
 by its required &lt;em&gt;label&lt;/em&gt;.&lt;/p&gt;
 &lt;h2 id="example"&gt;Example&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-hcl" data-lang="hcl"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;server&lt;/span&gt; {
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-hcl" data-lang="hcl"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;server&lt;/span&gt; {
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;endpoint&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;/ip_rate/**&amp;#34;&lt;/span&gt; {
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; access_control &lt;span style="color:#f92672"&gt;=&lt;/span&gt; [&lt;span style="color:#e6db74"&gt;&amp;#34;ip_rate&amp;#34;&lt;/span&gt;]
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;response&lt;/span&gt; {
@@ -1390,7 +1390,7 @@ required &lt;em&gt;label&lt;/em&gt;.&lt;/p&gt;
 &lt;/table&gt;
 &lt;h2 id="example"&gt;Example&lt;/h2&gt;
 &lt;p&gt;A complete example can be found &lt;a href="https://github.com/coupergateway/couper-examples/tree/master/saml"&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-hcl" data-lang="hcl"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;saml&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;SSO&amp;#34;&lt;/span&gt; {
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-hcl" data-lang="hcl"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;saml&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;SSO&amp;#34;&lt;/span&gt; {
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; idp_metadata_file &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;idp-metadata.xml&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; sp_entity_id &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;env&lt;/span&gt;.&lt;span style="color:#66d9ef"&gt;SP_ENTITY_ID&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; sp_acs_url &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;http://localhost:8080/saml/acs&amp;#34;&lt;/span&gt;
@@ -1521,7 +1521,7 @@ configuration file. You can add a specific port to your host.&lt;/p&gt;
 &lt;/table&gt;
 &lt;p&gt;A configured &lt;code&gt;server_certificate&lt;/code&gt; pub/key pair will be loaded once at startup and served on the related &lt;code&gt;server&lt;/code&gt; port configured with the &lt;code&gt;hosts&lt;/code&gt; attribute.&lt;/p&gt;
 &lt;h2 id="example"&gt;Example&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-hcl" data-lang="hcl"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;server_certificate&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;api.example.com&amp;#34;&lt;/span&gt; {&lt;span style="color:#75715e"&gt; #optional label
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-hcl" data-lang="hcl"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;server_certificate&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;api.example.com&amp;#34;&lt;/span&gt; {&lt;span style="color:#75715e"&gt; #optional label
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; public_key &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;base64_DER&amp;#34;&lt;/span&gt;&lt;span style="color:#75715e"&gt; # kube secret ...
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt; # OR
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; public_key_file &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;couperServer.crt&amp;#34;&lt;/span&gt;&lt;span style="color:#75715e"&gt; # PEM
@@ -1633,7 +1633,7 @@ gateway instance.&lt;/p&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-hcl" data-lang="hcl"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;spa&lt;/span&gt; {
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-hcl" data-lang="hcl"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;spa&lt;/span&gt; {
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; base_path &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;/my-app&amp;#34;&lt;/span&gt;&lt;span style="color:#75715e"&gt; # mounts on /my-app(/**,/special)
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; bootstrap_file &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;./htdocs/index.html&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; paths &lt;span style="color:#f92672"&gt;=&lt;/span&gt; [&lt;span style="color:#e6db74"&gt;&amp;#34;/**&amp;#34;, &amp;#34;/special&amp;#34;&lt;/span&gt;]
@@ -1685,7 +1685,26 @@ The certificates will be served on all ports within the &lt;code&gt;hosts&lt;/co
 &lt;p&gt;The simplest configuration is an empty &lt;code&gt;tls {}&lt;/code&gt; block which will serve a self signed certificate
 for local development.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Multiple &lt;a href="server_certificate"&gt;&lt;code&gt;server_certificate&lt;/code&gt;&lt;/a&gt; or &lt;a href="client_certificate"&gt;&lt;code&gt;client_certificate&lt;/code&gt;&lt;/a&gt; blocks are allowed.&lt;/p&gt;</description></item><item><title>Token Request (Beta)</title><link>https://docs.couper.io/configuration/block/token_request/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/block/token_request/</guid><description>&lt;h1 id="token-request-beta"&gt;Token Request (Beta)&lt;/h1&gt;
+&lt;p&gt;Multiple &lt;a href="server_certificate"&gt;&lt;code&gt;server_certificate&lt;/code&gt;&lt;/a&gt; or &lt;a href="client_certificate"&gt;&lt;code&gt;client_certificate&lt;/code&gt;&lt;/a&gt; blocks are allowed.&lt;/p&gt;</description></item><item><title>Token Introspection (Beta)</title><link>https://docs.couper.io/configuration/block/introspection/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/block/introspection/</guid><description>&lt;h1 id="token-introspection-beta"&gt;Token Introspection (Beta)&lt;/h1&gt;
+&lt;p&gt;The &lt;code&gt;beta_introspection&lt;/code&gt; block configures &lt;a href="https://datatracker.ietf.org/doc/html/rfc7662"&gt;OAuth 2.0 Token Introspection (RFC 7662)&lt;/a&gt; for a &lt;code&gt;jwt&lt;/code&gt; block. It allows Couper to verify token validity with an authorization server in addition to local JWT signature validation.&lt;/p&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th style="text-align: left"&gt;Block name&lt;/th&gt;
+ &lt;th style="text-align: left"&gt;Context&lt;/th&gt;
+ &lt;th style="text-align: left"&gt;Label&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;&lt;code&gt;beta_introspection&lt;/code&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/jwt"&gt;JWT Block&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;no label&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id="when-to-use-token-introspection"&gt;When to Use Token Introspection&lt;/h2&gt;
+&lt;p&gt;Standard JWT validation only checks the token&amp;rsquo;s signature and claims (expiry, audience, etc.) locally. This is fast but has a limitation: &lt;strong&gt;tokens cannot be revoked before they expire&lt;/strong&gt;.&lt;/p&gt;</description></item><item><title>Token Request (Beta)</title><link>https://docs.couper.io/configuration/block/token_request/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/block/token_request/</guid><description>&lt;h1 id="token-request-beta"&gt;Token Request (Beta)&lt;/h1&gt;
 &lt;p&gt;The &lt;code&gt;beta_token_request&lt;/code&gt; block in the &lt;a href="https://docs.couper.io/configuration/block/backend"&gt;Backend Block&lt;/a&gt; context configures a request to get a token used to authorize backend requests.&lt;/p&gt;
 &lt;table&gt;
  &lt;thead&gt;

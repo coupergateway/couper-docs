@@ -4,11 +4,11 @@ image&lt;/em&gt; from &lt;a href="https://hub.docker.com/r/coupergateway/couper"
 &lt;p&gt;Running Couper requires a working &lt;a href="https://www.docker.com/"&gt;Docker&lt;/a&gt; setup on your
 computer. Please visit the &lt;a href="https://docs.docker.com/get-started/"&gt;get started guide&lt;/a&gt; to get prepared.&lt;/p&gt;
 &lt;p&gt;To download/install Couper, open a terminal and execute:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ docker pull coupergateway/couper
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ docker pull coupergateway/couper
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Couper needs a configuration file to know what to do.&lt;/p&gt;
 &lt;p&gt;Create a directory with an empty &lt;code&gt;couper.hcl&lt;/code&gt; file.&lt;/p&gt;
 &lt;p&gt;Copy/paste the following configuration to the file and save it.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-hcl" data-lang="hcl"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;server&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;hello&amp;#34;&lt;/span&gt; {
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-hcl" data-lang="hcl"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;server&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;hello&amp;#34;&lt;/span&gt; {
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;endpoint&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;/**&amp;#34;&lt;/span&gt; {
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;response&lt;/span&gt; {
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; body &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;Hello World!&amp;#34;&lt;/span&gt;
@@ -18,7 +18,7 @@ computer. Please visit the &lt;a href="https://docs.docker.com/get-started/"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now &lt;code&gt;cd&lt;/code&gt; into the directory with the configuration file and start Couper in a docker container:&lt;/p&gt;</description></item><item><title>Examples</title><link>https://docs.couper.io/getting-started/examples/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/getting-started/examples/</guid><description>&lt;h1 id="examples"&gt;Examples&lt;/h1&gt;
 &lt;h2 id="file-and-web-serving"&gt;File and Web Serving&lt;/h2&gt;
 &lt;p&gt;Couper contains a Web server for simple file serving and also takes care of the more complex web serving of SPA assets.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-hcl" data-lang="hcl"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;server&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;example&amp;#34;&lt;/span&gt; {
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-hcl" data-lang="hcl"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;server&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;example&amp;#34;&lt;/span&gt; {
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;files&lt;/span&gt; {
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; document_root &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;htdocs&amp;#34;&lt;/span&gt;
