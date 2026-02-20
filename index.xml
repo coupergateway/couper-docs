@@ -446,6 +446,9 @@ This covers the use-case where the CA has signed multiple client certificates an
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Legacy configurations may still contain &lt;code&gt;beta_job&lt;/code&gt; blocks; they remain supported as aliases for &lt;code&gt;job&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;div class="blocks"&gt;
  &lt;h3 id="blocks"&gt;&lt;a href="#blocks"&gt;Nested Blocks&lt;/a&gt;&lt;/h3&gt;
  &lt;table class="table-auto"&gt;
@@ -460,11 +463,11 @@ This covers the use-case where the CA has signed multiple client certificates an
  &lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;&lt;code&gt;basic_auth&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Configure a &lt;a href="https://docs.couper.io/configuration/block/basic_auth"&gt;BasicAuth access control&lt;/a&gt; (zero or more).&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;&lt;code&gt;beta_job&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Configure a &lt;a href="https://docs.couper.io/configuration/block/job"&gt;job&lt;/a&gt; (zero or more).&lt;/div&gt;&lt;/td&gt;
- &lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;&lt;code&gt;beta_oauth2&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Configure an &lt;a href="https://docs.couper.io/configuration/block/beta_oauth2"&gt;OAuth2 access control&lt;/a&gt; (zero or more).&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;&lt;code&gt;beta_rate_limiter&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Configure a &lt;a href="https://docs.couper.io/configuration/block/rate_limiter"&gt;Rate limiter access control&lt;/a&gt; (zero or more).&lt;/div&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;&lt;td&gt;&lt;code&gt;job&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Configure a &lt;a href="https://docs.couper.io/configuration/block/job"&gt;job&lt;/a&gt; (zero or more).&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;&lt;code&gt;jwt&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Configure a &lt;a href="https://docs.couper.io/configuration/block/jwt"&gt;JWT access control&lt;/a&gt; (zero or more).&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -863,10 +866,10 @@ via &lt;code&gt;headers&lt;/code&gt; attribute. An unhealthy backend will return
 &lt;p&gt;It adds access control, observability, and back-end connectivity on a separate layer. This will keep your core application code more simple.&lt;/p&gt;
 &lt;p&gt;Couper does not need any special development skills and offers easy configuration and integration.&lt;/p&gt;
 &lt;h2 id="architectural-overview"&gt;Architectural Overview&lt;/h2&gt;
-&lt;p&gt;&lt;img src="https://docs.couper.io/img/architecture.png" alt="architecture"&gt;&lt;/p&gt;</description></item><item><title>Job (Beta)</title><link>https://docs.couper.io/configuration/block/job/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/block/job/</guid><description>&lt;h1 id="job-beta"&gt;Job (Beta)&lt;/h1&gt;
-&lt;p&gt;The &lt;code&gt;beta_job&lt;/code&gt; block lets you define recurring requests or sequences with an given interval. The job runs at startup
-and for every interval and has an own log type: &lt;code&gt;job&lt;/code&gt; which represents the starting point with an uid for tracing
-purposes.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://docs.couper.io/img/architecture.png" alt="architecture"&gt;&lt;/p&gt;</description></item><item><title>Job</title><link>https://docs.couper.io/configuration/block/job/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/block/job/</guid><description>&lt;h1 id="job"&gt;Job&lt;/h1&gt;
+&lt;p&gt;The &lt;code&gt;job&lt;/code&gt; block lets you define recurring requests or sequences with a given interval. The job runs at startup
+and then at every interval and has its own log type: &lt;code&gt;couper_job&lt;/code&gt;, which represents the starting point with a UID for tracing
+purposes. Older configurations may still use the legacy block name &lt;code&gt;beta_job&lt;/code&gt;, which remains supported as an alias.&lt;/p&gt;
 &lt;table&gt;
  &lt;thead&gt;
  &lt;tr&gt;
@@ -877,7 +880,7 @@ purposes.&lt;/p&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
  &lt;tr&gt;
- &lt;td style="text-align: left"&gt;&lt;code&gt;beta_job&lt;/code&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;code&gt;job&lt;/code&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/definitions"&gt;Definitions Block&lt;/a&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;required&lt;/td&gt;
  &lt;/tr&gt;
@@ -886,7 +889,7 @@ purposes.&lt;/p&gt;
 &lt;h2 id="example"&gt;Example&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-hcl" data-lang="hcl"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# ...
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;definitions&lt;/span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;beta_job&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;update_data&amp;#34;&lt;/span&gt; {&lt;span style="color:#75715e"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;job&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;update_data&amp;#34;&lt;/span&gt; {&lt;span style="color:#75715e"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt; # Execute once at the start of Couper and then every minute
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; interval &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;1m&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
