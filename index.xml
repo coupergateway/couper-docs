@@ -927,6 +927,8 @@ purposes.&lt;/p&gt;
  &lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;&lt;code&gt;interval&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;duration&lt;/div&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;div&gt;Execution interval.&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
+ &lt;tr&gt;&lt;td&gt;&lt;code&gt;startup_delay&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;duration&lt;/div&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;&amp;#34;0s&amp;#34;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Delays the first execution of the job after startup.&lt;/div&gt;&lt;/td&gt;
+ &lt;/tr&gt;
  &lt;/tbody&gt;
  &lt;/table&gt;
 &lt;/div&gt;
