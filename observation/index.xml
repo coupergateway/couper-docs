@@ -64,4 +64,10 @@ You may have to set your Datasource to your Prometheus one.&lt;/p&gt;</descripti
  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id="fields"&gt;Fields&lt;/h2&gt;
-&lt;p&gt;Given the large amount of information contained in some logs, it might come handy to change the format or log level (see &lt;a href="https://docs.couper.io/configuration/block/settings"&gt;Settings&lt;/a&gt;).&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;Given the large amount of information contained in some logs, it might come handy to change the format or log level (see &lt;a href="https://docs.couper.io/configuration/block/settings"&gt;Settings&lt;/a&gt;).&lt;/p&gt;</description></item><item><title>Tracing</title><link>https://docs.couper.io/observation/tracing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/observation/tracing/</guid><description>&lt;h1 id="tracing"&gt;Tracing&lt;/h1&gt;
+&lt;p&gt;Our tracing feature is &lt;a href="https://docs.couper.io/getting-started/beta-features"&gt;beta&lt;/a&gt; for now. Couper supports distributed tracing using &lt;a href="https://opentelemetry.io/"&gt;OpenTelemetry&lt;/a&gt; and the &lt;a href="https://www.w3.org/TR/trace-context/"&gt;W3C Trace Context&lt;/a&gt; standard.&lt;/p&gt;
+&lt;h2 id="configuration"&gt;Configuration&lt;/h2&gt;
+&lt;p&gt;Enable tracing with &lt;code&gt;beta_traces = true&lt;/code&gt; in the &lt;a href="https://docs.couper.io/configuration/block/settings"&gt;settings&lt;/a&gt; block or the &lt;code&gt;-beta-traces&lt;/code&gt; CLI flag. Couper exports trace spans via gRPC to an OpenTelemetry collector at &lt;code&gt;beta_traces_endpoint&lt;/code&gt; (default &lt;code&gt;localhost:4317&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;beta_service_name&lt;/code&gt; setting is used as the service name in exported spans.&lt;/p&gt;
+&lt;h2 id="trace-propagation"&gt;Trace Propagation&lt;/h2&gt;
+&lt;p&gt;Couper supports &lt;a href="https://www.w3.org/TR/trace-context/"&gt;W3C Trace Context&lt;/a&gt; propagation via the &lt;code&gt;traceparent&lt;/code&gt; HTTP header. Two settings control how incoming trace context is handled:&lt;/p&gt;</description></item></channel></rss>
