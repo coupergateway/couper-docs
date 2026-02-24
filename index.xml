@@ -1355,11 +1355,33 @@ required &lt;em&gt;label&lt;/em&gt;.&lt;/p&gt;
 &lt;/table&gt;
 &lt;h2 id="example"&gt;Example&lt;/h2&gt;
 &lt;p&gt;A complete example can be found &lt;a href="https://github.com/coupergateway/couper-examples/tree/master/saml"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id="using-a-metadata-file"&gt;Using a metadata file&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-hcl" data-lang="hcl"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;saml&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;SSO&amp;#34;&lt;/span&gt; {
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; idp_metadata_file &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;idp-metadata.xml&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; sp_entity_id &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;env&lt;/span&gt;.&lt;span style="color:#66d9ef"&gt;SP_ENTITY_ID&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; sp_acs_url &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;http://localhost:8080/saml/acs&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; array_attributes &lt;span style="color:#f92672"&gt;=&lt;/span&gt; [&lt;span style="color:#e6db74"&gt;&amp;#34;eduPersonAffiliation&amp;#34;] # or [&amp;#34;memberOf&amp;#34;&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="using-a-metadata-url-with-automatic-refresh"&gt;Using a metadata URL with automatic refresh&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-hcl" data-lang="hcl"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;saml&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;SSO&amp;#34;&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; idp_metadata_url &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;https://idp.example.com/metadata&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; metadata_ttl &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;1h&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; metadata_max_stale &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;1h&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; sp_entity_id &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;env&lt;/span&gt;.&lt;span style="color:#66d9ef"&gt;SP_ENTITY_ID&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; sp_acs_url &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;http://localhost:8080/saml/acs&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; array_attributes &lt;span style="color:#f92672"&gt;=&lt;/span&gt; [&lt;span style="color:#e6db74"&gt;&amp;#34;eduPersonAffiliation&amp;#34;&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="using-a-metadata-url-with-a-custom-backend"&gt;Using a metadata URL with a custom backend&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-hcl" data-lang="hcl"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;saml&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;SSO&amp;#34;&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; idp_metadata_url &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;https://idp.example.com/metadata&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; metadata_ttl &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;30m&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; sp_entity_id &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;env&lt;/span&gt;.&lt;span style="color:#66d9ef"&gt;SP_ENTITY_ID&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; sp_acs_url &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;http://localhost:8080/saml/acs&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;backend&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; origin &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;https://idp.example.com&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; timeout &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;10s&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="attributes"&gt;
  &lt;h3 id="attributes"&gt;&lt;a href="#attributes"&gt;Attributes&lt;/a&gt;&lt;/h3&gt;
@@ -1375,9 +1397,17 @@ required &lt;em&gt;label&lt;/em&gt;.&lt;/p&gt;
  &lt;tbody&gt;
  &lt;tr&gt;&lt;td&gt;&lt;code&gt;array_attributes&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;tuple (string)&lt;/div&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;[]&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;A list of assertion attributes that may have several values. Results in at least an empty array in &lt;code&gt;request.context.&amp;lt;label&amp;gt;.attributes.&amp;lt;name&amp;gt;&lt;/code&gt;&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
+ &lt;tr&gt;&lt;td&gt;&lt;code&gt;backend&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;string&lt;/div&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;div&gt;References a &lt;a href="https://docs.couper.io/configuration/block/backend"&gt;backend&lt;/a&gt; in &lt;a href="https://docs.couper.io/configuration/block/definitions"&gt;definitions&lt;/a&gt; for IdP metadata requests. Mutually exclusive with &lt;code&gt;backend&lt;/code&gt; block.&lt;/div&gt;&lt;/td&gt;
+ &lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;&lt;code&gt;custom_log_fields&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;object&lt;/div&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;div&gt;Log fields for &lt;a href="https://docs.couper.io/observation/logging#custom-logging"&gt;custom logging&lt;/a&gt;. Inherited by nested blocks.&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;&lt;code&gt;idp_metadata_file&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;string&lt;/div&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;div&gt;File reference to the Identity Provider metadata XML file.&lt;/div&gt;&lt;/td&gt;
+ &lt;tr&gt;&lt;td&gt;&lt;code&gt;idp_metadata_file&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;string&lt;/div&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;div&gt;File reference to the Identity Provider metadata XML file. Mutually exclusive with &lt;code&gt;idp_metadata_url&lt;/code&gt;.&lt;/div&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;&lt;td&gt;&lt;code&gt;idp_metadata_url&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;string&lt;/div&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;div&gt;URL to fetch the Identity Provider metadata XML. Mutually exclusive with &lt;code&gt;idp_metadata_file&lt;/code&gt;.&lt;/div&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;&lt;td&gt;&lt;code&gt;metadata_max_stale&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;duration&lt;/div&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;&amp;#34;1h&amp;#34;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Time period the cached IdP metadata stays valid after its TTL has passed.&lt;/div&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;&lt;td&gt;&lt;code&gt;metadata_ttl&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;duration&lt;/div&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;&amp;#34;1h&amp;#34;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Time period the IdP metadata stays valid and may be cached.&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;&lt;code&gt;sp_acs_url&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;string&lt;/div&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;div&gt;The URL of the Service Provider&amp;rsquo;s ACS endpoint. Relative URL references are resolved against the origin of the current request URL. The origin can be changed with the &lt;a href="settings"&gt;&lt;code&gt;accept_forwarded_url&lt;/code&gt; attribute&lt;/a&gt; if Couper is running behind a proxy.&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
