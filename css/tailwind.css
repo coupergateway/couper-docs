@@ -1,4 +1,4 @@
-/*! tailwindcss v4.1.18 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v4.2.1 | MIT License | https://tailwindcss.com */
 @layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
@@ -211,6 +211,12 @@
   .sticky {
     position: sticky;
   }
+  .start {
+    inset-inline-start: var(--spacing);
+  }
+  .end {
+    inset-inline-end: var(--spacing);
+  }
   .top-0 {
     top: calc(var(--spacing) * 0);
   }
@@ -296,22 +302,19 @@
     height: calc(var(--spacing) * 16);
   }
   .w-1\/3 {
-    width: calc(1/3 * 100%);
-  }
-  .w-1\/5 {
-    width: calc(1/5 * 100%);
+    width: calc(1 / 3 * 100%);
   }
   .w-3 {
     width: calc(var(--spacing) * 3);
   }
   .w-3\/5 {
-    width: calc(3/5 * 100%);
+    width: calc(3 / 5 * 100%);
   }
   .w-4 {
     width: calc(var(--spacing) * 4);
   }
   .w-4\/5 {
-    width: calc(4/5 * 100%);
+    width: calc(4 / 5 * 100%);
   }
   .w-6 {
     width: calc(var(--spacing) * 6);
@@ -328,8 +331,8 @@
   .max-w-4xl {
     max-width: var(--container-4xl);
   }
-  .min-w-\[220px\] {
-    min-width: 220px;
+  .min-w-0 {
+    min-width: calc(var(--spacing) * 0);
   }
   .flex-1 {
     flex: 1;
@@ -339,9 +342,6 @@
   }
   .grow {
     flex-grow: 1;
-  }
-  .grow-0 {
-    flex-grow: 0;
   }
   .table-auto {
     table-layout: auto;
@@ -649,9 +649,11 @@ body {
   min-height: calc(100vh - var(--header-height, 56px));
 }
 .content-columns {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 17rem 1fr 15rem;
+  -moz-column-gap: 3rem;
+       column-gap: 3rem;
+  align-items: start;
 }
 .sidebar-nav {
   border-right: 1px solid #e2e8f0;
@@ -662,9 +664,6 @@ body {
   scrollbar-width: thin;
 }
 .pagetoc-nav {
-  width: 20%;
-  min-width: 180px;
-  flex-grow: 0;
   position: sticky;
   top: var(--header-height, 56px);
   height: calc(100vh - var(--header-height, 56px));
@@ -1266,7 +1265,7 @@ button.ais-SearchBox-reset path {
 .toc a {
   color: #475569;
   text-decoration: none;
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   line-height: 1.5;
   display: block;
   padding: 0.25rem 0.5rem;
@@ -1279,7 +1278,7 @@ button.ais-SearchBox-reset path {
   background-color: #f0f9ff;
 }
 .toc code {
-  font-size: 0.8em;
+  font-size: 0.9em;
   font-weight: 600;
   background-color: #e0e7ff;
   color: #0284c7;
