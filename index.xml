@@ -1278,7 +1278,7 @@ by its required &lt;em&gt;label&lt;/em&gt;.&lt;/p&gt;
  &lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;&lt;code&gt;headers&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;object&lt;/div&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;div&gt;Same as &lt;code&gt;set_request_headers&lt;/code&gt; in &lt;a href="../modifiers#request-header"&gt;Modifiers - Request Header&lt;/a&gt;.&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;&lt;code&gt;json_body&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;string&lt;/div&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;div&gt;JSON request body, implicitly sets &lt;code&gt;Content-Type: application/json&lt;/code&gt; header field.&lt;/div&gt;&lt;/td&gt;
+ &lt;tr&gt;&lt;td&gt;&lt;code&gt;json_body&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;null, bool, number, string, object, tuple&lt;/div&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;div&gt;JSON request body, implicitly sets &lt;code&gt;Content-Type: application/json&lt;/code&gt; header field.&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;&lt;code&gt;method&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;string&lt;/div&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;&amp;#34;GET&amp;#34;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;The request method.&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
