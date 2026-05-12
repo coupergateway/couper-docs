@@ -85,7 +85,7 @@ Observation
 </span></span><span class=line><span class=cl>  }
 </span></span><span class=line><span class=cl>}
 </span></span></code></pre></div><p>This basic configuration defines an upstream backend service (<code>https://httpbin.org</code>) and &ldquo;mounts&rdquo; it on the local API endpoint <code>/public/**</code>.</p><p>An incoming request <code>/public/foo</code> will result in an outgoing request <code>https://httpbin.org/foo</code>.</p><h2 id=securing-apis>Securing APIs</h2><p>Access control is controlled by an
-<a href=/configuration/access-control>access control</a> attribute that can be set for many blocks.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-hcl data-lang=hcl><span class=line><span class=cl><span class=k>server</span> <span class=s2>&#34;example&#34;</span> {
+<a href=/configuration/access-control/>access control</a> attribute that can be set for many blocks.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-hcl data-lang=hcl><span class=line><span class=cl><span class=k>server</span> <span class=s2>&#34;example&#34;</span> {
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>  <span class=k>endpoint</span> <span class=s2>&#34;/private/**&#34;</span> {
 </span></span><span class=line><span class=cl><span class=n>    access_control</span> <span class=o>=</span> <span class=p>[</span><span class=s2>&#34;accessToken&#34;</span><span class=p>]</span>

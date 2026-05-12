@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Couper Documentation</title><link>https://docs.couper.io/</link><description>Recent content on Couper Documentation</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://docs.couper.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Health Check</title><link>https://docs.couper.io/observation/health/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/observation/health/</guid><description>&lt;h1 id="health-check"&gt;Health Check&lt;/h1&gt;
 &lt;p&gt;The health check will answer with status &lt;code&gt;200 OK&lt;/code&gt; on every port with the configured
-&lt;a href="https://docs.couper.io/configuration/block/settings"&gt;&lt;code&gt;health_path&lt;/code&gt; setting&lt;/a&gt; or the
-&lt;a href="https://docs.couper.io/configuration/command-line#observation-options"&gt;&lt;code&gt;COUPER_HEALTH_PATH&lt;/code&gt; environment variable&lt;/a&gt;.&lt;/p&gt;
+&lt;a href="https://docs.couper.io/configuration/block/settings/"&gt;&lt;code&gt;health_path&lt;/code&gt; setting&lt;/a&gt; or the
+&lt;a href="https://docs.couper.io/configuration/command-line/#observation-options"&gt;&lt;code&gt;COUPER_HEALTH_PATH&lt;/code&gt; environment variable&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;As soon as the gateway instance receives a &lt;code&gt;SIGINT&lt;/code&gt; or &lt;code&gt;SIGTERM&lt;/code&gt; the check will return a status
 &lt;code&gt;500 Internal Server Error&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;A shutdown delay (&lt;a href="https://docs.couper.io/configuration/command-line#timing-environment-variables"&gt;environment variable &lt;code&gt;COUPER_TIMING_SHUTDOWN_DELAY&lt;/code&gt;&lt;/a&gt;)
+&lt;p&gt;A shutdown delay (&lt;a href="https://docs.couper.io/configuration/command-line/#timing-environment-variables"&gt;environment variable &lt;code&gt;COUPER_TIMING_SHUTDOWN_DELAY&lt;/code&gt;&lt;/a&gt;)
 allows the server to finish all running requests and gives a load balancer time to pick another gateway instance.
 After this delay the server goes into shutdown mode and no new requests will be accepted.&lt;/p&gt;</description></item><item><title>Metrics</title><link>https://docs.couper.io/observation/metrics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/observation/metrics/</guid><description>&lt;h1 id="metrics"&gt;Metrics&lt;/h1&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="#metrics"&gt;Metrics&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://docs.couper.io/observation/metrics/#metrics"&gt;Metrics&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="#prometheus"&gt;Prometheus&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#grafana-dashboard"&gt;Grafana Dashboard&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.couper.io/observation/metrics/#prometheus"&gt;Prometheus&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.couper.io/observation/metrics/#grafana-dashboard"&gt;Grafana Dashboard&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="#preview"&gt;Preview&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://docs.couper.io/observation/metrics/#preview"&gt;Preview&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="#developers"&gt;Developers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.couper.io/observation/metrics/#developers"&gt;Developers&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Our metrics feature is &lt;a href="https://docs.couper.io/getting-started/beta-features"&gt;beta&lt;/a&gt; for now. However, we want to provide some core metrics which can be directly collected from Couper.&lt;/p&gt;
+&lt;p&gt;Our metrics feature is &lt;a href="https://docs.couper.io/getting-started/beta-features/"&gt;beta&lt;/a&gt; for now. However, we want to provide some core metrics which can be directly collected from Couper.&lt;/p&gt;
 &lt;h2 id="prometheus"&gt;Prometheus&lt;/h2&gt;
-&lt;p&gt;Couper provides a built-in &lt;a href="https://prometheus.io/"&gt;Prometheus&lt;/a&gt; exporter. It is configurable with &lt;a href="https://docs.couper.io/configuration/block/settings"&gt;settings&lt;/a&gt; like port or &lt;code&gt;service_name&lt;/code&gt; label. If enabled the default scrape target port is &lt;code&gt;9090&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Couper provides a built-in &lt;a href="https://prometheus.io/"&gt;Prometheus&lt;/a&gt; exporter. It is configurable with &lt;a href="https://docs.couper.io/configuration/block/settings/"&gt;settings&lt;/a&gt; like port or &lt;code&gt;service_name&lt;/code&gt; label. If enabled the default scrape target port is &lt;code&gt;9090&lt;/code&gt;.&lt;/p&gt;
 &lt;h2 id="grafana-dashboard"&gt;Grafana Dashboard&lt;/h2&gt;
 &lt;p&gt;Couper provides a maintained Grafana dashboard which you can find here: &lt;a href="https://github.com/coupergateway/couper/blob/master/grafana.json"&gt;grafana.json&lt;/a&gt;
 and import this JSON model to your grafana instance.
@@ -60,7 +60,7 @@ computer. Please visit the &lt;a href="https://docs.docker.com/get-started/"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The &lt;code&gt;files&lt;/code&gt; block configures Couper&amp;rsquo;s file server. It needs to know which directory to serve (&lt;code&gt;document_root&lt;/code&gt;).&lt;/p&gt;
 &lt;p&gt;The &lt;code&gt;spa&lt;/code&gt; block is responsible for serving the bootstrap document for all paths that match the paths list.&lt;/p&gt;</description></item><item><title>Logging</title><link>https://docs.couper.io/observation/logging/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/observation/logging/</guid><description>&lt;h1 id="logging"&gt;Logging&lt;/h1&gt;
 &lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;Upon the execution of Couper all log events are sent to the standard output. You can adjust the appearance and verbosity of the logs with a variety of &lt;a href="https://docs.couper.io/observation/logging#settings"&gt;Settings&lt;/a&gt;. There are different &lt;a href="#log-types"&gt;Log Types&lt;/a&gt; and &lt;a href="#fields"&gt;Fields&lt;/a&gt; containing useful information.&lt;/p&gt;
+&lt;p&gt;Upon the execution of Couper all log events are sent to the standard output. You can adjust the appearance and verbosity of the logs with a variety of &lt;a href="https://docs.couper.io/observation/logging/#settings"&gt;Settings&lt;/a&gt;. There are different &lt;a href="https://docs.couper.io/observation/logging/#log-types"&gt;Log Types&lt;/a&gt; and &lt;a href="https://docs.couper.io/observation/logging/#fields"&gt;Fields&lt;/a&gt; containing useful information.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;We aspire to make Couper as stable as possible so these logs are still subject to change.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -75,42 +75,42 @@ computer. Please visit the &lt;a href="https://docs.docker.com/get-started/"&gt;
  &lt;tbody&gt;
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;couper_access&lt;/code&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;Provides information about the frontend side of things. Compare &lt;a href="#access-fields"&gt;Access Fields&lt;/a&gt;.&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;Provides information about the frontend side of things. Compare &lt;a href="https://docs.couper.io/observation/logging/#access-fields"&gt;Access Fields&lt;/a&gt;.&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;couper_access_tls&lt;/code&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;Provides information about connections via configured &lt;a href="https://docs.couper.io/configuration/block/settings"&gt;https_dev_proxy&lt;/a&gt;. Compare &lt;a href="#access-fields"&gt;Access Fields&lt;/a&gt;.&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;Provides information about connections via configured &lt;a href="https://docs.couper.io/configuration/block/settings/"&gt;https_dev_proxy&lt;/a&gt;. Compare &lt;a href="https://docs.couper.io/observation/logging/#access-fields"&gt;Access Fields&lt;/a&gt;.&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;couper_backend&lt;/code&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;Provides information about the backend side of things. Compare &lt;a href="#backend-fields"&gt;Backend Fields&lt;/a&gt;.&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;Provides information about the backend side of things. Compare &lt;a href="https://docs.couper.io/observation/logging/#backend-fields"&gt;Backend Fields&lt;/a&gt;.&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;couper_daemon&lt;/code&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;Provides background information about the execution of Couper. Each printed log of this type contains a &lt;code&gt;message&lt;/code&gt; entry describing the current actions of Couper. Compare &lt;a href="#daemon-fields"&gt;Daemon Fields&lt;/a&gt;.&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;Provides background information about the execution of Couper. Each printed log of this type contains a &lt;code&gt;message&lt;/code&gt; entry describing the current actions of Couper. Compare &lt;a href="https://docs.couper.io/observation/logging/#daemon-fields"&gt;Daemon Fields&lt;/a&gt;.&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;couper_job&lt;/code&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;Provides information about &lt;a href="https://docs.couper.io/configuration/block/job"&gt;jobs&lt;/a&gt;. See &lt;a href="#job-fields"&gt;Job Fields&lt;/a&gt;.&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;Provides information about &lt;a href="https://docs.couper.io/configuration/block/job/"&gt;jobs&lt;/a&gt;. See &lt;a href="https://docs.couper.io/observation/logging/#job-fields"&gt;Job Fields&lt;/a&gt;.&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id="fields"&gt;Fields&lt;/h2&gt;
-&lt;p&gt;Given the large amount of information contained in some logs, it might come handy to change the format or log level (see &lt;a href="https://docs.couper.io/configuration/block/settings"&gt;Settings&lt;/a&gt;).&lt;/p&gt;</description></item><item><title>Beta Features</title><link>https://docs.couper.io/getting-started/beta-features/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/getting-started/beta-features/</guid><description>&lt;h1 id="about-beta-features"&gt;About &lt;em&gt;beta&lt;/em&gt; features&lt;/h1&gt;
+&lt;p&gt;Given the large amount of information contained in some logs, it might come handy to change the format or log level (see &lt;a href="https://docs.couper.io/configuration/block/settings/"&gt;Settings&lt;/a&gt;).&lt;/p&gt;</description></item><item><title>Beta Features</title><link>https://docs.couper.io/getting-started/beta-features/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/getting-started/beta-features/</guid><description>&lt;h1 id="about-beta-features"&gt;About &lt;em&gt;beta&lt;/em&gt; features&lt;/h1&gt;
 &lt;p&gt;We use &lt;em&gt;beta&lt;/em&gt; features to have the possibility to develop new, complex features for you while still being able to maintain our compatibility promise.&lt;/p&gt;
 &lt;p&gt;You can see beta features as a feature preview. We will announce new beta features in the &lt;a href="https://github.com/coupergateway/couper/blob/master/CHANGELOG.md"&gt;Changelog&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;We will keep features in beta as long as we collect feedback and are actively working on it. You can expect beta features to evolve.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;They can change with every release.&lt;/em&gt;&lt;/p&gt;</description></item><item><title>Tracing</title><link>https://docs.couper.io/observation/tracing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/observation/tracing/</guid><description>&lt;h1 id="tracing"&gt;Tracing&lt;/h1&gt;
-&lt;p&gt;Our tracing feature is &lt;a href="https://docs.couper.io/getting-started/beta-features"&gt;beta&lt;/a&gt; for now. Couper supports distributed tracing using &lt;a href="https://opentelemetry.io/"&gt;OpenTelemetry&lt;/a&gt; and the &lt;a href="https://www.w3.org/TR/trace-context/"&gt;W3C Trace Context&lt;/a&gt; standard.&lt;/p&gt;
+&lt;p&gt;Our tracing feature is &lt;a href="https://docs.couper.io/getting-started/beta-features/"&gt;beta&lt;/a&gt; for now. Couper supports distributed tracing using &lt;a href="https://opentelemetry.io/"&gt;OpenTelemetry&lt;/a&gt; and the &lt;a href="https://www.w3.org/TR/trace-context/"&gt;W3C Trace Context&lt;/a&gt; standard.&lt;/p&gt;
 &lt;h2 id="configuration"&gt;Configuration&lt;/h2&gt;
-&lt;p&gt;Enable tracing with &lt;code&gt;beta_traces = true&lt;/code&gt; in the &lt;a href="https://docs.couper.io/configuration/block/settings"&gt;settings&lt;/a&gt; block or the &lt;code&gt;-beta-traces&lt;/code&gt; CLI flag. Couper exports trace spans via gRPC to an OpenTelemetry collector at &lt;code&gt;beta_traces_endpoint&lt;/code&gt; (default &lt;code&gt;localhost:4317&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;Enable tracing with &lt;code&gt;beta_traces = true&lt;/code&gt; in the &lt;a href="https://docs.couper.io/configuration/block/settings/"&gt;settings&lt;/a&gt; block or the &lt;code&gt;-beta-traces&lt;/code&gt; CLI flag. Couper exports trace spans via gRPC to an OpenTelemetry collector at &lt;code&gt;beta_traces_endpoint&lt;/code&gt; (default &lt;code&gt;localhost:4317&lt;/code&gt;).&lt;/p&gt;
 &lt;p&gt;The &lt;code&gt;beta_service_name&lt;/code&gt; setting is used as the service name in exported spans.&lt;/p&gt;
 &lt;h2 id="trace-propagation"&gt;Trace Propagation&lt;/h2&gt;
 &lt;p&gt;Couper supports &lt;a href="https://www.w3.org/TR/trace-context/"&gt;W3C Trace Context&lt;/a&gt; propagation via the &lt;code&gt;traceparent&lt;/code&gt; HTTP header. Two settings control how incoming trace context is handled:&lt;/p&gt;</description></item><item><title>Access Control</title><link>https://docs.couper.io/configuration/access-control/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/access-control/</guid><description>&lt;h1 id="access-control"&gt;Access Control&lt;/h1&gt;
 &lt;p&gt;The configuration of access controls is twofold in Couper: You define the particular
-type such as &lt;code&gt;jwt&lt;/code&gt; or &lt;code&gt;basic_auth&lt;/code&gt; in &lt;a href="https://docs.couper.io/configuration/block/definitions"&gt;&lt;code&gt;definitions&lt;/code&gt;&lt;/a&gt;, each with a distinct label
+type such as &lt;code&gt;jwt&lt;/code&gt; or &lt;code&gt;basic_auth&lt;/code&gt; in &lt;a href="https://docs.couper.io/configuration/block/definitions/"&gt;&lt;code&gt;definitions&lt;/code&gt;&lt;/a&gt;, each with a distinct label
 (must not be one of the reserved names: &lt;code&gt;granted_permissions&lt;/code&gt;, &lt;code&gt;required_permission&lt;/code&gt;).&lt;/p&gt;
-&lt;p&gt;Anywhere in the &lt;a href="https://docs.couper.io/configuration/block/server"&gt;&lt;code&gt;server&lt;/code&gt; block&lt;/a&gt; those labels can be used in the &lt;code&gt;access_control&lt;/code&gt;
+&lt;p&gt;Anywhere in the &lt;a href="https://docs.couper.io/configuration/block/server/"&gt;&lt;code&gt;server&lt;/code&gt; block&lt;/a&gt; those labels can be used in the &lt;code&gt;access_control&lt;/code&gt;
 list to protect the respective block.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;📝 Access permissions are inherited by nested blocks.&lt;/p&gt;
@@ -133,15 +133,15 @@ as JSON error with an error body payload. This can be customized via &lt;code&gt
  &lt;tbody&gt;
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;api&lt;/code&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/server"&gt;Server Block&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/server/"&gt;Server Block&lt;/a&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;Optional&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3 id="attribute-allowed_methods"&gt;Attribute &lt;code&gt;allowed_methods&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;The default value &lt;code&gt;*&lt;/code&gt; can be combined with additional methods. Methods are matched case-insensitively. &lt;code&gt;Access-Control-Allow-Methods&lt;/code&gt; is only sent in response to a &lt;a href="https://docs.couper.io/configuration/block/cors"&gt;CORS&lt;/a&gt; preflight request, if the method requested by &lt;code&gt;Access-Control-Request-Method&lt;/code&gt; is an allowed method.&lt;/p&gt;</description></item><item><title>Backend</title><link>https://docs.couper.io/configuration/block/backend/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/block/backend/</guid><description>&lt;h1 id="backend"&gt;Backend&lt;/h1&gt;
+&lt;p&gt;The default value &lt;code&gt;*&lt;/code&gt; can be combined with additional methods. Methods are matched case-insensitively. &lt;code&gt;Access-Control-Allow-Methods&lt;/code&gt; is only sent in response to a &lt;a href="https://docs.couper.io/configuration/block/cors/"&gt;CORS&lt;/a&gt; preflight request, if the method requested by &lt;code&gt;Access-Control-Request-Method&lt;/code&gt; is an allowed method.&lt;/p&gt;</description></item><item><title>Backend</title><link>https://docs.couper.io/configuration/block/backend/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/block/backend/</guid><description>&lt;h1 id="backend"&gt;Backend&lt;/h1&gt;
 &lt;p&gt;The &lt;code&gt;backend&lt;/code&gt; block defines the connection to a local/remote backend service.&lt;/p&gt;
-&lt;p&gt;Backends can be defined in the &lt;a href="https://docs.couper.io/configuration/block/definitions"&gt;Definitions Block&lt;/a&gt; and referenced by &lt;em&gt;label&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Backends can be defined in the &lt;a href="https://docs.couper.io/configuration/block/definitions/"&gt;Definitions Block&lt;/a&gt; and referenced by &lt;em&gt;label&lt;/em&gt;.&lt;/p&gt;
 &lt;table&gt;
  &lt;thead&gt;
  &lt;tr&gt;
@@ -153,8 +153,8 @@ as JSON error with an error body payload. This can be customized via &lt;code&gt
  &lt;tbody&gt;
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;backend&lt;/code&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/definitions"&gt;Definitions Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/proxy"&gt;Proxy Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/request"&gt;Request Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/jwt"&gt;JWT Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/beta_oauth2"&gt;OAuth2 AC (Beta) Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/oidc"&gt;OIDC Block&lt;/a&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;⚠ required, if defined in &lt;a href="https://docs.couper.io/configuration/block/definitions"&gt;Definitions Block&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/definitions/"&gt;Definitions Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/proxy/"&gt;Proxy Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/request/"&gt;Request Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/jwt/"&gt;JWT Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/beta_oauth2/"&gt;OAuth2 AC (Beta) Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/oidc/"&gt;OIDC Block&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;⚠ required, if defined in &lt;a href="https://docs.couper.io/configuration/block/definitions/"&gt;Definitions Block&lt;/a&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
@@ -182,7 +182,7 @@ as JSON error with an error body payload. This can be customized via &lt;code&gt
  &lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;&lt;code&gt;connect_timeout&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;duration&lt;/div&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;&amp;#34;10s&amp;#34;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;The total timeout for dialing and connect to the origin.&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;&lt;code&gt;custom_log_fields&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;object&lt;/div&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;div&gt;Log fields for &lt;a href="https://docs.couper.io/observation/logging#custom-logging"&gt;custom logging&lt;/a&gt;. Inherited by nested blocks.&lt;/div&gt;&lt;/td&gt;
+ &lt;tr&gt;&lt;td&gt;&lt;code&gt;custom_log_fields&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;object&lt;/div&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;div&gt;Log fields for &lt;a href="https://docs.couper.io/observation/logging/#custom-logging"&gt;custom logging&lt;/a&gt;. Inherited by nested blocks.&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;&lt;code&gt;disable_certificate_validation&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;bool&lt;/div&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Disables the peer certificate validation. Must not be used in backend refinement.&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -246,19 +246,19 @@ as JSON error with an error body payload. This can be customized via &lt;code&gt
  &lt;tbody&gt;
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;basic_auth&lt;/code&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/definitions"&gt;Definitions Block&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/definitions/"&gt;Definitions Block&lt;/a&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;required&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;The &lt;code&gt;basic_auth&lt;/code&gt; block lets you configure basic auth for your gateway. Like all
-&lt;a href="https://docs.couper.io/configuration/access-control"&gt;access control&lt;/a&gt; types, the &lt;code&gt;basic_auth&lt;/code&gt; block is defined in the
-&lt;a href="https://docs.couper.io/configuration/block/definitions"&gt;&lt;code&gt;definitions&lt;/code&gt; block&lt;/a&gt; and can be referenced in all configuration
+&lt;p&gt;The &lt;code&gt;basic_auth&lt;/code&gt; block lets you configure HTTP basic auth for your gateway. Like all
+&lt;a href="https://docs.couper.io/configuration/access-control/"&gt;access control&lt;/a&gt; types, the &lt;code&gt;basic_auth&lt;/code&gt; block is defined in the
+&lt;a href="https://docs.couper.io/configuration/block/definitions/"&gt;&lt;code&gt;definitions&lt;/code&gt; block&lt;/a&gt; and can be referenced in all configuration
 blocks by its required &lt;em&gt;label&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;If both &lt;code&gt;user&lt;/code&gt;/&lt;code&gt;password&lt;/code&gt; and &lt;code&gt;htpasswd_file&lt;/code&gt; are configured, the incoming
-credentials from the &lt;code&gt;Authorization&lt;/code&gt; request HTTP header field are checked against
-&lt;code&gt;user&lt;/code&gt;/&lt;code&gt;password&lt;/code&gt; if the user matches, and against the data in the file referenced
-by &lt;code&gt;htpasswd_file&lt;/code&gt; otherwise.&lt;/p&gt;</description></item><item><title>Client Certificate</title><link>https://docs.couper.io/configuration/block/client_certificate/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/block/client_certificate/</guid><description>&lt;h1 id="client-certificate"&gt;Client Certificate&lt;/h1&gt;
+&lt;p&gt;Basic Auth is intended for simple access control situations where a static list
+of users is sufficient. This could be to protect a staging environment, or to
+expose a dedicated API to a single internal client, such as a neighboring
+microservice.&lt;/p&gt;</description></item><item><title>Client Certificate</title><link>https://docs.couper.io/configuration/block/client_certificate/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/block/client_certificate/</guid><description>&lt;h1 id="client-certificate"&gt;Client Certificate&lt;/h1&gt;
 &lt;table&gt;
  &lt;thead&gt;
  &lt;tr&gt;
@@ -270,7 +270,7 @@ by &lt;code&gt;htpasswd_file&lt;/code&gt; otherwise.&lt;/p&gt;</description></it
  &lt;tbody&gt;
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;client_certificate&lt;/code&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/server_tls"&gt;tls Block&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/server_tls/"&gt;tls Block&lt;/a&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;optional&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
@@ -310,7 +310,7 @@ This covers the use-case where the CA has signed multiple client certificates an
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;Most of the following command-line options map to &lt;a href="https://docs.couper.io/configuration/block/settings"&gt;settings&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Most of the following command-line options map to &lt;a href="https://docs.couper.io/configuration/block/settings/"&gt;settings&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id="basic-options"&gt;Basic Options&lt;/h2&gt;
 &lt;table&gt;
  &lt;thead&gt;
@@ -362,12 +362,12 @@ This covers the use-case where the CA has signed multiple client certificates an
  &lt;td style="text-align: left"&gt;&lt;code&gt;-watch-retry-delay&lt;/code&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;500ms&lt;/code&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;COUPER_WATCH_RETRY_DELAY&lt;/code&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;Delay &lt;a href="#duration"&gt;duration&lt;/a&gt; before next attempt if an error occurs.&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;Delay &lt;a href="https://docs.couper.io/configuration/command-line/#duration"&gt;duration&lt;/a&gt; before next attempt if an error occurs.&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Note: Apart from &lt;code&gt;e&lt;/code&gt; and &lt;code&gt;p&lt;/code&gt;, these options &lt;strong&gt;do not&lt;/strong&gt; map to &lt;a href="https://docs.couper.io/configuration/block/settings"&gt;settings&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Configuration File</title><link>https://docs.couper.io/configuration/configuration-file/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/configuration-file/</guid><description>&lt;h1 id="configuration-file"&gt;Configuration File&lt;/h1&gt;
+&lt;p&gt;Note: Apart from &lt;code&gt;e&lt;/code&gt; and &lt;code&gt;p&lt;/code&gt;, these options &lt;strong&gt;do not&lt;/strong&gt; map to &lt;a href="https://docs.couper.io/configuration/block/settings/"&gt;settings&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Configuration File</title><link>https://docs.couper.io/configuration/configuration-file/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/configuration-file/</guid><description>&lt;h1 id="configuration-file"&gt;Configuration File&lt;/h1&gt;
 &lt;p&gt;The language for Couper&amp;rsquo;s configuration file is &lt;a href="https://github.com/hashicorp/hcl/tree/hcl2#information-model-and-syntax"&gt;HCL 2.0&lt;/a&gt;, a configuration language by HashiCorp.&lt;/p&gt;
 &lt;h2 id="ide-extension"&gt;IDE Extension&lt;/h2&gt;
 &lt;p&gt;Couper provides its own IDE extension that adds Couper-specific highlighting and autocompletion to Couper&amp;rsquo;s configuration file &lt;code&gt;couper.hcl&lt;/code&gt; in Visual Studio Code.&lt;/p&gt;
@@ -387,12 +387,12 @@ This covers the use-case where the CA has signed multiple client certificates an
  &lt;tbody&gt;
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;cors&lt;/code&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/server"&gt;Server Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/files"&gt;Files Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/spa"&gt;SPA Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/api"&gt;API Block&lt;/a&gt;.&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/server/"&gt;Server Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/files/"&gt;Files Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/spa/"&gt;SPA Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/api/"&gt;API Block&lt;/a&gt;.&lt;/td&gt;
  &lt;td style="text-align: left"&gt;no label&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; &lt;code&gt;Access-Control-Allow-Methods&lt;/code&gt; is only sent in response to a CORS preflight request, if the method requested by &lt;code&gt;Access-Control-Request-Method&lt;/code&gt; is an allowed method (see the &lt;code&gt;allowed_method&lt;/code&gt; attribute for &lt;a href="https://docs.couper.io/configuration/block/api"&gt;&lt;code&gt;api&lt;/code&gt;&lt;/a&gt; or &lt;a href="https://docs.couper.io/configuration/block/endpoint"&gt;&lt;code&gt;endpoint&lt;/code&gt;&lt;/a&gt; blocks).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; &lt;code&gt;Access-Control-Allow-Methods&lt;/code&gt; is only sent in response to a CORS preflight request, if the method requested by &lt;code&gt;Access-Control-Request-Method&lt;/code&gt; is an allowed method (see the &lt;code&gt;allowed_method&lt;/code&gt; attribute for &lt;a href="https://docs.couper.io/configuration/block/api/"&gt;&lt;code&gt;api&lt;/code&gt;&lt;/a&gt; or &lt;a href="https://docs.couper.io/configuration/block/endpoint/"&gt;&lt;code&gt;endpoint&lt;/code&gt;&lt;/a&gt; blocks).&lt;/p&gt;
 &lt;h3 id="attribute-allowed_origins"&gt;Attribute &lt;code&gt;allowed_origins&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;Can be either of: a string with a single specific origin, &lt;code&gt;&amp;quot;*&amp;quot;&lt;/code&gt; (all origins are allowed) or an array of specific origins.&lt;/p&gt;</description></item><item><title>Defaults</title><link>https://docs.couper.io/configuration/block/defaults/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/block/defaults/</guid><description>&lt;h1 id="defaults"&gt;Defaults&lt;/h1&gt;
 &lt;p&gt;The &lt;code&gt;defaults&lt;/code&gt; block lets you define default values.&lt;/p&gt;
@@ -435,7 +435,7 @@ This covers the use-case where the CA has signed multiple client certificates an
 &lt;li&gt;&lt;a href="https://github.com/coupergateway/couper-examples/blob/master/env-var/README.md"&gt;&lt;code&gt;environment_variables&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Definitions</title><link>https://docs.couper.io/configuration/block/definitions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/block/definitions/</guid><description>&lt;h1 id="definitions"&gt;Definitions&lt;/h1&gt;
 &lt;p&gt;Use the &lt;code&gt;definitions&lt;/code&gt; block to define configurations you want to reuse.&lt;/p&gt;
-&lt;p&gt;⚠ &lt;a href="https://docs.couper.io/configuration/access-control"&gt;access control&lt;/a&gt; is &lt;strong&gt;always&lt;/strong&gt; defined in the &lt;code&gt;definitions&lt;/code&gt; block.&lt;/p&gt;
+&lt;p&gt;⚠ &lt;a href="https://docs.couper.io/configuration/access-control/"&gt;access control&lt;/a&gt; is &lt;strong&gt;always&lt;/strong&gt; defined in the &lt;code&gt;definitions&lt;/code&gt; block.&lt;/p&gt;
 &lt;table&gt;
  &lt;thead&gt;
  &lt;tr&gt;
@@ -465,25 +465,25 @@ This covers the use-case where the CA has signed multiple client certificates an
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- &lt;tr&gt;&lt;td&gt;&lt;code&gt;backend&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Configure a &lt;a href="https://docs.couper.io/configuration/block/backend"&gt;backend&lt;/a&gt; (zero or more).&lt;/div&gt;&lt;/td&gt;
+ &lt;tr&gt;&lt;td&gt;&lt;code&gt;backend&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Configure a &lt;a href="https://docs.couper.io/configuration/block/backend/"&gt;backend&lt;/a&gt; (zero or more).&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;&lt;code&gt;basic_auth&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Configure a &lt;a href="https://docs.couper.io/configuration/block/basic_auth"&gt;BasicAuth access control&lt;/a&gt; (zero or more).&lt;/div&gt;&lt;/td&gt;
+ &lt;tr&gt;&lt;td&gt;&lt;code&gt;basic_auth&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Configure a &lt;a href="https://docs.couper.io/configuration/block/basic_auth/"&gt;BasicAuth access control&lt;/a&gt; (zero or more).&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;&lt;code&gt;beta_oauth2&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Configure an &lt;a href="https://docs.couper.io/configuration/block/beta_oauth2"&gt;OAuth2 access control&lt;/a&gt; (zero or more).&lt;/div&gt;&lt;/td&gt;
+ &lt;tr&gt;&lt;td&gt;&lt;code&gt;beta_oauth2&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Configure an &lt;a href="https://docs.couper.io/configuration/block/beta_oauth2/"&gt;OAuth2 access control&lt;/a&gt; (zero or more).&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;&lt;code&gt;beta_rate_limiter&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Configure a &lt;a href="https://docs.couper.io/configuration/block/rate_limiter"&gt;Rate limiter access control&lt;/a&gt; (zero or more).&lt;/div&gt;&lt;/td&gt;
+ &lt;tr&gt;&lt;td&gt;&lt;code&gt;beta_rate_limiter&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Configure a &lt;a href="https://docs.couper.io/configuration/block/rate_limiter/"&gt;Rate limiter access control&lt;/a&gt; (zero or more).&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;&lt;code&gt;job&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Configure a &lt;a href="https://docs.couper.io/configuration/block/job"&gt;job&lt;/a&gt; (zero or more).&lt;/div&gt;&lt;/td&gt;
+ &lt;tr&gt;&lt;td&gt;&lt;code&gt;job&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Configure a &lt;a href="https://docs.couper.io/configuration/block/job/"&gt;job&lt;/a&gt; (zero or more).&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;&lt;code&gt;jwt&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Configure a &lt;a href="https://docs.couper.io/configuration/block/jwt"&gt;JWT access control&lt;/a&gt; (zero or more).&lt;/div&gt;&lt;/td&gt;
+ &lt;tr&gt;&lt;td&gt;&lt;code&gt;jwt&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Configure a &lt;a href="https://docs.couper.io/configuration/block/jwt/"&gt;JWT access control&lt;/a&gt; (zero or more).&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;&lt;code&gt;jwt_signing_profile&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Configure a &lt;a href="https://docs.couper.io/configuration/block/jwt_signing_profile"&gt;JWT signing profile&lt;/a&gt; (zero or more).&lt;/div&gt;&lt;/td&gt;
+ &lt;tr&gt;&lt;td&gt;&lt;code&gt;jwt_signing_profile&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Configure a &lt;a href="https://docs.couper.io/configuration/block/jwt_signing_profile/"&gt;JWT signing profile&lt;/a&gt; (zero or more).&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;&lt;code&gt;oidc&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Configure an &lt;a href="https://docs.couper.io/configuration/block/oidc"&gt;OIDC access control&lt;/a&gt; (zero or more).&lt;/div&gt;&lt;/td&gt;
+ &lt;tr&gt;&lt;td&gt;&lt;code&gt;oidc&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Configure an &lt;a href="https://docs.couper.io/configuration/block/oidc/"&gt;OIDC access control&lt;/a&gt; (zero or more).&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;&lt;code&gt;proxy&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Configure a &lt;a href="https://docs.couper.io/configuration/block/proxy"&gt;proxy&lt;/a&gt; (zero or more).&lt;/div&gt;&lt;/td&gt;
+ &lt;tr&gt;&lt;td&gt;&lt;code&gt;proxy&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Configure a &lt;a href="https://docs.couper.io/configuration/block/proxy/"&gt;proxy&lt;/a&gt; (zero or more).&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;&lt;code&gt;saml&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Configure a &lt;a href="https://docs.couper.io/configuration/block/saml"&gt;SAML access control&lt;/a&gt; (zero or more).&lt;/div&gt;&lt;/td&gt;
+ &lt;tr&gt;&lt;td&gt;&lt;code&gt;saml&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Configure a &lt;a href="https://docs.couper.io/configuration/block/saml/"&gt;SAML access control&lt;/a&gt; (zero or more).&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
  &lt;/table&gt;
@@ -502,16 +502,16 @@ produce an explicit or implicit client response.&lt;/p&gt;
  &lt;tbody&gt;
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;endpoint&lt;/code&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/server"&gt;Server Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/api"&gt;API Block&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/server/"&gt;Server Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/api/"&gt;API Block&lt;/a&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;⚠ required, defines the path suffix for incoming client requests&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id="endpoint-sequence"&gt;Endpoint Sequence&lt;/h2&gt;
 &lt;p&gt;If &lt;code&gt;request&lt;/code&gt; and/or &lt;code&gt;proxy&lt;/code&gt; block definitions are sequential based on their &lt;code&gt;backend_responses.*&lt;/code&gt; variable references
-at load-time they will be executed sequentially. Unexpected responses can be caught with &lt;a href="https://docs.couper.io/configuration/error-handling"&gt;error handling&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Environment</title><link>https://docs.couper.io/configuration/block/environment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/block/environment/</guid><description>&lt;h1 id="environment"&gt;Environment&lt;/h1&gt;
+at load-time they will be executed sequentially. Unexpected responses can be caught with &lt;a href="https://docs.couper.io/configuration/error-handling/"&gt;error handling&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Environment</title><link>https://docs.couper.io/configuration/block/environment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/block/environment/</guid><description>&lt;h1 id="environment"&gt;Environment&lt;/h1&gt;
 &lt;p&gt;The &lt;code&gt;environment&lt;/code&gt; block lets you refine the Couper configuration based on the set
-&lt;a href="https://docs.couper.io/configuration/command-line#basic-options"&gt;environment&lt;/a&gt;.&lt;/p&gt;
+&lt;a href="https://docs.couper.io/configuration/command-line/#basic-options"&gt;environment&lt;/a&gt;.&lt;/p&gt;
 &lt;table&gt;
  &lt;thead&gt;
  &lt;tr&gt;
@@ -531,12 +531,12 @@ at load-time they will be executed sequentially. Unexpected responses can be cau
  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;The &lt;code&gt;environment&lt;/code&gt; block works like a preprocessor. If the label of an &lt;code&gt;environment&lt;/code&gt;
-block does not match the set &lt;a href="https://docs.couper.io/configuration/command-line#basic-options"&gt;&lt;code&gt;COUPER_ENVIRONMENT&lt;/code&gt;&lt;/a&gt; value, the preprocessor
+block does not match the set &lt;a href="https://docs.couper.io/configuration/command-line/#basic-options"&gt;&lt;code&gt;COUPER_ENVIRONMENT&lt;/code&gt;&lt;/a&gt; value, the preprocessor
 removes this block and its content. Otherwise, the content of the block is added
 to the configuration.&lt;/p&gt;</description></item><item><title>Error Handler</title><link>https://docs.couper.io/configuration/block/error_handler/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/block/error_handler/</guid><description>&lt;h1 id="error-handler"&gt;Error Handler&lt;/h1&gt;
 &lt;p&gt;The &lt;code&gt;error_handler&lt;/code&gt; block lets you configure the handling of errors thrown in components configured by the parent blocks.&lt;/p&gt;
-&lt;p&gt;The error handler label specifies which &lt;a href="https://docs.couper.io/configuration/error-handling#error-types"&gt;error type&lt;/a&gt; should be handled. Multiple labels are allowed. The label can be omitted to catch all relevant errors. This has the same behavior as the error type &lt;code&gt;*&lt;/code&gt;, that catches all errors explicitly.&lt;/p&gt;
-&lt;p&gt;Concerning child blocks and attributes, the &lt;code&gt;error_handler&lt;/code&gt; block is similar to an &lt;a href="https://docs.couper.io/configuration/block/endpoint"&gt;Endpoint Block&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Errors</title><link>https://docs.couper.io/configuration/error-handling/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/error-handling/</guid><description>&lt;h1 id="errors"&gt;Errors&lt;/h1&gt;
+&lt;p&gt;The error handler label specifies which &lt;a href="https://docs.couper.io/configuration/error-handling/#error-types"&gt;error type&lt;/a&gt; should be handled. Multiple labels are allowed. The label can be omitted to catch all relevant errors. This has the same behavior as the error type &lt;code&gt;*&lt;/code&gt;, that catches all errors explicitly.&lt;/p&gt;
+&lt;p&gt;Concerning child blocks and attributes, the &lt;code&gt;error_handler&lt;/code&gt; block is similar to an &lt;a href="https://docs.couper.io/configuration/block/endpoint/"&gt;Endpoint Block&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Errors</title><link>https://docs.couper.io/configuration/error-handling/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/error-handling/</guid><description>&lt;h1 id="errors"&gt;Errors&lt;/h1&gt;
 &lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;Errors can occur in various places: due to invalid client requests or problems on the backend and network side.
 Couper specifies some generic error categories (like &lt;code&gt;configuration&lt;/code&gt;, &lt;code&gt;server&lt;/code&gt;, &lt;code&gt;backend&lt;/code&gt; or &lt;code&gt;access_control&lt;/code&gt;) to help you identify the occurring problems faster.&lt;/p&gt;
@@ -552,7 +552,7 @@ Detailed information is provided via log message. This way, all information can 
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Application-provided functions.
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;shouty_message&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;upper&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;message&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;See &lt;a href="https://docs.couper.io/configuration/functions"&gt;functions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Files</title><link>https://docs.couper.io/configuration/block/files/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/block/files/</guid><description>&lt;h1 id="files"&gt;Files&lt;/h1&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;See &lt;a href="https://docs.couper.io/configuration/functions/"&gt;functions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Files</title><link>https://docs.couper.io/configuration/block/files/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/block/files/</guid><description>&lt;h1 id="files"&gt;Files&lt;/h1&gt;
 &lt;p&gt;The &lt;code&gt;files&lt;/code&gt; blocks configure the file serving. Can be defined multiple times as long as the &lt;code&gt;base_path&lt;/code&gt; is unique.&lt;/p&gt;
 &lt;table&gt;
  &lt;thead&gt;
@@ -565,7 +565,7 @@ Detailed information is provided via log message. This way, all information can 
  &lt;tbody&gt;
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;files&lt;/code&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/server"&gt;Server Block&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/server/"&gt;Server Block&lt;/a&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;Optional&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
@@ -588,7 +588,7 @@ Detailed information is provided via log message. This way, all information can 
  &lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;&lt;code&gt;base_path&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;string&lt;/div&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;div&gt;Configures the path prefix for all requests.&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;&lt;code&gt;custom_log_fields&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;object&lt;/div&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;div&gt;Log fields for &lt;a href="https://docs.couper.io/observation/logging#custom-logging"&gt;custom logging&lt;/a&gt;. Inherited by nested blocks.&lt;/div&gt;&lt;/td&gt;
+ &lt;tr&gt;&lt;td&gt;&lt;code&gt;custom_log_fields&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;object&lt;/div&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;div&gt;Log fields for &lt;a href="https://docs.couper.io/observation/logging/#custom-logging"&gt;custom logging&lt;/a&gt;. Inherited by nested blocks.&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;&lt;code&gt;document_root&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;string&lt;/div&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;div&gt;Location of the document root (directory).&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -612,7 +612,7 @@ Detailed information is provided via log message. This way, all information can 
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- &lt;tr&gt;&lt;td&gt;&lt;code&gt;cors&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Configures &lt;a href="https://docs.couper.io/configuration/block/cors"&gt;CORS&lt;/a&gt; settings (zero or one).&lt;/div&gt;&lt;/td&gt;
+ &lt;tr&gt;&lt;td&gt;&lt;code&gt;cors&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Configures &lt;a href="https://docs.couper.io/configuration/block/cors/"&gt;CORS&lt;/a&gt; settings (zero or one).&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
  &lt;/table&gt;
@@ -688,7 +688,7 @@ Detailed information is provided via log message. This way, all information can 
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;jwt_sign&lt;/code&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;string&lt;/td&gt;
- &lt;td style="text-align: left"&gt;Creates and signs a JSON Web Token (JWT) from information from a referenced &lt;a href="https://docs.couper.io/configuration/block/jwt_signing_profile"&gt;JWT Signing Profile Block&lt;/a&gt; (or &lt;a href="https://docs.couper.io/configuration/block/jwt"&gt;JWT Block&lt;/a&gt; with &lt;code&gt;signing_ttl&lt;/code&gt;) and additional claims provided as a function parameter.&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;Creates and signs a JSON Web Token (JWT) from information from a referenced &lt;a href="https://docs.couper.io/configuration/block/jwt_signing_profile/"&gt;JWT Signing Profile Block&lt;/a&gt; (or &lt;a href="https://docs.couper.io/configuration/block/jwt/"&gt;JWT Block&lt;/a&gt; with &lt;code&gt;signing_ttl&lt;/code&gt;) and additional claims provided as a function parameter.&lt;/td&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;label&lt;/code&gt; (string), &lt;code&gt;claims&lt;/code&gt; (object)&lt;/td&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;jwt_sign(&amp;quot;myJWT&amp;quot;)&lt;/code&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -723,7 +723,7 @@ Detailed information is provided via log message. This way, all information can 
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;oauth2_authorization_url&lt;/code&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;string&lt;/td&gt;
- &lt;td style="text-align: left"&gt;Creates an OAuth2 authorization URL from a referenced &lt;a href="https://docs.couper.io/configuration/block/beta_oauth2"&gt;OAuth2 AC (Beta) Block&lt;/a&gt; or &lt;a href="https://docs.couper.io/configuration/block/oidc"&gt;OIDC Block&lt;/a&gt;.&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;Creates an OAuth2 authorization URL from a referenced &lt;a href="https://docs.couper.io/configuration/block/beta_oauth2/"&gt;OAuth2 AC (Beta) Block&lt;/a&gt; or &lt;a href="https://docs.couper.io/configuration/block/oidc/"&gt;OIDC Block&lt;/a&gt;.&lt;/td&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;label&lt;/code&gt; (string)&lt;/td&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;oauth2_authorization_url(&amp;quot;myOAuth2&amp;quot;)&lt;/code&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -744,7 +744,7 @@ Detailed information is provided via log message. This way, all information can 
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;saml_sso_url&lt;/code&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;string&lt;/td&gt;
- &lt;td style="text-align: left"&gt;Creates a SAML SingleSignOn URL (including the &lt;code&gt;SAMLRequest&lt;/code&gt; parameter) from a referenced &lt;a href="https://docs.couper.io/configuration/block/saml"&gt;SAML Block&lt;/a&gt;.&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;Creates a SAML SingleSignOn URL (including the &lt;code&gt;SAMLRequest&lt;/code&gt; parameter) from a referenced &lt;a href="https://docs.couper.io/configuration/block/saml/"&gt;SAML Block&lt;/a&gt;.&lt;/td&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;label&lt;/code&gt; (string)&lt;/td&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;saml_sso_url(&amp;quot;mySAML&amp;quot;)&lt;/code&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -820,9 +820,9 @@ Detailed information is provided via log message. This way, all information can 
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;</description></item><item><title>Health</title><link>https://docs.couper.io/configuration/block/health/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/block/health/</guid><description>&lt;h1 id="health"&gt;Health&lt;/h1&gt;
-&lt;p&gt;Defines a recurring health check request for its backend. Results can be obtained via the &lt;a href="https://docs.couper.io/configuration/variables#backends"&gt;&lt;code&gt;backends.&amp;lt;label&amp;gt;.health&lt;/code&gt; variables&lt;/a&gt;.
+&lt;p&gt;Defines a recurring health check request for its backend. Results can be obtained via the &lt;a href="https://docs.couper.io/configuration/variables/#backends"&gt;&lt;code&gt;backends.&amp;lt;label&amp;gt;.health&lt;/code&gt; variables&lt;/a&gt;.
 Changes in health states and related requests will be logged. Default User-Agent will be &lt;code&gt;Couper / &amp;lt;version&amp;gt; health-check&lt;/code&gt; if not provided
-via &lt;code&gt;headers&lt;/code&gt; attribute. An unhealthy backend will return with a &lt;a href="https://docs.couper.io/configuration/error-handling#api-error-types"&gt;&lt;code&gt;backend_unhealthy&lt;/code&gt;&lt;/a&gt; error.&lt;/p&gt;
+via &lt;code&gt;headers&lt;/code&gt; attribute. An unhealthy backend will return with a &lt;a href="https://docs.couper.io/configuration/error-handling/#api-error-types"&gt;&lt;code&gt;backend_unhealthy&lt;/code&gt;&lt;/a&gt; error.&lt;/p&gt;
 &lt;table&gt;
  &lt;thead&gt;
  &lt;tr&gt;
@@ -834,7 +834,7 @@ via &lt;code&gt;headers&lt;/code&gt; attribute. An unhealthy backend will return
  &lt;tbody&gt;
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;beta_health&lt;/code&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/backend"&gt;&lt;code&gt;backend&lt;/code&gt; block&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/backend/"&gt;&lt;code&gt;backend&lt;/code&gt; block&lt;/a&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;no label&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
@@ -887,7 +887,7 @@ purposes. Older configurations may still use the legacy block name &lt;code&gt;b
  &lt;tbody&gt;
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;job&lt;/code&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/definitions"&gt;Definitions Block&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/definitions/"&gt;Definitions Block&lt;/a&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;required&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
@@ -932,7 +932,7 @@ purposes. Older configurations may still use the legacy block name &lt;code&gt;b
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- &lt;tr&gt;&lt;td&gt;&lt;code&gt;custom_log_fields&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;object&lt;/div&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;div&gt;Log fields for &lt;a href="https://docs.couper.io/observation/logging#custom-logging"&gt;custom logging&lt;/a&gt;. Inherited by nested blocks.&lt;/div&gt;&lt;/td&gt;
+ &lt;tr&gt;&lt;td&gt;&lt;code&gt;custom_log_fields&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;object&lt;/div&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;div&gt;Log fields for &lt;a href="https://docs.couper.io/observation/logging/#custom-logging"&gt;custom logging&lt;/a&gt;. Inherited by nested blocks.&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;&lt;code&gt;interval&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;duration&lt;/div&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;div&gt;Execution interval.&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -948,16 +948,16 @@ purposes. Older configurations may still use the legacy block name &lt;code&gt;b
  Values of type duration are provided as number string followed by a unit listed below.
  &lt;p&gt;Example: &lt;code&gt;timeout = &amp;#34;300s&amp;#34;&lt;/code&gt;&lt;/p&gt;</description></item><item><title>JWT</title><link>https://docs.couper.io/configuration/block/jwt/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/block/jwt/</guid><description>&lt;h1 id="jwt"&gt;JWT&lt;/h1&gt;
 &lt;p&gt;The &lt;code&gt;jwt&lt;/code&gt; block lets you configure JSON Web Token access control for your gateway.
-Like all &lt;a href="https://docs.couper.io/configuration/access-control"&gt;access control&lt;/a&gt; types, the &lt;code&gt;jwt&lt;/code&gt; block is defined in
-the &lt;a href="https://docs.couper.io/configuration/block/definitions"&gt;&lt;code&gt;definitions&lt;/code&gt; Block&lt;/a&gt; and can be referenced in all configuration blocks by its
+Like all &lt;a href="https://docs.couper.io/configuration/access-control/"&gt;access control&lt;/a&gt; types, the &lt;code&gt;jwt&lt;/code&gt; block is defined in
+the &lt;a href="https://docs.couper.io/configuration/block/definitions/"&gt;&lt;code&gt;definitions&lt;/code&gt; Block&lt;/a&gt; and can be referenced in all configuration blocks by its
 required &lt;em&gt;label&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Since responses from endpoints protected by JWT access controls are not publicly cacheable, a &lt;code&gt;Cache-Control: private&lt;/code&gt; header field is added to the response, unless this feature is disabled with &lt;code&gt;disable_private_caching = true&lt;/code&gt;.&lt;/p&gt;</description></item><item><title>JWT Signing Profile</title><link>https://docs.couper.io/configuration/block/jwt_signing_profile/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/block/jwt_signing_profile/</guid><description>&lt;h1 id="jwt-signing-profile"&gt;JWT Signing Profile&lt;/h1&gt;
 &lt;p&gt;The &lt;code&gt;jwt_signing_profile&lt;/code&gt; block lets you configure a JSON Web Token signing
-profile for your gateway. It is referenced in the &lt;a href="https://docs.couper.io/configuration/functions"&gt;&lt;code&gt;jwt_sign()&lt;/code&gt; function&lt;/a&gt;
+profile for your gateway. It is referenced in the &lt;a href="https://docs.couper.io/configuration/functions/"&gt;&lt;code&gt;jwt_sign()&lt;/code&gt; function&lt;/a&gt;
 by its required &lt;em&gt;label&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;It can also be used (without &lt;em&gt;label&lt;/em&gt;) in &lt;a href="oauth2"&gt;&lt;code&gt;oauth2&lt;/code&gt;&lt;/a&gt;, &lt;a href="oidc"&gt;&lt;code&gt;oidc&lt;/code&gt;&lt;/a&gt; or
-&lt;a href="beta_oauth2"&gt;&lt;code&gt;beta_oauth2&lt;/code&gt;&lt;/a&gt; blocks for &lt;code&gt;token_endpoint_auth_method&lt;/code&gt;s &lt;code&gt;&amp;quot;client_secret_jwt&amp;quot;&lt;/code&gt;
-or &lt;code&gt;&amp;quot;private_key_jwt&amp;quot;&lt;/code&gt; or in &lt;a href="oauth2"&gt;&lt;code&gt;oauth2&lt;/code&gt;&lt;/a&gt; blocks with
+&lt;p&gt;It can also be used (without &lt;em&gt;label&lt;/em&gt;) in &lt;a href="https://docs.couper.io/configuration/block/oauth2/"&gt;&lt;code&gt;oauth2&lt;/code&gt;&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/oidc/"&gt;&lt;code&gt;oidc&lt;/code&gt;&lt;/a&gt; or
+&lt;a href="https://docs.couper.io/configuration/block/beta_oauth2/"&gt;&lt;code&gt;beta_oauth2&lt;/code&gt;&lt;/a&gt; blocks for &lt;code&gt;token_endpoint_auth_method&lt;/code&gt;s &lt;code&gt;&amp;quot;client_secret_jwt&amp;quot;&lt;/code&gt;
+or &lt;code&gt;&amp;quot;private_key_jwt&amp;quot;&lt;/code&gt; or in &lt;a href="https://docs.couper.io/configuration/block/oauth2/"&gt;&lt;code&gt;oauth2&lt;/code&gt;&lt;/a&gt; blocks with
 &lt;code&gt;grant_type = &amp;quot;urn:ietf:params:oauth:grant-type:jwt-bearer&amp;quot;&lt;/code&gt;, in the absence of an
 &lt;code&gt;assertion&lt;/code&gt; attribute, for configuring a self-signed JWT assertion.&lt;/p&gt;
 &lt;table&gt;
@@ -971,7 +971,7 @@ or &lt;code&gt;&amp;quot;private_key_jwt&amp;quot;&lt;/code&gt; or in &lt;a href
  &lt;tbody&gt;
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;jwt_signing_profile&lt;/code&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/definitions"&gt;Definitions Block&lt;/a&gt;, &lt;a href="oauth2"&gt;OAuth2 Block&lt;/a&gt;, &lt;a href="beta_oauth2"&gt;OAuth2 AC (Beta) Block&lt;/a&gt;, &lt;a href="oidc"&gt;OIDC Block&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/definitions/"&gt;Definitions Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/oauth2/"&gt;OAuth2 Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/beta_oauth2/"&gt;OAuth2 AC (Beta) Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/oidc/"&gt;OIDC Block&lt;/a&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;required if defined in defititions&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
@@ -1010,14 +1010,14 @@ or &lt;code&gt;&amp;quot;private_key_jwt&amp;quot;&lt;/code&gt; or in &lt;a href
  Values of type duration are provided as number string followed by a unit listed below.
  &lt;p&gt;Example: &lt;code&gt;timeout = &amp;#34;300s&amp;#34;&lt;/code&gt;&lt;/p&gt;</description></item><item><title>Merge of Configuration File(s)</title><link>https://docs.couper.io/configuration/multiple-files/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/multiple-files/</guid><description>&lt;h1 id="merging"&gt;Merging&lt;/h1&gt;
 &lt;p&gt;Couper supports merging of blocks and attributes from multiple configuration files
-(see &lt;a href="https://docs.couper.io/configuration/command-line#basic-options"&gt;Basic Options of Command Line Interface&lt;/a&gt;).&lt;/p&gt;
+(see &lt;a href="https://docs.couper.io/configuration/command-line/#basic-options"&gt;Basic Options of Command Line Interface&lt;/a&gt;).&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="#merging"&gt;Merging&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#general-rules-of-merging"&gt;General Rules of Merging&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#merging-of-server-blocks"&gt;Merging of &lt;code&gt;server&lt;/code&gt; Blocks&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#merging-of-definitions-blocks"&gt;Merging of &lt;code&gt;definitions&lt;/code&gt; Blocks&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#merging-of-defaults-blocks"&gt;Merging of &lt;code&gt;defaults&lt;/code&gt; Blocks&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#merging-of-settings-blocks"&gt;Merging of &lt;code&gt;settings&lt;/code&gt; Blocks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.couper.io/configuration/multiple-files/#merging"&gt;Merging&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.couper.io/configuration/multiple-files/#general-rules-of-merging"&gt;General Rules of Merging&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.couper.io/configuration/multiple-files/#merging-of-server-blocks"&gt;Merging of &lt;code&gt;server&lt;/code&gt; Blocks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.couper.io/configuration/multiple-files/#merging-of-definitions-blocks"&gt;Merging of &lt;code&gt;definitions&lt;/code&gt; Blocks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.couper.io/configuration/multiple-files/#merging-of-defaults-blocks"&gt;Merging of &lt;code&gt;defaults&lt;/code&gt; Blocks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.couper.io/configuration/multiple-files/#merging-of-settings-blocks"&gt;Merging of &lt;code&gt;settings&lt;/code&gt; Blocks&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="general-rules-of-merging"&gt;General Rules of Merging&lt;/h2&gt;
 &lt;p&gt;When merging, all attributes (except &lt;code&gt;environment_variables&lt;/code&gt; in the &lt;code&gt;defaults&lt;/code&gt; block) replace existing attributes with the same name, if any, otherwise they are added.&lt;/p&gt;
@@ -1037,23 +1037,23 @@ executed ordered as follows:&lt;/p&gt;
  &lt;tbody&gt;
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;remove_request_headers&lt;/code&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/endpoint"&gt;Endpoint Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/proxy"&gt;Proxy Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/backend"&gt;Backend Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/error_handler"&gt;Error Handler&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/endpoint/"&gt;Endpoint Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/proxy/"&gt;Proxy Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/backend/"&gt;Backend Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/error_handler/"&gt;Error Handler&lt;/a&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;List of request header to be removed from the upstream request.&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;set_request_headers&lt;/code&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/endpoint"&gt;Endpoint Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/proxy"&gt;Proxy Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/backend"&gt;Backend Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/error_handler"&gt;Error Handler&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/endpoint/"&gt;Endpoint Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/proxy/"&gt;Proxy Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/backend/"&gt;Backend Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/error_handler/"&gt;Error Handler&lt;/a&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;Key/value(s) pairs to set request header in the upstream request.&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;add_request_headers&lt;/code&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/endpoint"&gt;Endpoint Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/proxy"&gt;Proxy Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/backend"&gt;Backend Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/error_handler"&gt;Error Handler&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/endpoint/"&gt;Endpoint Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/proxy/"&gt;Proxy Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/backend/"&gt;Backend Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/error_handler/"&gt;Error Handler&lt;/a&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;Key/value(s) pairs to add request header to the upstream request.&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;All &lt;code&gt;*_request_headers&lt;/code&gt; are executed from: &lt;code&gt;endpoint&lt;/code&gt;, &lt;code&gt;proxy&lt;/code&gt;, &lt;code&gt;backend&lt;/code&gt; and &lt;code&gt;error_handler&lt;/code&gt;.&lt;/p&gt;</description></item><item><title>OAuth2</title><link>https://docs.couper.io/configuration/block/oauth2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/block/oauth2/</guid><description>&lt;h1 id="oauth2"&gt;OAuth2&lt;/h1&gt;
-&lt;p&gt;The &lt;code&gt;oauth2&lt;/code&gt; block in the &lt;a href="https://docs.couper.io/configuration/block/backend"&gt;Backend Block&lt;/a&gt; context configures an OAuth2 flow to request a bearer token for the backend request.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;oauth2&lt;/code&gt; block in the &lt;a href="https://docs.couper.io/configuration/block/backend/"&gt;Backend Block&lt;/a&gt; context configures an OAuth2 flow to request a bearer token for the backend request.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; The token received from the authorization server&amp;rsquo;s token endpoint is stored &lt;strong&gt;per backend&lt;/strong&gt;. So even with flows where a user&amp;rsquo;s account characteristics like username/password or email address are involved, there is no way to &amp;ldquo;switch&amp;rdquo; from one user to another depending on the client request.&lt;/p&gt;
 &lt;table&gt;
  &lt;thead&gt;
@@ -1066,15 +1066,15 @@ executed ordered as follows:&lt;/p&gt;
  &lt;tbody&gt;
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;oauth2&lt;/code&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/backend"&gt;Backend Block&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/backend/"&gt;Backend Block&lt;/a&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;no label&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;A nested &lt;code&gt;jwt_signing_profile&lt;/code&gt; block is used in two cases:&lt;/p&gt;</description></item><item><title>OAuth2 AC (Beta)</title><link>https://docs.couper.io/configuration/block/beta_oauth2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/block/beta_oauth2/</guid><description>&lt;h1 id="oauth2-ac-beta"&gt;OAuth2 AC (Beta)&lt;/h1&gt;
-&lt;p&gt;The &lt;code&gt;beta_oauth2&lt;/code&gt; block lets you configure the &lt;a href="https://docs.couper.io/configuration/functions"&gt;&lt;code&gt;oauth2_authorization_url()&lt;/code&gt; function&lt;/a&gt; and an access
+&lt;p&gt;The &lt;code&gt;beta_oauth2&lt;/code&gt; block lets you configure the &lt;a href="https://docs.couper.io/configuration/functions/"&gt;&lt;code&gt;oauth2_authorization_url()&lt;/code&gt; function&lt;/a&gt; and an access
 control for an OAuth2 &lt;strong&gt;Authorization Code Grant Flow&lt;/strong&gt; redirect endpoint.
-Like all &lt;a href="https://docs.couper.io/configuration/access-control"&gt;access control&lt;/a&gt; types, the &lt;code&gt;beta_oauth2&lt;/code&gt; block is defined in the &lt;a href="https://docs.couper.io/configuration/block/definitions"&gt;&lt;code&gt;definitions&lt;/code&gt; block&lt;/a&gt; and can be referenced in all configuration blocks by its required &lt;em&gt;label&lt;/em&gt;.&lt;/p&gt;
+Like all &lt;a href="https://docs.couper.io/configuration/access-control/"&gt;access control&lt;/a&gt; types, the &lt;code&gt;beta_oauth2&lt;/code&gt; block is defined in the &lt;a href="https://docs.couper.io/configuration/block/definitions/"&gt;&lt;code&gt;definitions&lt;/code&gt; block&lt;/a&gt; and can be referenced in all configuration blocks by its required &lt;em&gt;label&lt;/em&gt;.&lt;/p&gt;
 &lt;table&gt;
  &lt;thead&gt;
  &lt;tr&gt;
@@ -1086,15 +1086,15 @@ Like all &lt;a href="https://docs.couper.io/configuration/access-control"&gt;acc
  &lt;tbody&gt;
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;beta_oauth2&lt;/code&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/definitions"&gt;Definitions Block&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/definitions/"&gt;Definitions Block&lt;/a&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;⚠ required&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;A nested &lt;code&gt;jwt_signing_profile&lt;/code&gt; block is used to create a client assertion if &lt;code&gt;token_endpoint_auth_method&lt;/code&gt; is either &lt;code&gt;&amp;quot;client_secret_jwt&amp;quot;&lt;/code&gt; or &lt;code&gt;&amp;quot;private_key_jwt&amp;quot;&lt;/code&gt;.&lt;/p&gt;</description></item><item><title>OIDC</title><link>https://docs.couper.io/configuration/block/oidc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/block/oidc/</guid><description>&lt;h1 id="oidc"&gt;OIDC&lt;/h1&gt;
-&lt;p&gt;The &lt;code&gt;oidc&lt;/code&gt; block lets you configure the &lt;a href="https://docs.couper.io/configuration/functions"&gt;&lt;code&gt;oauth2_authorization_url()&lt;/code&gt; function&lt;/a&gt; and an access
+&lt;p&gt;The &lt;code&gt;oidc&lt;/code&gt; block lets you configure the &lt;a href="https://docs.couper.io/configuration/functions/"&gt;&lt;code&gt;oauth2_authorization_url()&lt;/code&gt; function&lt;/a&gt; and an access
 control for an OIDC &lt;strong&gt;Authorization Code Grant Flow&lt;/strong&gt; redirect endpoint.
-Like all &lt;a href="https://docs.couper.io/configuration/access-control"&gt;access control&lt;/a&gt; types, the &lt;code&gt;oidc&lt;/code&gt; block is defined in the &lt;a href="https://docs.couper.io/configuration/block/definitions"&gt;&lt;code&gt;definitions&lt;/code&gt; Block&lt;/a&gt; and can be referenced in all configuration blocks by its required &lt;em&gt;label&lt;/em&gt;.&lt;/p&gt;
+Like all &lt;a href="https://docs.couper.io/configuration/access-control/"&gt;access control&lt;/a&gt; types, the &lt;code&gt;oidc&lt;/code&gt; block is defined in the &lt;a href="https://docs.couper.io/configuration/block/definitions/"&gt;&lt;code&gt;definitions&lt;/code&gt; Block&lt;/a&gt; and can be referenced in all configuration blocks by its required &lt;em&gt;label&lt;/em&gt;.&lt;/p&gt;
 &lt;table&gt;
  &lt;thead&gt;
  &lt;tr&gt;
@@ -1106,7 +1106,7 @@ Like all &lt;a href="https://docs.couper.io/configuration/access-control"&gt;acc
  &lt;tbody&gt;
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;oidc&lt;/code&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/definitions"&gt;Definitions Block&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/definitions/"&gt;Definitions Block&lt;/a&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;⚠ required&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
@@ -1125,7 +1125,7 @@ lead to a non-matching &lt;em&gt;route&lt;/em&gt; which is still required for re
 In this case the response validation will fail if not ignored, too.&lt;/p&gt;</description></item><item><title>Proxy</title><link>https://docs.couper.io/configuration/block/proxy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/block/proxy/</guid><description>&lt;h1 id="proxy"&gt;Proxy&lt;/h1&gt;
 &lt;p&gt;The &lt;code&gt;proxy&lt;/code&gt; block creates and executes a proxy request to a backend service.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;📝 Multiple &lt;code&gt;proxy&lt;/code&gt; and &lt;a href="https://docs.couper.io/configuration/block/request"&gt;&lt;code&gt;request&lt;/code&gt;&lt;/a&gt; blocks are executed in parallel.&lt;/p&gt;
+&lt;p&gt;📝 Multiple &lt;code&gt;proxy&lt;/code&gt; and &lt;a href="https://docs.couper.io/configuration/block/request/"&gt;&lt;code&gt;request&lt;/code&gt;&lt;/a&gt; blocks are executed in parallel.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;table&gt;
  &lt;thead&gt;
@@ -1138,12 +1138,12 @@ In this case the response validation will fail if not ignored, too.&lt;/p&gt;</d
  &lt;tbody&gt;
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;proxy&lt;/code&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/endpoint"&gt;Endpoint Block&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/endpoint/"&gt;Endpoint Block&lt;/a&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;See &lt;code&gt;Label&lt;/code&gt; description below.&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;strong&gt;Label:&lt;/strong&gt; If defined in an &lt;a href="https://docs.couper.io/configuration/block/endpoint"&gt;Endpoint Block&lt;/a&gt;, a &lt;code&gt;proxy&lt;/code&gt; block or &lt;a href="https://docs.couper.io/configuration/block/request"&gt;Request Block&lt;/a&gt; w/o a label has an implicit name &lt;code&gt;&amp;quot;default&amp;quot;&lt;/code&gt;. If defined in the &lt;a href="https://docs.couper.io/configuration/block/definitions"&gt;Definitions Block&lt;/a&gt;, the label of &lt;code&gt;proxy&lt;/code&gt; is used as reference in &lt;a href="https://docs.couper.io/configuration/block/endpoint"&gt;Endpoint Blocks&lt;/a&gt; and the name can be defined via &lt;code&gt;name&lt;/code&gt; attribute. Only &lt;strong&gt;one&lt;/strong&gt; &lt;code&gt;proxy&lt;/code&gt; block or &lt;a href="https://docs.couper.io/configuration/block/request"&gt;Request Block&lt;/a&gt; w/ label &lt;code&gt;&amp;quot;default&amp;quot;&lt;/code&gt; per &lt;a href="https://docs.couper.io/configuration/block/endpoint"&gt;Endpoint Block&lt;/a&gt; is allowed.&lt;/p&gt;</description></item><item><title>Rate Limiter (Beta)</title><link>https://docs.couper.io/configuration/block/rate_limiter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/block/rate_limiter/</guid><description>&lt;h1 id="rate-limiter-beta"&gt;Rate Limiter (Beta)&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Label:&lt;/strong&gt; If defined in an &lt;a href="https://docs.couper.io/configuration/block/endpoint/"&gt;Endpoint Block&lt;/a&gt;, a &lt;code&gt;proxy&lt;/code&gt; block or &lt;a href="https://docs.couper.io/configuration/block/request/"&gt;Request Block&lt;/a&gt; w/o a label has an implicit name &lt;code&gt;&amp;quot;default&amp;quot;&lt;/code&gt;. If defined in the &lt;a href="https://docs.couper.io/configuration/block/definitions/"&gt;Definitions Block&lt;/a&gt;, the label of &lt;code&gt;proxy&lt;/code&gt; is used as reference in &lt;a href="https://docs.couper.io/configuration/block/endpoint/"&gt;Endpoint Blocks&lt;/a&gt; and the name can be defined via &lt;code&gt;name&lt;/code&gt; attribute. Only &lt;strong&gt;one&lt;/strong&gt; &lt;code&gt;proxy&lt;/code&gt; block or &lt;a href="https://docs.couper.io/configuration/block/request/"&gt;Request Block&lt;/a&gt; w/ label &lt;code&gt;&amp;quot;default&amp;quot;&lt;/code&gt; per &lt;a href="https://docs.couper.io/configuration/block/endpoint/"&gt;Endpoint Block&lt;/a&gt; is allowed.&lt;/p&gt;</description></item><item><title>Rate Limiter (Beta)</title><link>https://docs.couper.io/configuration/block/rate_limiter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/block/rate_limiter/</guid><description>&lt;h1 id="rate-limiter-beta"&gt;Rate Limiter (Beta)&lt;/h1&gt;
 &lt;table&gt;
  &lt;thead&gt;
  &lt;tr&gt;
@@ -1155,13 +1155,13 @@ In this case the response validation will fail if not ignored, too.&lt;/p&gt;</d
  &lt;tbody&gt;
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;beta_rate_limiter&lt;/code&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/definitions"&gt;Definitions Block&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/definitions/"&gt;Definitions Block&lt;/a&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;required&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;Rate Limier is a beta feature that lets you configure rate limiting for your gateway. It is defined in the
-&lt;a href="https://docs.couper.io/configuration/block/definitions"&gt;&lt;code&gt;definitions&lt;/code&gt; block&lt;/a&gt; and can be referenced in all access control attributes
+&lt;a href="https://docs.couper.io/configuration/block/definitions/"&gt;&lt;code&gt;definitions&lt;/code&gt; block&lt;/a&gt; and can be referenced in all access control attributes
 by its required &lt;em&gt;label&lt;/em&gt;.&lt;/p&gt;
 &lt;h2 id="example"&gt;Example&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-hcl" data-lang="hcl"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;server&lt;/span&gt; {
@@ -1216,7 +1216,7 @@ by its required &lt;em&gt;label&lt;/em&gt;.&lt;/p&gt;
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- &lt;tr&gt;&lt;td&gt;&lt;code&gt;custom_log_fields&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;object&lt;/div&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;div&gt;Log fields for &lt;a href="https://docs.couper.io/observation/logging#custom-logging"&gt;custom logging&lt;/a&gt;. Inherited by nested blocks.&lt;/div&gt;&lt;/td&gt;
+ &lt;tr&gt;&lt;td&gt;&lt;code&gt;custom_log_fields&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;object&lt;/div&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;div&gt;Log fields for &lt;a href="https://docs.couper.io/observation/logging/#custom-logging"&gt;custom logging&lt;/a&gt;. Inherited by nested blocks.&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;&lt;code&gt;key&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;string&lt;/div&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;div&gt;The expression defining which key to be used to identify a visitor.&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1237,7 +1237,7 @@ by its required &lt;em&gt;label&lt;/em&gt;.&lt;/p&gt;
  &lt;p&gt;Example: &lt;code&gt;timeout = &amp;#34;300s&amp;#34;&lt;/code&gt;&lt;/p&gt;</description></item><item><title>Request</title><link>https://docs.couper.io/configuration/block/request/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/block/request/</guid><description>&lt;h1 id="request"&gt;Request&lt;/h1&gt;
 &lt;p&gt;The &lt;code&gt;request&lt;/code&gt; block creates and executes a request to a backend service.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;📝 Multiple &lt;a href="https://docs.couper.io/configuration/block/proxy"&gt;&lt;code&gt;proxy&lt;/code&gt;&lt;/a&gt; and &lt;code&gt;request&lt;/code&gt; blocks are executed in parallel.&lt;/p&gt;
+&lt;p&gt;📝 Multiple &lt;a href="https://docs.couper.io/configuration/block/proxy/"&gt;&lt;code&gt;proxy&lt;/code&gt;&lt;/a&gt; and &lt;code&gt;request&lt;/code&gt; blocks are executed in parallel.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;table&gt;
  &lt;thead&gt;
@@ -1250,8 +1250,8 @@ by its required &lt;em&gt;label&lt;/em&gt;.&lt;/p&gt;
  &lt;tbody&gt;
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;request&lt;/code&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/endpoint"&gt;Endpoint Block&lt;/a&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;⚠ A &lt;a href="https://docs.couper.io/configuration/block/proxy"&gt;Proxy Block&lt;/a&gt; or &lt;a href="https://docs.couper.io/configuration/block/request"&gt;Request Block&lt;/a&gt; w/o a label has an implicit label &lt;code&gt;&amp;quot;default&amp;quot;&lt;/code&gt;. Only &lt;strong&gt;one&lt;/strong&gt; &lt;a href="https://docs.couper.io/configuration/block/proxy"&gt;Proxy Block&lt;/a&gt; or &lt;a href="https://docs.couper.io/configuration/block/request"&gt;Request Block&lt;/a&gt; w/ label &lt;code&gt;&amp;quot;default&amp;quot;&lt;/code&gt; per &lt;a href="https://docs.couper.io/configuration/block/endpoint"&gt;Endpoint Block&lt;/a&gt; is allowed.&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/endpoint/"&gt;Endpoint Block&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;⚠ A &lt;a href="https://docs.couper.io/configuration/block/proxy/"&gt;Proxy Block&lt;/a&gt; or &lt;a href="https://docs.couper.io/configuration/block/request/"&gt;Request Block&lt;/a&gt; w/o a label has an implicit label &lt;code&gt;&amp;quot;default&amp;quot;&lt;/code&gt;. Only &lt;strong&gt;one&lt;/strong&gt; &lt;a href="https://docs.couper.io/configuration/block/proxy/"&gt;Proxy Block&lt;/a&gt; or &lt;a href="https://docs.couper.io/configuration/block/request/"&gt;Request Block&lt;/a&gt; w/ label &lt;code&gt;&amp;quot;default&amp;quot;&lt;/code&gt; per &lt;a href="https://docs.couper.io/configuration/block/endpoint/"&gt;Endpoint Block&lt;/a&gt; is allowed.&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
@@ -1268,7 +1268,7 @@ by its required &lt;em&gt;label&lt;/em&gt;.&lt;/p&gt;
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- &lt;tr&gt;&lt;td&gt;&lt;code&gt;backend&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;string&lt;/div&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;div&gt;References a &lt;a href="https://docs.couper.io/configuration/block/backend"&gt;backend&lt;/a&gt; in &lt;a href="https://docs.couper.io/configuration/block/definitions"&gt;definitions&lt;/a&gt; for the request. Mutually exclusive with &lt;code&gt;backend&lt;/code&gt; block.&lt;/div&gt;&lt;/td&gt;
+ &lt;tr&gt;&lt;td&gt;&lt;code&gt;backend&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;string&lt;/div&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;div&gt;References a &lt;a href="https://docs.couper.io/configuration/block/backend/"&gt;backend&lt;/a&gt; in &lt;a href="https://docs.couper.io/configuration/block/definitions/"&gt;definitions&lt;/a&gt; for the request. Mutually exclusive with &lt;code&gt;backend&lt;/code&gt; block.&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;&lt;code&gt;body&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;string&lt;/div&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;div&gt;Plain text request body, implicitly sets &lt;code&gt;Content-Type: text/plain&lt;/code&gt; header field.&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1303,7 +1303,7 @@ by its required &lt;em&gt;label&lt;/em&gt;.&lt;/p&gt;
  &lt;tbody&gt;
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;response&lt;/code&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/endpoint"&gt;Endpoint Block&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/endpoint/"&gt;Endpoint Block&lt;/a&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;no label&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
@@ -1332,10 +1332,10 @@ by its required &lt;em&gt;label&lt;/em&gt;.&lt;/p&gt;
  &lt;/tbody&gt;
  &lt;/table&gt;
 &lt;/div&gt;</description></item><item><title>SAML</title><link>https://docs.couper.io/configuration/block/saml/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/block/saml/</guid><description>&lt;h1 id="saml"&gt;SAML&lt;/h1&gt;
-&lt;p&gt;The &lt;code&gt;saml&lt;/code&gt; block lets you configure the &lt;a href="https://docs.couper.io/configuration/functions"&gt;&lt;code&gt;saml_sso_url()&lt;/code&gt; function&lt;/a&gt; and an access
+&lt;p&gt;The &lt;code&gt;saml&lt;/code&gt; block lets you configure the &lt;a href="https://docs.couper.io/configuration/functions/"&gt;&lt;code&gt;saml_sso_url()&lt;/code&gt; function&lt;/a&gt; and an access
 control for a SAML Assertion Consumer Service (ACS) endpoint.
-Like all &lt;a href="https://docs.couper.io/configuration/access-control"&gt;access control&lt;/a&gt; types, the &lt;code&gt;saml&lt;/code&gt; block is defined in
-the &lt;a href="https://docs.couper.io/configuration/block/definitions"&gt;&lt;code&gt;definitions&lt;/code&gt; block&lt;/a&gt; and can be referenced in all configuration blocks by its
+Like all &lt;a href="https://docs.couper.io/configuration/access-control/"&gt;access control&lt;/a&gt; types, the &lt;code&gt;saml&lt;/code&gt; block is defined in
+the &lt;a href="https://docs.couper.io/configuration/block/definitions/"&gt;&lt;code&gt;definitions&lt;/code&gt; block&lt;/a&gt; and can be referenced in all configuration blocks by its
 required &lt;em&gt;label&lt;/em&gt;.&lt;/p&gt;
 &lt;table&gt;
  &lt;thead&gt;
@@ -1348,7 +1348,7 @@ required &lt;em&gt;label&lt;/em&gt;.&lt;/p&gt;
  &lt;tbody&gt;
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;saml&lt;/code&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/definitions"&gt;Definitions Block&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/definitions/"&gt;Definitions Block&lt;/a&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;⚠ required&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
@@ -1397,9 +1397,9 @@ required &lt;em&gt;label&lt;/em&gt;.&lt;/p&gt;
  &lt;tbody&gt;
  &lt;tr&gt;&lt;td&gt;&lt;code&gt;array_attributes&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;tuple (string)&lt;/div&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;[]&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;A list of assertion attributes that may have several values. Results in at least an empty array in &lt;code&gt;request.context.&amp;lt;label&amp;gt;.attributes.&amp;lt;name&amp;gt;&lt;/code&gt;&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;&lt;code&gt;backend&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;string&lt;/div&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;div&gt;References a &lt;a href="https://docs.couper.io/configuration/block/backend"&gt;backend&lt;/a&gt; in &lt;a href="https://docs.couper.io/configuration/block/definitions"&gt;definitions&lt;/a&gt; for IdP metadata requests. Mutually exclusive with &lt;code&gt;backend&lt;/code&gt; block.&lt;/div&gt;&lt;/td&gt;
+ &lt;tr&gt;&lt;td&gt;&lt;code&gt;backend&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;string&lt;/div&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;div&gt;References a &lt;a href="https://docs.couper.io/configuration/block/backend/"&gt;backend&lt;/a&gt; in &lt;a href="https://docs.couper.io/configuration/block/definitions/"&gt;definitions&lt;/a&gt; for IdP metadata requests. Mutually exclusive with &lt;code&gt;backend&lt;/code&gt; block.&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;&lt;code&gt;custom_log_fields&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;object&lt;/div&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;div&gt;Log fields for &lt;a href="https://docs.couper.io/observation/logging#custom-logging"&gt;custom logging&lt;/a&gt;. Inherited by nested blocks.&lt;/div&gt;&lt;/td&gt;
+ &lt;tr&gt;&lt;td&gt;&lt;code&gt;custom_log_fields&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;object&lt;/div&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;div&gt;Log fields for &lt;a href="https://docs.couper.io/observation/logging/#custom-logging"&gt;custom logging&lt;/a&gt;. Inherited by nested blocks.&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;&lt;code&gt;idp_metadata_file&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;string&lt;/div&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;div&gt;File reference to the Identity Provider metadata XML file. Mutually exclusive with &lt;code&gt;idp_metadata_url&lt;/code&gt;.&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1457,7 +1457,7 @@ configuration file. You can add a specific port to your host.&lt;/p&gt;
  &lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;&lt;code&gt;base_path&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;string&lt;/div&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;div&gt;The path prefix for all requests.&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;&lt;code&gt;custom_log_fields&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;object&lt;/div&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;div&gt;Log fields for &lt;a href="https://docs.couper.io/observation/logging#custom-logging"&gt;custom logging&lt;/a&gt;. Inherited by nested blocks.&lt;/div&gt;&lt;/td&gt;
+ &lt;tr&gt;&lt;td&gt;&lt;code&gt;custom_log_fields&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;object&lt;/div&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;div&gt;Log fields for &lt;a href="https://docs.couper.io/observation/logging/#custom-logging"&gt;custom logging&lt;/a&gt;. Inherited by nested blocks.&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;&lt;code&gt;disable_access_control&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;tuple (string)&lt;/div&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;[]&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Disables access controls by name.&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1485,15 +1485,15 @@ configuration file. You can add a specific port to your host.&lt;/p&gt;
  &lt;tbody&gt;
  &lt;tr&gt;&lt;td&gt;&lt;code&gt;api&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Configures an API (zero or more).&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;&lt;code&gt;cors&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Configures &lt;a href="https://docs.couper.io/configuration/block/cors"&gt;CORS&lt;/a&gt; settings (zero or one).&lt;/div&gt;&lt;/td&gt;
+ &lt;tr&gt;&lt;td&gt;&lt;code&gt;cors&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Configures &lt;a href="https://docs.couper.io/configuration/block/cors/"&gt;CORS&lt;/a&gt; settings (zero or one).&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;&lt;code&gt;endpoint&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Configures a free &lt;a href="https://docs.couper.io/configuration/block/endpoint"&gt;endpoint&lt;/a&gt; (zero or more).&lt;/div&gt;&lt;/td&gt;
+ &lt;tr&gt;&lt;td&gt;&lt;code&gt;endpoint&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Configures a free &lt;a href="https://docs.couper.io/configuration/block/endpoint/"&gt;endpoint&lt;/a&gt; (zero or more).&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;&lt;code&gt;files&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Configures file serving (zero or more).&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;&lt;code&gt;spa&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Configures an SPA (zero or more).&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;&lt;code&gt;tls&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Configures &lt;a href="https://docs.couper.io/configuration/block/server_tls"&gt;server TLS&lt;/a&gt; (zero or one).&lt;/div&gt;&lt;/td&gt;
+ &lt;tr&gt;&lt;td&gt;&lt;code&gt;tls&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Configures &lt;a href="https://docs.couper.io/configuration/block/server_tls/"&gt;server TLS&lt;/a&gt; (zero or one).&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
  &lt;/table&gt;
@@ -1509,7 +1509,7 @@ configuration file. You can add a specific port to your host.&lt;/p&gt;
  &lt;tbody&gt;
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;server_certificate&lt;/code&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/server_tls"&gt;tls Block&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/server_tls/"&gt;tls Block&lt;/a&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;optional&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
@@ -1564,7 +1564,7 @@ gateway instance.&lt;/p&gt;
  &lt;tbody&gt;
  &lt;tr&gt;&lt;td&gt;&lt;code&gt;accept_forwarded_url&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;tuple (string)&lt;/div&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;[]&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Which &lt;code&gt;X-Forwarded-*&lt;/code&gt; request HTTP header fields should be accepted to change the &lt;a href="../variables#request"&gt;request variables&lt;/a&gt; &lt;code&gt;url&lt;/code&gt;, &lt;code&gt;origin&lt;/code&gt;, &lt;code&gt;protocol&lt;/code&gt;, &lt;code&gt;host&lt;/code&gt;, &lt;code&gt;port&lt;/code&gt;. Valid values: &lt;code&gt;&amp;quot;proto&amp;quot;&lt;/code&gt;, &lt;code&gt;&amp;quot;host&amp;quot;&lt;/code&gt; and &lt;code&gt;&amp;quot;port&amp;quot;&lt;/code&gt;. The port in a &lt;code&gt;X-Forwarded-Port&lt;/code&gt; header takes precedence over a port in &lt;code&gt;X-Forwarded-Host&lt;/code&gt;. Affects relative URL values for &lt;a href="saml"&gt;&lt;code&gt;sp_acs_url&lt;/code&gt;&lt;/a&gt; attribute and &lt;code&gt;redirect_uri&lt;/code&gt; attribute within &lt;a href="oauth2"&gt;&lt;code&gt;beta_oauth2&lt;/code&gt;&lt;/a&gt; and &lt;a href="oidc"&gt;&lt;code&gt;oidc&lt;/code&gt;&lt;/a&gt;.&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;&lt;code&gt;beta_metrics&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;bool&lt;/div&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Enables the Prometheus &lt;a href="https://docs.couper.io/observation/metrics"&gt;metrics&lt;/a&gt; exporter.&lt;/div&gt;&lt;/td&gt;
+ &lt;tr&gt;&lt;td&gt;&lt;code&gt;beta_metrics&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;bool&lt;/div&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Enables the Prometheus &lt;a href="https://docs.couper.io/observation/metrics/"&gt;metrics&lt;/a&gt; exporter.&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;&lt;code&gt;beta_metrics_port&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;number&lt;/div&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;9090&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Prometheus exporter listen port.&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1631,7 +1631,7 @@ gateway instance.&lt;/p&gt;
  &lt;tbody&gt;
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;spa&lt;/code&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/server"&gt;Server Block&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/server/"&gt;Server Block&lt;/a&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;Optional&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
@@ -1645,7 +1645,7 @@ gateway instance.&lt;/p&gt;
 &lt;p&gt;As it could get complicated to configure an SPA based on its environment (urls, clientIDs, &amp;hellip;) Couper can
 inject those environment based values into the &lt;code&gt;bootstrap_file&lt;/code&gt; before serving it to the client.&lt;/p&gt;</description></item><item><title>Throttle</title><link>https://docs.couper.io/configuration/block/throttle/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/block/throttle/</guid><description>&lt;h1 id="throttle"&gt;Throttle&lt;/h1&gt;
 &lt;p&gt;Throttling protects backend services by limiting the number of requests forwarded to an origin within a given time period. This helps avoid cascading failures or spare resources on upstream services with known capacity limits.&lt;/p&gt;
-&lt;p&gt;If the throttle limit is exceeded, Couper either queues the request until the next period (&lt;code&gt;mode = &amp;quot;wait&amp;quot;&lt;/code&gt;, default) or immediately responds with HTTP status &lt;code&gt;429&lt;/code&gt; (&lt;code&gt;mode = &amp;quot;block&amp;quot;&lt;/code&gt;). Exceeded limits in &lt;code&gt;block&lt;/code&gt; mode can be handled with an &lt;a href="https://docs.couper.io/configuration/block/error_handler"&gt;&lt;code&gt;error_handler&lt;/code&gt;&lt;/a&gt; using the &lt;a href="https://docs.couper.io/configuration/error-handling#endpoint-error-types"&gt;&lt;code&gt;backend_throttle_exceeded&lt;/code&gt;&lt;/a&gt; error type.&lt;/p&gt;</description></item><item><title>TLS (Backend)</title><link>https://docs.couper.io/configuration/block/backend_tls/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/block/backend_tls/</guid><description>&lt;h1 id="tls-backend"&gt;TLS (Backend)&lt;/h1&gt;
+&lt;p&gt;If the throttle limit is exceeded, Couper either queues the request until the next period (&lt;code&gt;mode = &amp;quot;wait&amp;quot;&lt;/code&gt;, default) or immediately responds with HTTP status &lt;code&gt;429&lt;/code&gt; (&lt;code&gt;mode = &amp;quot;block&amp;quot;&lt;/code&gt;). Exceeded limits in &lt;code&gt;block&lt;/code&gt; mode can be handled with an &lt;a href="https://docs.couper.io/configuration/block/error_handler/"&gt;&lt;code&gt;error_handler&lt;/code&gt;&lt;/a&gt; using the &lt;a href="https://docs.couper.io/configuration/error-handling/#endpoint-error-types"&gt;&lt;code&gt;backend_throttle_exceeded&lt;/code&gt;&lt;/a&gt; error type.&lt;/p&gt;</description></item><item><title>TLS (Backend)</title><link>https://docs.couper.io/configuration/block/backend_tls/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/block/backend_tls/</guid><description>&lt;h1 id="tls-backend"&gt;TLS (Backend)&lt;/h1&gt;
 &lt;table&gt;
  &lt;thead&gt;
  &lt;tr&gt;
@@ -1657,7 +1657,7 @@ inject those environment based values into the &lt;code&gt;bootstrap_file&lt;/co
  &lt;tbody&gt;
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;tls&lt;/code&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/backend"&gt;Backend Block&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/backend/"&gt;Backend Block&lt;/a&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;no&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
@@ -1679,7 +1679,7 @@ attributes allow the backend to present certificate and key during a TLS handsha
  &lt;tbody&gt;
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;tls&lt;/code&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/server"&gt;Server Block&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/server/"&gt;Server Block&lt;/a&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;no&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
@@ -1690,7 +1690,7 @@ The certificates will be served on all ports within the &lt;code&gt;hosts&lt;/co
 &lt;p&gt;The simplest configuration is an empty &lt;code&gt;tls {}&lt;/code&gt; block which will serve a self signed certificate
 for local development.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Multiple &lt;a href="server_certificate"&gt;&lt;code&gt;server_certificate&lt;/code&gt;&lt;/a&gt; or &lt;a href="client_certificate"&gt;&lt;code&gt;client_certificate&lt;/code&gt;&lt;/a&gt; blocks are allowed.&lt;/p&gt;</description></item><item><title>Token Introspection (Beta)</title><link>https://docs.couper.io/configuration/block/introspection/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/block/introspection/</guid><description>&lt;h1 id="token-introspection-beta"&gt;Token Introspection (Beta)&lt;/h1&gt;
+&lt;p&gt;Multiple &lt;a href="https://docs.couper.io/configuration/block/server_certificate/"&gt;&lt;code&gt;server_certificate&lt;/code&gt;&lt;/a&gt; or &lt;a href="https://docs.couper.io/configuration/block/client_certificate/"&gt;&lt;code&gt;client_certificate&lt;/code&gt;&lt;/a&gt; blocks are allowed.&lt;/p&gt;</description></item><item><title>Token Introspection (Beta)</title><link>https://docs.couper.io/configuration/block/introspection/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/block/introspection/</guid><description>&lt;h1 id="token-introspection-beta"&gt;Token Introspection (Beta)&lt;/h1&gt;
 &lt;p&gt;The &lt;code&gt;beta_introspection&lt;/code&gt; block configures &lt;a href="https://datatracker.ietf.org/doc/html/rfc7662"&gt;OAuth 2.0 Token Introspection (RFC 7662)&lt;/a&gt; for a &lt;code&gt;jwt&lt;/code&gt; block. It allows Couper to verify token validity with an authorization server in addition to local JWT signature validation.&lt;/p&gt;
 &lt;table&gt;
  &lt;thead&gt;
@@ -1703,14 +1703,14 @@ for local development.&lt;/p&gt;
  &lt;tbody&gt;
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;beta_introspection&lt;/code&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/jwt"&gt;JWT Block&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/jwt/"&gt;JWT Block&lt;/a&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;no label&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id="when-to-use-token-introspection"&gt;When to Use Token Introspection&lt;/h2&gt;
 &lt;p&gt;Standard JWT validation only checks the token&amp;rsquo;s signature and claims (expiry, audience, etc.) locally. This is fast but has a limitation: &lt;strong&gt;tokens cannot be revoked before they expire&lt;/strong&gt;.&lt;/p&gt;</description></item><item><title>Token Request (Beta)</title><link>https://docs.couper.io/configuration/block/token_request/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/block/token_request/</guid><description>&lt;h1 id="token-request-beta"&gt;Token Request (Beta)&lt;/h1&gt;
-&lt;p&gt;The &lt;code&gt;beta_token_request&lt;/code&gt; block in the &lt;a href="https://docs.couper.io/configuration/block/backend"&gt;Backend Block&lt;/a&gt; context configures a request to get a token used to authorize backend requests.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;beta_token_request&lt;/code&gt; block in the &lt;a href="https://docs.couper.io/configuration/block/backend/"&gt;Backend Block&lt;/a&gt; context configures a request to get a token used to authorize backend requests.&lt;/p&gt;
 &lt;table&gt;
  &lt;thead&gt;
  &lt;tr&gt;
@@ -1722,8 +1722,8 @@ for local development.&lt;/p&gt;
  &lt;tbody&gt;
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;beta_token_request&lt;/code&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/backend"&gt;Backend Block&lt;/a&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;⚠ A &lt;a href="https://docs.couper.io/configuration/block/token_request"&gt;Token Request (Beta) Block&lt;/a&gt; w/o a label has an implicit label &lt;code&gt;&amp;quot;default&amp;quot;&lt;/code&gt;. Only &lt;strong&gt;one&lt;/strong&gt; &lt;a href="https://docs.couper.io/configuration/block/token_request"&gt;Token Request (Beta) Block&lt;/a&gt; w/ label &lt;code&gt;&amp;quot;default&amp;quot;&lt;/code&gt; per &lt;a href="https://docs.couper.io/configuration/block/backend"&gt;Backend Block&lt;/a&gt; is allowed.&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/backend/"&gt;Backend Block&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;⚠ A &lt;a href="https://docs.couper.io/configuration/block/token_request/"&gt;Token Request (Beta) Block&lt;/a&gt; w/o a label has an implicit label &lt;code&gt;&amp;quot;default&amp;quot;&lt;/code&gt;. Only &lt;strong&gt;one&lt;/strong&gt; &lt;a href="https://docs.couper.io/configuration/block/token_request/"&gt;Token Request (Beta) Block&lt;/a&gt; w/ label &lt;code&gt;&amp;quot;default&amp;quot;&lt;/code&gt; per &lt;a href="https://docs.couper.io/configuration/block/backend/"&gt;Backend Block&lt;/a&gt; is allowed.&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
@@ -1740,7 +1740,7 @@ for local development.&lt;/p&gt;
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- &lt;tr&gt;&lt;td&gt;&lt;code&gt;backend&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;string&lt;/div&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;div&gt;References a &lt;a href="https://docs.couper.io/configuration/block/backend"&gt;backend&lt;/a&gt; in &lt;a href="https://docs.couper.io/configuration/block/definitions"&gt;definitions&lt;/a&gt; for the token request. Mutually exclusive with &lt;code&gt;backend&lt;/code&gt; block.&lt;/div&gt;&lt;/td&gt;
+ &lt;tr&gt;&lt;td&gt;&lt;code&gt;backend&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;string&lt;/div&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;div&gt;References a &lt;a href="https://docs.couper.io/configuration/block/backend/"&gt;backend&lt;/a&gt; in &lt;a href="https://docs.couper.io/configuration/block/definitions/"&gt;definitions&lt;/a&gt; for the token request. Mutually exclusive with &lt;code&gt;backend&lt;/code&gt; block.&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;&lt;code&gt;body&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;string&lt;/div&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;div&gt;Creates implicit default &lt;code&gt;Content-Type: text/plain&lt;/code&gt; header field.&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1796,7 +1796,7 @@ The second evaluation will happen during the request/response handling.&lt;/p&gt
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;environment&lt;/code&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;string&lt;/td&gt;
- &lt;td style="text-align: left"&gt;The &lt;a href="https://docs.couper.io/configuration/command-line#basic-options"&gt;environment&lt;/a&gt; Couper currently runs in.&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;The &lt;a href="https://docs.couper.io/configuration/command-line/#basic-options"&gt;environment&lt;/a&gt; Couper currently runs in.&lt;/td&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;&amp;quot;prod&amp;quot;&lt;/code&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
@@ -1816,7 +1816,7 @@ since these references get evaluated at start.&lt;/p&gt;</description></item><it
  &lt;tbody&gt;
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;websockets&lt;/code&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/proxy"&gt;&lt;code&gt;proxy&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/proxy/"&gt;&lt;code&gt;proxy&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;no label&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
@@ -1845,7 +1845,7 @@ since these references get evaluated at start.&lt;/p&gt;</description></item><it
  &lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;&lt;code&gt;set_response_headers&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;object&lt;/div&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;div&gt;Key/value pairs to set as response headers in the client response.&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;&lt;code&gt;timeout&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;string&lt;/div&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;div&gt;The total deadline &lt;a href="#duration"&gt;duration&lt;/a&gt; a WebSocket connection has to exist.&lt;/div&gt;&lt;/td&gt;
+ &lt;tr&gt;&lt;td&gt;&lt;code&gt;timeout&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;string&lt;/div&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;div&gt;The total deadline &lt;a href="https://docs.couper.io/#duration"&gt;duration&lt;/a&gt; a WebSocket connection has to exist.&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
  &lt;/table&gt;

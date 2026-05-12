@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Configuration on Couper Documentation</title><link>https://docs.couper.io/configuration/</link><description>Recent content in Configuration on Couper Documentation</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://docs.couper.io/configuration/index.xml" rel="self" type="application/rss+xml"/><item><title>Access Control</title><link>https://docs.couper.io/configuration/access-control/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/access-control/</guid><description>&lt;h1 id="access-control"&gt;Access Control&lt;/h1&gt;
 &lt;p&gt;The configuration of access controls is twofold in Couper: You define the particular
-type such as &lt;code&gt;jwt&lt;/code&gt; or &lt;code&gt;basic_auth&lt;/code&gt; in &lt;a href="https://docs.couper.io/configuration/block/definitions"&gt;&lt;code&gt;definitions&lt;/code&gt;&lt;/a&gt;, each with a distinct label
+type such as &lt;code&gt;jwt&lt;/code&gt; or &lt;code&gt;basic_auth&lt;/code&gt; in &lt;a href="https://docs.couper.io/configuration/block/definitions/"&gt;&lt;code&gt;definitions&lt;/code&gt;&lt;/a&gt;, each with a distinct label
 (must not be one of the reserved names: &lt;code&gt;granted_permissions&lt;/code&gt;, &lt;code&gt;required_permission&lt;/code&gt;).&lt;/p&gt;
-&lt;p&gt;Anywhere in the &lt;a href="https://docs.couper.io/configuration/block/server"&gt;&lt;code&gt;server&lt;/code&gt; block&lt;/a&gt; those labels can be used in the &lt;code&gt;access_control&lt;/code&gt;
+&lt;p&gt;Anywhere in the &lt;a href="https://docs.couper.io/configuration/block/server/"&gt;&lt;code&gt;server&lt;/code&gt; block&lt;/a&gt; those labels can be used in the &lt;code&gt;access_control&lt;/code&gt;
 list to protect the respective block.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;📝 Access permissions are inherited by nested blocks.&lt;/p&gt;
@@ -36,7 +36,7 @@ the &lt;code&gt;access_control&lt;/code&gt; named &lt;code&gt;bar&lt;/code&gt; w
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;Most of the following command-line options map to &lt;a href="https://docs.couper.io/configuration/block/settings"&gt;settings&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Most of the following command-line options map to &lt;a href="https://docs.couper.io/configuration/block/settings/"&gt;settings&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id="basic-options"&gt;Basic Options&lt;/h2&gt;
 &lt;table&gt;
  &lt;thead&gt;
@@ -88,12 +88,12 @@ the &lt;code&gt;access_control&lt;/code&gt; named &lt;code&gt;bar&lt;/code&gt; w
  &lt;td style="text-align: left"&gt;&lt;code&gt;-watch-retry-delay&lt;/code&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;500ms&lt;/code&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;COUPER_WATCH_RETRY_DELAY&lt;/code&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;Delay &lt;a href="#duration"&gt;duration&lt;/a&gt; before next attempt if an error occurs.&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;Delay &lt;a href="https://docs.couper.io/configuration/command-line/#duration"&gt;duration&lt;/a&gt; before next attempt if an error occurs.&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Note: Apart from &lt;code&gt;e&lt;/code&gt; and &lt;code&gt;p&lt;/code&gt;, these options &lt;strong&gt;do not&lt;/strong&gt; map to &lt;a href="https://docs.couper.io/configuration/block/settings"&gt;settings&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Configuration File</title><link>https://docs.couper.io/configuration/configuration-file/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/configuration-file/</guid><description>&lt;h1 id="configuration-file"&gt;Configuration File&lt;/h1&gt;
+&lt;p&gt;Note: Apart from &lt;code&gt;e&lt;/code&gt; and &lt;code&gt;p&lt;/code&gt;, these options &lt;strong&gt;do not&lt;/strong&gt; map to &lt;a href="https://docs.couper.io/configuration/block/settings/"&gt;settings&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Configuration File</title><link>https://docs.couper.io/configuration/configuration-file/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/configuration-file/</guid><description>&lt;h1 id="configuration-file"&gt;Configuration File&lt;/h1&gt;
 &lt;p&gt;The language for Couper&amp;rsquo;s configuration file is &lt;a href="https://github.com/hashicorp/hcl/tree/hcl2#information-model-and-syntax"&gt;HCL 2.0&lt;/a&gt;, a configuration language by HashiCorp.&lt;/p&gt;
 &lt;h2 id="ide-extension"&gt;IDE Extension&lt;/h2&gt;
 &lt;p&gt;Couper provides its own IDE extension that adds Couper-specific highlighting and autocompletion to Couper&amp;rsquo;s configuration file &lt;code&gt;couper.hcl&lt;/code&gt; in Visual Studio Code.&lt;/p&gt;
@@ -116,7 +116,7 @@ Detailed information is provided via log message. This way, all information can 
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Application-provided functions.
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;shouty_message&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;upper&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;message&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;See &lt;a href="https://docs.couper.io/configuration/functions"&gt;functions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Functions</title><link>https://docs.couper.io/configuration/functions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/functions/</guid><description>&lt;h1 id="functions"&gt;Functions&lt;/h1&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;See &lt;a href="https://docs.couper.io/configuration/functions/"&gt;functions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Functions</title><link>https://docs.couper.io/configuration/functions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/functions/</guid><description>&lt;h1 id="functions"&gt;Functions&lt;/h1&gt;
 &lt;p&gt;This functions can be used and combined as standalone call with all kind of hcl expressions. But some of them requires a &lt;code&gt;definitions&lt;/code&gt; reference.&lt;/p&gt;
 &lt;table&gt;
  &lt;thead&gt;
@@ -188,7 +188,7 @@ Detailed information is provided via log message. This way, all information can 
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;jwt_sign&lt;/code&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;string&lt;/td&gt;
- &lt;td style="text-align: left"&gt;Creates and signs a JSON Web Token (JWT) from information from a referenced &lt;a href="https://docs.couper.io/configuration/block/jwt_signing_profile"&gt;JWT Signing Profile Block&lt;/a&gt; (or &lt;a href="https://docs.couper.io/configuration/block/jwt"&gt;JWT Block&lt;/a&gt; with &lt;code&gt;signing_ttl&lt;/code&gt;) and additional claims provided as a function parameter.&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;Creates and signs a JSON Web Token (JWT) from information from a referenced &lt;a href="https://docs.couper.io/configuration/block/jwt_signing_profile/"&gt;JWT Signing Profile Block&lt;/a&gt; (or &lt;a href="https://docs.couper.io/configuration/block/jwt/"&gt;JWT Block&lt;/a&gt; with &lt;code&gt;signing_ttl&lt;/code&gt;) and additional claims provided as a function parameter.&lt;/td&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;label&lt;/code&gt; (string), &lt;code&gt;claims&lt;/code&gt; (object)&lt;/td&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;jwt_sign(&amp;quot;myJWT&amp;quot;)&lt;/code&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -223,7 +223,7 @@ Detailed information is provided via log message. This way, all information can 
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;oauth2_authorization_url&lt;/code&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;string&lt;/td&gt;
- &lt;td style="text-align: left"&gt;Creates an OAuth2 authorization URL from a referenced &lt;a href="https://docs.couper.io/configuration/block/beta_oauth2"&gt;OAuth2 AC (Beta) Block&lt;/a&gt; or &lt;a href="https://docs.couper.io/configuration/block/oidc"&gt;OIDC Block&lt;/a&gt;.&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;Creates an OAuth2 authorization URL from a referenced &lt;a href="https://docs.couper.io/configuration/block/beta_oauth2/"&gt;OAuth2 AC (Beta) Block&lt;/a&gt; or &lt;a href="https://docs.couper.io/configuration/block/oidc/"&gt;OIDC Block&lt;/a&gt;.&lt;/td&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;label&lt;/code&gt; (string)&lt;/td&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;oauth2_authorization_url(&amp;quot;myOAuth2&amp;quot;)&lt;/code&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -244,7 +244,7 @@ Detailed information is provided via log message. This way, all information can 
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;saml_sso_url&lt;/code&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;string&lt;/td&gt;
- &lt;td style="text-align: left"&gt;Creates a SAML SingleSignOn URL (including the &lt;code&gt;SAMLRequest&lt;/code&gt; parameter) from a referenced &lt;a href="https://docs.couper.io/configuration/block/saml"&gt;SAML Block&lt;/a&gt;.&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;Creates a SAML SingleSignOn URL (including the &lt;code&gt;SAMLRequest&lt;/code&gt; parameter) from a referenced &lt;a href="https://docs.couper.io/configuration/block/saml/"&gt;SAML Block&lt;/a&gt;.&lt;/td&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;label&lt;/code&gt; (string)&lt;/td&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;saml_sso_url(&amp;quot;mySAML&amp;quot;)&lt;/code&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -321,14 +321,14 @@ Detailed information is provided via log message. This way, all information can 
  &lt;/tbody&gt;
 &lt;/table&gt;</description></item><item><title>Merge of Configuration File(s)</title><link>https://docs.couper.io/configuration/multiple-files/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/multiple-files/</guid><description>&lt;h1 id="merging"&gt;Merging&lt;/h1&gt;
 &lt;p&gt;Couper supports merging of blocks and attributes from multiple configuration files
-(see &lt;a href="https://docs.couper.io/configuration/command-line#basic-options"&gt;Basic Options of Command Line Interface&lt;/a&gt;).&lt;/p&gt;
+(see &lt;a href="https://docs.couper.io/configuration/command-line/#basic-options"&gt;Basic Options of Command Line Interface&lt;/a&gt;).&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="#merging"&gt;Merging&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#general-rules-of-merging"&gt;General Rules of Merging&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#merging-of-server-blocks"&gt;Merging of &lt;code&gt;server&lt;/code&gt; Blocks&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#merging-of-definitions-blocks"&gt;Merging of &lt;code&gt;definitions&lt;/code&gt; Blocks&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#merging-of-defaults-blocks"&gt;Merging of &lt;code&gt;defaults&lt;/code&gt; Blocks&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#merging-of-settings-blocks"&gt;Merging of &lt;code&gt;settings&lt;/code&gt; Blocks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.couper.io/configuration/multiple-files/#merging"&gt;Merging&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.couper.io/configuration/multiple-files/#general-rules-of-merging"&gt;General Rules of Merging&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.couper.io/configuration/multiple-files/#merging-of-server-blocks"&gt;Merging of &lt;code&gt;server&lt;/code&gt; Blocks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.couper.io/configuration/multiple-files/#merging-of-definitions-blocks"&gt;Merging of &lt;code&gt;definitions&lt;/code&gt; Blocks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.couper.io/configuration/multiple-files/#merging-of-defaults-blocks"&gt;Merging of &lt;code&gt;defaults&lt;/code&gt; Blocks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.couper.io/configuration/multiple-files/#merging-of-settings-blocks"&gt;Merging of &lt;code&gt;settings&lt;/code&gt; Blocks&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="general-rules-of-merging"&gt;General Rules of Merging&lt;/h2&gt;
 &lt;p&gt;When merging, all attributes (except &lt;code&gt;environment_variables&lt;/code&gt; in the &lt;code&gt;defaults&lt;/code&gt; block) replace existing attributes with the same name, if any, otherwise they are added.&lt;/p&gt;
@@ -348,17 +348,17 @@ executed ordered as follows:&lt;/p&gt;
  &lt;tbody&gt;
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;remove_request_headers&lt;/code&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/endpoint"&gt;Endpoint Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/proxy"&gt;Proxy Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/backend"&gt;Backend Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/error_handler"&gt;Error Handler&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/endpoint/"&gt;Endpoint Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/proxy/"&gt;Proxy Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/backend/"&gt;Backend Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/error_handler/"&gt;Error Handler&lt;/a&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;List of request header to be removed from the upstream request.&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;set_request_headers&lt;/code&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/endpoint"&gt;Endpoint Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/proxy"&gt;Proxy Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/backend"&gt;Backend Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/error_handler"&gt;Error Handler&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/endpoint/"&gt;Endpoint Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/proxy/"&gt;Proxy Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/backend/"&gt;Backend Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/error_handler/"&gt;Error Handler&lt;/a&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;Key/value(s) pairs to set request header in the upstream request.&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;add_request_headers&lt;/code&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/endpoint"&gt;Endpoint Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/proxy"&gt;Proxy Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/backend"&gt;Backend Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/error_handler"&gt;Error Handler&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/endpoint/"&gt;Endpoint Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/proxy/"&gt;Proxy Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/backend/"&gt;Backend Block&lt;/a&gt;, &lt;a href="https://docs.couper.io/configuration/block/error_handler/"&gt;Error Handler&lt;/a&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;Key/value(s) pairs to add request header to the upstream request.&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
@@ -393,7 +393,7 @@ The second evaluation will happen during the request/response handling.&lt;/p&gt
  &lt;tr&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;environment&lt;/code&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;string&lt;/td&gt;
- &lt;td style="text-align: left"&gt;The &lt;a href="https://docs.couper.io/configuration/command-line#basic-options"&gt;environment&lt;/a&gt; Couper currently runs in.&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;The &lt;a href="https://docs.couper.io/configuration/command-line/#basic-options"&gt;environment&lt;/a&gt; Couper currently runs in.&lt;/td&gt;
  &lt;td style="text-align: left"&gt;&lt;code&gt;&amp;quot;prod&amp;quot;&lt;/code&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
