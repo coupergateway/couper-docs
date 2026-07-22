@@ -90,7 +90,23 @@ client request to the configured authorization service:</p><div class=highlight>
 </span></span><span class=line><span class=cl>    <span class=p>}</span>
 </span></span><span class=line><span class=cl>  <span class=p>}</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></div><p>The response status code of the authorization service determines the decision:</p><table><thead><tr><th style=text-align:left>Status</th><th style=text-align:left>Result</th></tr></thead><tbody><tr><td style=text-align:left><code>200</code></td><td style=text-align:left>The request is allowed.</td></tr><tr><td style=text-align:left><code>401</code></td><td style=text-align:left>Denied with error type <code>authz_external_invalid_credentials</code>, default response status <code>401</code>.</td></tr><tr><td style=text-align:left><code>403</code></td><td style=text-align:left>Denied with error type <code>authz_external_insufficient_permissions</code>, default response status <code>403</code>.</td></tr><tr><td style=text-align:left>any other</td><td style=text-align:left>Denied with error type <code>authz_external</code>, default response status <code>401</code>.</td></tr></tbody></table><p>The <code>200</code> response is exposed as the <a href=/configuration/variables/#context><code>request.context.&lt;label></code> variable</a>:
+</span></span></code></pre></div><p>Couper calls the authorization service on the hot path of every protected request, so the
+connection to it should be persistent. This is the recommended setup: a (typically local)
+authorization service behind a <code>backend</code> with <code>http2 = true</code> — callouts are then multiplexed
+over a single persistent HTTP/2 connection instead of paying a round trip per request.
+HTTP/2 is negotiated via TLS (ALPN), so the authorization service must be reachable via
+<code>https</code> — without <code>http2</code> Couper still reuses connections (HTTP/1.1 keep-alive), just
+without multiplexing.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-hcl data-lang=hcl><span class=line><span class=cl><span class=k>definitions</span> {
+</span></span><span class=line><span class=cl>  <span class=k>beta_authz_external</span> <span class=s2>&#34;authz&#34;</span> {
+</span></span><span class=line><span class=cl>    <span class=k>backend</span> {
+</span></span><span class=line><span class=cl><span class=n>      origin</span> <span class=o>=</span> <span class=s2>&#34;https://localhost:4000&#34;</span>
+</span></span><span class=line><span class=cl><span class=n>      http2</span>  <span class=o>=</span> <span class=kt>true</span>
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>  }
+</span></span><span class=line><span class=cl>}
+</span></span></code></pre></div><p>Couper does not cache authorization decisions: whether a decision may be reused is only
+known to the authorization service, which can cache internally whenever its decision
+allows it.</p><p>The response status code of the authorization service determines the decision:</p><table><thead><tr><th style=text-align:left>Status</th><th style=text-align:left>Result</th></tr></thead><tbody><tr><td style=text-align:left><code>200</code></td><td style=text-align:left>The request is allowed.</td></tr><tr><td style=text-align:left><code>401</code></td><td style=text-align:left>Denied with error type <code>authz_external_invalid_credentials</code>, default response status <code>401</code>.</td></tr><tr><td style=text-align:left><code>403</code></td><td style=text-align:left>Denied with error type <code>authz_external_insufficient_permissions</code>, default response status <code>403</code>.</td></tr><tr><td style=text-align:left>any other</td><td style=text-align:left>Denied with error type <code>authz_external</code>, default response status <code>401</code>.</td></tr></tbody></table><p>The <code>200</code> response is exposed as the <a href=/configuration/variables/#context><code>request.context.&lt;label></code> variable</a>:
 the properties of a JSON object body (<code>Content-Type: application/json</code>) — the place for validated
 claims, the resolved identity or granted permissions — plus the response headers under
 <code>request.context.&lt;label>.headers</code> (lower-cased names, first value, like <code>request.headers</code>).
