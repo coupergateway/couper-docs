@@ -76,21 +76,32 @@ client request to the configured authorization service:</p><div class=highlight>
 </span></span><span class=line><span class=cl>    <span class=p>}</span>
 </span></span><span class=line><span class=cl>  <span class=p>}</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></div><p>With <code>include_tls = true</code> the TLS connection information of the client request is added:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=line><span class=cl><span class=p>{</span>
+</span></span></code></pre></div><p>With <code>include_tls = true</code> the TLS connection information of the client request is added. In a
+client-facing mTLS setup the <code>client_certificate</code> carries the fields an authorization service
+keys on — this is the full payload such a service can expect:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=line><span class=cl><span class=p>{</span>
 </span></span><span class=line><span class=cl>  <span class=nt>&#34;client_request&#34;</span><span class=p>:</span> <span class=p>{</span> <span class=nt>&#34;...&#34;</span><span class=p>:</span> <span class=s2>&#34;...&#34;</span> <span class=p>},</span>
 </span></span><span class=line><span class=cl>  <span class=nt>&#34;metadata_tls&#34;</span><span class=p>:</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>    <span class=nt>&#34;version&#34;</span><span class=p>:</span> <span class=s2>&#34;TLS 1.3&#34;</span><span class=p>,</span>
 </span></span><span class=line><span class=cl>    <span class=nt>&#34;cipher_suite&#34;</span><span class=p>:</span> <span class=s2>&#34;TLS_AES_128_GCM_SHA256&#34;</span><span class=p>,</span>
 </span></span><span class=line><span class=cl>    <span class=nt>&#34;server_name&#34;</span><span class=p>:</span> <span class=s2>&#34;couper.example.com&#34;</span><span class=p>,</span>
 </span></span><span class=line><span class=cl>    <span class=nt>&#34;client_certificate&#34;</span><span class=p>:</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>      <span class=nt>&#34;subject&#34;</span><span class=p>:</span> <span class=s2>&#34;CN=my-client&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;subject&#34;</span><span class=p>:</span> <span class=s2>&#34;CN=my-client,O=Example&#34;</span><span class=p>,</span>
 </span></span><span class=line><span class=cl>      <span class=nt>&#34;issuer&#34;</span><span class=p>:</span> <span class=s2>&#34;CN=my-ca&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;serial_number&#34;</span><span class=p>:</span> <span class=s2>&#34;1267&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;fingerprint_sha256&#34;</span><span class=p>:</span> <span class=s2>&#34;9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08&#34;</span><span class=p>,</span>
 </span></span><span class=line><span class=cl>      <span class=nt>&#34;not_before&#34;</span><span class=p>:</span> <span class=s2>&#34;2026-01-01T00:00:00Z&#34;</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>      <span class=nt>&#34;not_after&#34;</span><span class=p>:</span> <span class=s2>&#34;2027-01-01T00:00:00Z&#34;</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;not_after&#34;</span><span class=p>:</span> <span class=s2>&#34;2027-01-01T00:00:00Z&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;dns_names&#34;</span><span class=p>:</span> <span class=p>[</span><span class=s2>&#34;client.example&#34;</span><span class=p>],</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;uris&#34;</span><span class=p>:</span> <span class=p>[</span><span class=s2>&#34;spiffe://example.org/mcp-client&#34;</span><span class=p>],</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;email_addresses&#34;</span><span class=p>:</span> <span class=p>[</span><span class=s2>&#34;mcp@example.org&#34;</span><span class=p>],</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;ip_addresses&#34;</span><span class=p>:</span> <span class=p>[</span><span class=s2>&#34;10.0.0.7&#34;</span><span class=p>]</span>
 </span></span><span class=line><span class=cl>    <span class=p>}</span>
 </span></span><span class=line><span class=cl>  <span class=p>}</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></div><p>Couper calls the authorization service on the hot path of every protected request, so the
+</span></span></code></pre></div><p><code>serial_number</code> is hex-encoded and <code>fingerprint_sha256</code> is the hex SHA-256 of the DER
+certificate — use either for allow lists or pinning. The subject alternative names
+(<code>dns_names</code>, <code>uris</code>, <code>email_addresses</code>, <code>ip_addresses</code>) appear only when the certificate
+carries them and often hold the identity to authorize on, e.g. a SPIFFE ID in <code>uris</code>.</p><p>Couper calls the authorization service on the hot path of every protected request, so the
 connection to it should be persistent. This is the recommended setup: a (typically local)
 authorization service behind a <code>backend</code> with <code>http2 = true</code> — callouts are then multiplexed
 over a single persistent HTTP/2 connection instead of paying a round trip per request.
