@@ -94,9 +94,11 @@ client request to the configured authorization service:</p><div class=highlight>
 connection to it should be persistent. This is the recommended setup: a (typically local)
 authorization service behind a <code>backend</code> with <code>http2 = true</code> — callouts are then multiplexed
 over a single persistent HTTP/2 connection instead of paying a round trip per request.
-HTTP/2 is negotiated via TLS (ALPN), so the authorization service must be reachable via
-<code>https</code> — without <code>http2</code> Couper still reuses connections (HTTP/1.1 keep-alive), just
-without multiplexing.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-hcl data-lang=hcl><span class=line><span class=cl><span class=k>definitions</span> {
+HTTP/2 is negotiated via TLS (ALPN), so <code>http2</code> applies to <code>https</code> origins. For a trusted
+cleartext (<code>http</code>) authorization service, <code>http2_prior_knowledge = true</code> establishes the
+same multiplexed HTTP/2 connection without TLS (h2c) — the service must speak HTTP/2.
+Without either, Couper still reuses connections (HTTP/1.1 keep-alive), just without
+multiplexing.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-hcl data-lang=hcl><span class=line><span class=cl><span class=k>definitions</span> {
 </span></span><span class=line><span class=cl>  <span class=k>beta_external_authz</span> <span class=s2>&#34;authz&#34;</span> {
 </span></span><span class=line><span class=cl>    <span class=k>backend</span> {
 </span></span><span class=line><span class=cl><span class=n>      origin</span> <span class=o>=</span> <span class=s2>&#34;https://localhost:4000&#34;</span>

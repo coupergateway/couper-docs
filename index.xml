@@ -190,7 +190,9 @@ as JSON error with an error body payload. This can be customized via &lt;code&gt
  &lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;&lt;code&gt;hostname&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;string&lt;/div&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;div&gt;Value of the HTTP host header field for the origin request. Since hostname replaces the request host the value will also be used for a server identity check during a TLS handshake with the origin.&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;&lt;code&gt;http2&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;bool&lt;/div&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Enables the HTTP2 support. Must not be used in backend refinement.&lt;/div&gt;&lt;/td&gt;
+ &lt;tr&gt;&lt;td&gt;&lt;code&gt;http2&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;bool&lt;/div&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Enables the HTTP2 support. HTTP2 is negotiated during the TLS handshake (ALPN), so it applies to &lt;code&gt;https&lt;/code&gt; origins only. Must not be used in backend refinement.&lt;/div&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;&lt;td&gt;&lt;code&gt;http2_prior_knowledge&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;bool&lt;/div&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Uses cleartext HTTP2 (h2c) with prior knowledge for &lt;code&gt;http&lt;/code&gt; origins — the origin must speak HTTP2. Must not be used in backend refinement.&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;&lt;code&gt;max_connections&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;number&lt;/div&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;0&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;The maximum number of concurrent connections in any state (&lt;em&gt;active&lt;/em&gt; or &lt;em&gt;idle&lt;/em&gt;) to the origin. Must not be used in backend refinement.&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
