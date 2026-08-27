@@ -139,7 +139,34 @@ as JSON error with an error body payload. This can be customized via &lt;code&gt
  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3 id="attribute-allowed_methods"&gt;Attribute &lt;code&gt;allowed_methods&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;The default value &lt;code&gt;*&lt;/code&gt; can be combined with additional methods. Methods are matched case-insensitively. &lt;code&gt;Access-Control-Allow-Methods&lt;/code&gt; is only sent in response to a &lt;a href="https://docs.couper.io/configuration/block/cors/"&gt;CORS&lt;/a&gt; preflight request, if the method requested by &lt;code&gt;Access-Control-Request-Method&lt;/code&gt; is an allowed method.&lt;/p&gt;</description></item><item><title>Backend</title><link>https://docs.couper.io/configuration/block/backend/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/block/backend/</guid><description>&lt;h1 id="backend"&gt;Backend&lt;/h1&gt;
+&lt;p&gt;The default value &lt;code&gt;*&lt;/code&gt; can be combined with additional methods. Methods are matched case-insensitively. &lt;code&gt;Access-Control-Allow-Methods&lt;/code&gt; is only sent in response to a &lt;a href="https://docs.couper.io/configuration/block/cors/"&gt;CORS&lt;/a&gt; preflight request, if the method requested by &lt;code&gt;Access-Control-Request-Method&lt;/code&gt; is an allowed method.&lt;/p&gt;</description></item><item><title>AuthZEN Authorization (Beta)</title><link>https://docs.couper.io/configuration/block/beta_authzen/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/block/beta_authzen/</guid><description>&lt;h1 id="authzen-authorization-beta"&gt;AuthZEN Authorization (Beta)&lt;/h1&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th style="text-align: left"&gt;Block name&lt;/th&gt;
+ &lt;th style="text-align: left"&gt;Context&lt;/th&gt;
+ &lt;th style="text-align: left"&gt;Label&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;&lt;code&gt;beta_authzen&lt;/code&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/definitions/"&gt;Definitions Block&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;⚠ required&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;The &lt;code&gt;beta_authzen&lt;/code&gt; block delegates the authorization decision for client requests to an
+external service. Like all &lt;a href="https://docs.couper.io/configuration/access-control/"&gt;access control&lt;/a&gt; types, it is
+defined in the &lt;a href="https://docs.couper.io/configuration/block/definitions/"&gt;&lt;code&gt;definitions&lt;/code&gt; block&lt;/a&gt; and referenced by
+its required &lt;em&gt;label&lt;/em&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Specification: &lt;a href="https://openid.net/specs/authorization-api-1_0.html"&gt;OpenID AuthZEN Authorization API 1.0&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="enforcement-point-decision-point-and-the-tuple"&gt;Enforcement point, decision point and the tuple&lt;/h2&gt;
+&lt;p&gt;Couper is the policy enforcement point (PEP): it gates the request. The authorization
+service is the policy decision point (PDP): it decides. For every protected request Couper
+sends a &lt;code&gt;POST&lt;/code&gt; request to the PDP and enforces the returned decision.&lt;/p&gt;</description></item><item><title>Backend</title><link>https://docs.couper.io/configuration/block/backend/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/block/backend/</guid><description>&lt;h1 id="backend"&gt;Backend&lt;/h1&gt;
 &lt;p&gt;The &lt;code&gt;backend&lt;/code&gt; block defines the connection to a local/remote backend service.&lt;/p&gt;
 &lt;p&gt;Backends can be defined in the &lt;a href="https://docs.couper.io/configuration/block/definitions/"&gt;Definitions Block&lt;/a&gt; and referenced by &lt;em&gt;label&lt;/em&gt;.&lt;/p&gt;
 &lt;table&gt;
@@ -471,7 +498,7 @@ This covers the use-case where the CA has signed multiple client certificates an
  &lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;&lt;code&gt;basic_auth&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Configure a &lt;a href="https://docs.couper.io/configuration/block/basic_auth/"&gt;BasicAuth access control&lt;/a&gt; (zero or more).&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;&lt;code&gt;beta_external_authz&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Configure an &lt;a href="https://docs.couper.io/configuration/block/beta_external_authz/"&gt;external authorization access control&lt;/a&gt; (zero or more).&lt;/div&gt;&lt;/td&gt;
+ &lt;tr&gt;&lt;td&gt;&lt;code&gt;beta_authzen&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Configure an &lt;a href="https://docs.couper.io/configuration/block/beta_authzen/"&gt;AuthZEN authorization access control&lt;/a&gt; (zero or more).&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;&lt;code&gt;beta_oauth2&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;Configure an &lt;a href="https://docs.couper.io/configuration/block/beta_oauth2/"&gt;OAuth2 access control&lt;/a&gt; (zero or more).&lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -556,30 +583,7 @@ Detailed information is provided via log message. This way, all information can 
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Application-provided functions.
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;shouty_message&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;upper&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;message&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;See &lt;a href="https://docs.couper.io/configuration/functions/"&gt;functions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>External Authorization (Beta)</title><link>https://docs.couper.io/configuration/block/beta_external_authz/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/block/beta_external_authz/</guid><description>&lt;h1 id="external-authorization-beta"&gt;External Authorization (Beta)&lt;/h1&gt;
-&lt;table&gt;
- &lt;thead&gt;
- &lt;tr&gt;
- &lt;th style="text-align: left"&gt;Block name&lt;/th&gt;
- &lt;th style="text-align: left"&gt;Context&lt;/th&gt;
- &lt;th style="text-align: left"&gt;Label&lt;/th&gt;
- &lt;/tr&gt;
- &lt;/thead&gt;
- &lt;tbody&gt;
- &lt;tr&gt;
- &lt;td style="text-align: left"&gt;&lt;code&gt;beta_external_authz&lt;/code&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;&lt;a href="https://docs.couper.io/configuration/block/definitions/"&gt;Definitions Block&lt;/a&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;⚠ required&lt;/td&gt;
- &lt;/tr&gt;
- &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;The &lt;code&gt;beta_external_authz&lt;/code&gt; block lets you delegate the authorization decision for client
-requests to an external service. Like all &lt;a href="https://docs.couper.io/configuration/access-control/"&gt;access control&lt;/a&gt;
-types, the &lt;code&gt;beta_external_authz&lt;/code&gt; block is defined in the
-&lt;a href="https://docs.couper.io/configuration/block/definitions/"&gt;&lt;code&gt;definitions&lt;/code&gt; block&lt;/a&gt; and can be referenced in all
-configuration blocks by its required &lt;em&gt;label&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;For every protected request Couper sends a &lt;code&gt;POST&lt;/code&gt; request with a JSON body describing the
-client request to the configured authorization service:&lt;/p&gt;</description></item><item><title>Files</title><link>https://docs.couper.io/configuration/block/files/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/block/files/</guid><description>&lt;h1 id="files"&gt;Files&lt;/h1&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;See &lt;a href="https://docs.couper.io/configuration/functions/"&gt;functions&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Files</title><link>https://docs.couper.io/configuration/block/files/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.couper.io/configuration/block/files/</guid><description>&lt;h1 id="files"&gt;Files&lt;/h1&gt;
 &lt;p&gt;The &lt;code&gt;files&lt;/code&gt; blocks configure the file serving. Can be defined multiple times as long as the &lt;code&gt;base_path&lt;/code&gt; is unique.&lt;/p&gt;
 &lt;table&gt;
  &lt;thead&gt;

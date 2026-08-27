@@ -1,0 +1,398 @@
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>AuthZEN Authorization (Beta) | Couper Documentation</title><script>(function(){const e=localStorage.getItem("theme"),t=e||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");t==="dark"?document.documentElement.classList.add("dark"):document.documentElement.classList.add("light")})()</script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/instantsearch.css@8/themes/satellite-min.css><script src=https://cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js></script><script src=https://cdn.jsdelivr.net/npm/instantsearch.js@4></script><link rel=stylesheet href=/css/tailwind.css><script>window.__couper_syntax={varPattern:"\\b(couper|env|request|backends?|backend_requests?|backend_responses?|beta_token_response)\\b"}</script></head><body class="antialiasing text-slate-700"><div id=search-backdrop class=search-backdrop></div><div id=search-results class=search-results-overlay></div><header class="sticky top-0 z-50 flex justify-between items-center px-6 py-3 headerShadow"><div class="flex items-center gap-3 shrink-0"><div class=header-logo><svg class="box-border h-16 w-16 md:w-18 md:h-18 xl:w-22 xl:h-22" viewBox="0 0 152 165" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"><g id="Page-1"><g id="Desktop-HD-Copy"><g id="couper-4"><g id="Group-39"><g id="Layer1"><path d="M15 116S8.349 42.165 76 42c65.001-.158 62 74 62 74s-58.325 18.728-123 0z" style="fill:#fff"/></g><path id="Fill-2" d="M87.395 42.775c-3.714-.699-7.537-1.106-11.457-1.106-33.907.0-61.394 27.439-61.394 61.286v11.331l22.913 6.435v-17.766c0-29.935 21.511-54.818 49.938-60.18" style="fill:#e3e4e4"/><path id="Path" d="M97.262.364 88.698 15.17l-8.479-14.806-8.569 14.821-8.537-14.806-8.569 14.812-2.537-4.38H39.85v6.029h8.669l6.025 10.408 8.557-14.797 8.54 14.806 8.551-14.791 8.479 14.803 8.564-14.803 2.533 4.422h10.107V10.86h-6.604l-6.009-10.496z" style="fill:#65b32e"/><path id="Fill-12" d="M40.784 15.473c1.062-3.264-.732-6.771-4.002-7.827-3.27-1.056-6.778.731-7.84 3.999-1.059 3.26.736 6.766 4.001 7.823 3.274 1.056 6.783-.731 7.841-3.995" style="fill:#fff"/><path id="Fill-121" d="M122.784 15.473c1.062-3.264-.732-6.771-4.002-7.827-3.27-1.056-6.778.731-7.84 3.999-1.059 3.26.736 6.766 4.001 7.823 3.274 1.056 6.783-.731 7.841-3.995" style="fill:#fff"/><path id="Fill-4" d="M17.565 114.748v-11.795c0-32.129 26.186-58.269 58.372-58.269 32.189.0 58.375 26.14 58.375 58.269v11.756c-6.208 1.724-26.413 6.514-59.115 6.514-32.536.0-51.711-4.742-57.632-6.475m12.942-101.15c0-2.43 1.978-4.404 4.412-4.404 2.433.0 4.411 1.974 4.411 4.404.0 2.429-1.978 4.404-4.411 4.404-2.434.0-4.412-1.975-4.412-4.404m81.771.0c0-2.43 1.981-4.404 4.415-4.404 2.433.0 4.411 1.974 4.411 4.404.0 2.429-1.978 4.404-4.411 4.404-2.434.0-4.415-1.975-4.415-4.404m7.621 42.492V23.476c4.189-1.363 7.244-5.251 7.244-9.878.0-5.751-4.689-10.433-10.45-10.433-5.765.0-10.454 4.682-10.454 10.433.0 4.765 3.237 8.75 7.621 9.992v27.506c-10.653-7.786-23.737-12.44-37.923-12.44-14.183.0-27.267 4.654-37.92 12.44V23.509c4.245-1.326 7.352-5.245 7.352-9.911.0-5.751-4.689-10.433-10.45-10.433-5.762.0-10.451 4.682-10.451 10.433.0 4.726 3.185 8.681 7.509 9.959V56.09c-12.552 11.741-20.451 28.38-20.451 46.863v49.187h6.039v-31.113c5.628 1.54 17.175 4.105 34.846 5.408l-.021 25.702 6.039.006.021-25.332c5.146.272 10.69.441 16.747.441 6.58.0 12.601-.199 18.169-.513l-.018 25.398 6.039.006.021-25.802c17.532-1.353 29.236-3.888 34.904-5.377v31.176h6.039v-49.187c0-18.483-7.899-35.122-20.452-46.863" style="fill:#1a1b1c"/><path id="Fill-6" d="M82.703 87.309c0 7.479 6.072 13.54 13.564 13.54 7.492.0 13.561-6.061 13.561-13.54.0-7.475-6.069-13.54-13.561-13.54s-13.564 6.065-13.564 13.54" style="fill:#3ea1c1"/><path id="Fill-8" d="M96.266 76.784c-5.813.0-10.544 4.721-10.544 10.526.0 5.803 4.731 10.526 10.544 10.526s10.545-4.723 10.545-10.526c0-5.805-4.732-10.526-10.545-10.526m0 27.081c-9.143.0-16.584-7.425-16.584-16.555.0-9.127 7.441-16.554 16.584-16.554s16.584 7.427 16.584 16.554c0 9.13-7.441 16.555-16.584 16.555" style="fill:#1a1b1c"/><path id="Fill-10" d="M100.992 87.309c0-2.604-2.117-4.714-4.726-4.714s-4.723 2.11-4.723 4.714c0 2.605 2.114 4.718 4.723 4.718s4.726-2.113 4.726-4.718" style="fill:#1a1b1c"/><path id="Fill-122" d="M104.858 82.514c.806-2.478-.556-5.139-3.038-5.941s-5.145.555-5.952 3.035c-.803 2.475.559 5.137 3.038 5.938 2.485.802 5.149-.554 5.952-3.032" style="fill:#fff"/><path id="Fill-14" d="M28.878 164.681h-6.039v-3.014c0-4.612-3.756-8.361-8.373-8.361-4.62.0-8.377 3.749-8.377 8.361v3.014h-6.039v-3.014c0-7.933 6.468-14.39 14.416-14.39 7.944.0 14.412 6.457 14.412 14.39v3.014z" style="fill:#aa64aa"/><path id="Fill-16" d="M151.749 164.681h-6.04v-3.014c0-4.612-3.756-8.361-8.373-8.361-4.62.0-8.376 3.749-8.376 8.361v3.014h-6.04v-3.014c0-7.933 6.465-14.39 14.416-14.39 7.948.0 14.413 6.457 14.413 14.39v3.014z" style="fill:#eb3d3e"/><path id="Fill-18" d="M69.836 164.681h-6.039v-3.014c0-4.612-3.757-8.361-8.377-8.361-4.617.0-8.373 3.749-8.373 8.361v3.014h-6.039v-3.014c0-7.933 6.465-14.39 14.412-14.39 7.948.0 14.416 6.457 14.416 14.39v3.014z" style="fill:#3ea1c1"/><path id="Fill-20" d="M110.792 164.681h-6.039v-3.014c0-4.612-3.756-8.361-8.376-8.361-4.617.0-8.374 3.749-8.374 8.361v3.014h-6.039v-3.014c0-7.933 6.465-14.39 14.413-14.39 7.947.0 14.415 6.457 14.415 14.39v3.014z" style="fill:#f6ab1f"/></g></g></g></g></svg></div><h1 class="text-xl font-semibold whitespace-nowrap">Couper Documentation</h1><div class=version-badge>v1.14</div></div><div class="flex justify-center flex-1 mx-8"><div class=w-4/5><div id=searchbox></div></div></div><div class="flex items-center gap-3 shrink-0"><button id=dark-mode-toggle class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-300 hover:bg-slate-100 transition-colors text-sm font-medium dark-toggle-btn" aria-label="Toggle dark mode">
+<svg class="sun-icon w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364-.707-.707M6.343 6.343l-.707-.707m12.728.0-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+<svg class="moon-icon w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003.0 0012 21a9.003 9.003.0 008.354-5.646z"/></svg>
+<span class=theme-label>Dark theme</span>
+</button>
+<a href=https://github.com/coupergateway/couper target=_blank class="flex items-center p-2 rounded-lg hover:bg-slate-100 transition-colors github-link"><svg class="w-8 h-8" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0C5.374.0.0 5.373.0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931.0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176.0.0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221.0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a></div></header><script>(function(){function e(){var e=document.querySelector("header");e&&document.documentElement.style.setProperty("--header-height",e.offsetHeight+"px")}e(),window.addEventListener("resize",e)})()</script><div class=content-wrapper><div class=content-columns><nav class="p-4 pt-6 sidebar-nav"><div class="mb-2 pb-2 border-b border-slate-100 sidebar-section-divider last:border-b-0"><button class="sidebar-section-toggle flex items-center justify-between w-full py-2 px-2 rounded-md text-left font-semibold text-base text-amber-500 transition-colors sidebar-section-btn" data-section="Getting Started" aria-expanded=false>
+<span class="flex items-center gap-2"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+Getting Started
+</span><svg class="sidebar-chevron w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button><div class="sidebar-section-content overflow-hidden transition-all duration-200 hidden"><a href=/getting-started/running-couper/ class="sidebar-link block py-1.5 pl-8 pr-2 text-sm rounded-md transition-colors">Running Couper
+</a><a href=/getting-started/examples/ class="sidebar-link block py-1.5 pl-8 pr-2 text-sm rounded-md transition-colors">Examples
+</a><a href=/getting-started/beta-features/ class="sidebar-link block py-1.5 pl-8 pr-2 text-sm rounded-md transition-colors">Beta Features
+</a><a href=/getting-started/welcome/ class="sidebar-link block py-1.5 pl-8 pr-2 text-sm rounded-md transition-colors">Introduction</a></div></div><div class="mb-2 pb-2 border-b border-slate-100 sidebar-section-divider last:border-b-0"><button class="sidebar-section-toggle flex items-center justify-between w-full py-2 px-2 rounded-md text-left font-semibold text-base text-amber-500 transition-colors sidebar-section-btn" data-section=Configuration aria-expanded=true>
+<span class="flex items-center gap-2"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35.0a1.724 1.724.0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724.0 001.066 2.573c1.756.426 1.756 2.924.0 3.35a1.724 1.724.0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724.0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35.0a1.724 1.724.0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724.0 00-1.066-2.573c-1.756-.426-1.756-2.924.0-3.35a1.724 1.724.0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+Configuration
+</span><svg class="sidebar-chevron w-4 h-4 transition-transform duration-200 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button><div class="sidebar-section-content overflow-hidden transition-all duration-200"><a href=/configuration/access-control/ class="sidebar-link block py-1.5 pl-8 pr-2 text-sm rounded-md transition-colors">Access Control
+</a><a href=/configuration/command-line/ class="sidebar-link block py-1.5 pl-8 pr-2 text-sm rounded-md transition-colors">Command Line Interface (CLI)
+</a><a href=/configuration/configuration-file/ class="sidebar-link block py-1.5 pl-8 pr-2 text-sm rounded-md transition-colors">Configuration File
+</a><a href=/configuration/error-handling/ class="sidebar-link block py-1.5 pl-8 pr-2 text-sm rounded-md transition-colors">Errors
+</a><a href=/configuration/expressions/ class="sidebar-link block py-1.5 pl-8 pr-2 text-sm rounded-md transition-colors">Expressions
+</a><a href=/configuration/functions/ class="sidebar-link block py-1.5 pl-8 pr-2 text-sm rounded-md transition-colors">Functions
+</a><a href=/configuration/multiple-files/ class="sidebar-link block py-1.5 pl-8 pr-2 text-sm rounded-md transition-colors">Merge of Configuration File(s)
+</a><a href=/configuration/modifiers/ class="sidebar-link block py-1.5 pl-8 pr-2 text-sm rounded-md transition-colors">Modifiers
+</a><a href=/configuration/variables/ class="sidebar-link block py-1.5 pl-8 pr-2 text-sm rounded-md transition-colors">Variables</a><div class=mt-1><button class="sidebar-section-toggle flex items-center justify-between w-full py-1.5 pl-8 pr-2 text-left text-sm font-semibold text-amber-500 rounded-md transition-colors sidebar-section-btn" data-section=Blocks aria-expanded=true>
+Blocks
+<svg class="sidebar-chevron w-3 h-3 transition-transform duration-200 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button><div class="sidebar-section-content overflow-hidden transition-all duration-200"><a href=/configuration/block/api/ class="sidebar-link block py-1.5 pl-12 pr-2 text-sm rounded-md transition-colors">API
+</a><a href=/configuration/block/beta_authzen/ class="sidebar-link block py-1.5 pl-12 pr-2 text-sm rounded-md transition-colors active">AuthZEN Authorization (Beta)
+</a><a href=/configuration/block/backend/ class="sidebar-link block py-1.5 pl-12 pr-2 text-sm rounded-md transition-colors">Backend
+</a><a href=/configuration/block/basic_auth/ class="sidebar-link block py-1.5 pl-12 pr-2 text-sm rounded-md transition-colors">Basic Auth
+</a><a href=/configuration/block/client_certificate/ class="sidebar-link block py-1.5 pl-12 pr-2 text-sm rounded-md transition-colors">Client Certificate
+</a><a href=/configuration/block/cors/ class="sidebar-link block py-1.5 pl-12 pr-2 text-sm rounded-md transition-colors">CORS
+</a><a href=/configuration/block/defaults/ class="sidebar-link block py-1.5 pl-12 pr-2 text-sm rounded-md transition-colors">Defaults
+</a><a href=/configuration/block/definitions/ class="sidebar-link block py-1.5 pl-12 pr-2 text-sm rounded-md transition-colors">Definitions
+</a><a href=/configuration/block/endpoint/ class="sidebar-link block py-1.5 pl-12 pr-2 text-sm rounded-md transition-colors">Endpoint
+</a><a href=/configuration/block/environment/ class="sidebar-link block py-1.5 pl-12 pr-2 text-sm rounded-md transition-colors">Environment
+</a><a href=/configuration/block/error_handler/ class="sidebar-link block py-1.5 pl-12 pr-2 text-sm rounded-md transition-colors">Error Handler
+</a><a href=/configuration/block/files/ class="sidebar-link block py-1.5 pl-12 pr-2 text-sm rounded-md transition-colors">Files
+</a><a href=/configuration/block/health/ class="sidebar-link block py-1.5 pl-12 pr-2 text-sm rounded-md transition-colors">Health
+</a><a href=/configuration/block/job/ class="sidebar-link block py-1.5 pl-12 pr-2 text-sm rounded-md transition-colors">Job
+</a><a href=/configuration/block/jwt/ class="sidebar-link block py-1.5 pl-12 pr-2 text-sm rounded-md transition-colors">JWT
+</a><a href=/configuration/block/jwt_signing_profile/ class="sidebar-link block py-1.5 pl-12 pr-2 text-sm rounded-md transition-colors">JWT Signing Profile
+</a><a href=/configuration/block/oauth2/ class="sidebar-link block py-1.5 pl-12 pr-2 text-sm rounded-md transition-colors">OAuth2
+</a><a href=/configuration/block/beta_oauth2/ class="sidebar-link block py-1.5 pl-12 pr-2 text-sm rounded-md transition-colors">OAuth2 AC (Beta)
+</a><a href=/configuration/block/oidc/ class="sidebar-link block py-1.5 pl-12 pr-2 text-sm rounded-md transition-colors">OIDC
+</a><a href=/configuration/block/openapi/ class="sidebar-link block py-1.5 pl-12 pr-2 text-sm rounded-md transition-colors">OpenAPI
+</a><a href=/configuration/block/proxy/ class="sidebar-link block py-1.5 pl-12 pr-2 text-sm rounded-md transition-colors">Proxy
+</a><a href=/configuration/block/rate_limiter/ class="sidebar-link block py-1.5 pl-12 pr-2 text-sm rounded-md transition-colors">Rate Limiter (Beta)
+</a><a href=/configuration/block/request/ class="sidebar-link block py-1.5 pl-12 pr-2 text-sm rounded-md transition-colors">Request
+</a><a href=/configuration/block/response/ class="sidebar-link block py-1.5 pl-12 pr-2 text-sm rounded-md transition-colors">Response
+</a><a href=/configuration/block/saml/ class="sidebar-link block py-1.5 pl-12 pr-2 text-sm rounded-md transition-colors">SAML
+</a><a href=/configuration/block/server/ class="sidebar-link block py-1.5 pl-12 pr-2 text-sm rounded-md transition-colors">Server
+</a><a href=/configuration/block/server_certificate/ class="sidebar-link block py-1.5 pl-12 pr-2 text-sm rounded-md transition-colors">Server Certificate
+</a><a href=/configuration/block/settings/ class="sidebar-link block py-1.5 pl-12 pr-2 text-sm rounded-md transition-colors">Settings
+</a><a href=/configuration/block/spa/ class="sidebar-link block py-1.5 pl-12 pr-2 text-sm rounded-md transition-colors">SPA
+</a><a href=/configuration/block/throttle/ class="sidebar-link block py-1.5 pl-12 pr-2 text-sm rounded-md transition-colors">Throttle
+</a><a href=/configuration/block/backend_tls/ class="sidebar-link block py-1.5 pl-12 pr-2 text-sm rounded-md transition-colors">TLS (Backend)
+</a><a href=/configuration/block/server_tls/ class="sidebar-link block py-1.5 pl-12 pr-2 text-sm rounded-md transition-colors">TLS (Server)
+</a><a href=/configuration/block/introspection/ class="sidebar-link block py-1.5 pl-12 pr-2 text-sm rounded-md transition-colors">Token Introspection (Beta)
+</a><a href=/configuration/block/token_request/ class="sidebar-link block py-1.5 pl-12 pr-2 text-sm rounded-md transition-colors">Token Request (Beta)
+</a><a href=/configuration/block/websockets/ class="sidebar-link block py-1.5 pl-12 pr-2 text-sm rounded-md transition-colors">WebSockets</a></div></div></div></div><div class="mb-2 pb-2 border-b border-slate-100 sidebar-section-divider last:border-b-0"><button class="sidebar-section-toggle flex items-center justify-between w-full py-2 px-2 rounded-md text-left font-semibold text-base text-amber-500 transition-colors sidebar-section-btn" data-section=Observation aria-expanded=false>
+<span class="flex items-center gap-2"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+Observation
+</span><svg class="sidebar-chevron w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button><div class="sidebar-section-content overflow-hidden transition-all duration-200 hidden"><a href=/observation/health/ class="sidebar-link block py-1.5 pl-8 pr-2 text-sm rounded-md transition-colors">Health Check
+</a><a href=/observation/metrics/ class="sidebar-link block py-1.5 pl-8 pr-2 text-sm rounded-md transition-colors">Metrics
+</a><a href=/observation/logging/ class="sidebar-link block py-1.5 pl-8 pr-2 text-sm rounded-md transition-colors">Logging
+</a><a href=/observation/tracing/ class="sidebar-link block py-1.5 pl-8 pr-2 text-sm rounded-md transition-colors">Tracing</a></div></div></nav><main class="px-8 py-6 min-w-0 prose prose-slate prose-lg prose-code:bg-sky-100 prose-code:text-sky-900 prose-code:p-1 prose-code:rounded-md prose-code:text-sm prose-blockquote:bg-purple-100 prose-blockquote:rounded-md prose-a:text-sky-600 hover:prose-a:text-amber-500"><h1 id=authzen-authorization-beta>AuthZEN Authorization (Beta)</h1><table><thead><tr><th style=text-align:left>Block name</th><th style=text-align:left>Context</th><th style=text-align:left>Label</th></tr></thead><tbody><tr><td style=text-align:left><code>beta_authzen</code></td><td style=text-align:left><a href=/configuration/block/definitions/>Definitions Block</a></td><td style=text-align:left>⚠ required</td></tr></tbody></table><p>The <code>beta_authzen</code> block delegates the authorization decision for client requests to an
+external service. Like all <a href=/configuration/access-control/>access control</a> types, it is
+defined in the <a href=/configuration/block/definitions/><code>definitions</code> block</a> and referenced by
+its required <em>label</em>.</p><blockquote><p>Specification: <a href=https://openid.net/specs/authorization-api-1_0.html>OpenID AuthZEN Authorization API 1.0</a></p></blockquote><h2 id=enforcement-point-decision-point-and-the-tuple>Enforcement point, decision point and the tuple</h2><p>Couper is the policy enforcement point (PEP): it gates the request. The authorization
+service is the policy decision point (PDP): it decides. For every protected request Couper
+sends a <code>POST</code> request to the PDP and enforces the returned decision.</p><p>Every question to the PDP is the same tuple: may this <strong>subject</strong> perform this <strong>action</strong>
+on this <strong>resource</strong>? An open <strong>context</strong> object carries everything else a decision may
+need.</p><p>This is the <strong>default</strong> evaluation request. Couper builds it from the client request when
+no tuple attribute is set:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;subject&#34;</span><span class=p>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;type&#34;</span><span class=p>:</span> <span class=s2>&#34;JWT&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;id&#34;</span><span class=p>:</span> <span class=s2>&#34;eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9...&#34;</span>
+</span></span><span class=line><span class=cl>  <span class=p>},</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;action&#34;</span><span class=p>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;name&#34;</span><span class=p>:</span> <span class=s2>&#34;GET&#34;</span>
+</span></span><span class=line><span class=cl>  <span class=p>},</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;resource&#34;</span><span class=p>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;type&#34;</span><span class=p>:</span> <span class=s2>&#34;route&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;id&#34;</span><span class=p>:</span> <span class=s2>&#34;/todos/{todoId}&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;properties&#34;</span><span class=p>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;uri&#34;</span><span class=p>:</span> <span class=s2>&#34;https://couper.example.com/todos/42?full=1&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;scheme&#34;</span><span class=p>:</span> <span class=s2>&#34;https&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;hostname&#34;</span><span class=p>:</span> <span class=s2>&#34;couper.example.com&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;path&#34;</span><span class=p>:</span> <span class=s2>&#34;/todos/42&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;route&#34;</span><span class=p>:</span> <span class=s2>&#34;/todos/{todoId}&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;params&#34;</span><span class=p>:</span> <span class=p>{</span> <span class=nt>&#34;todoId&#34;</span><span class=p>:</span> <span class=s2>&#34;42&#34;</span> <span class=p>},</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;query&#34;</span><span class=p>:</span> <span class=p>{</span> <span class=nt>&#34;full&#34;</span><span class=p>:</span> <span class=p>[</span><span class=s2>&#34;1&#34;</span><span class=p>]</span> <span class=p>},</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;ip&#34;</span><span class=p>:</span> <span class=s2>&#34;10.0.0.7&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>  <span class=p>},</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;context&#34;</span><span class=p>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;headers&#34;</span><span class=p>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;authorization&#34;</span><span class=p>:</span> <span class=s2>&#34;Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9...&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><p>The <code>subject</code> names the credential, not a validated principal. The authorization service
+validates it, not Couper. With a bearer token, the type is <code>JWT</code> and the <code>id</code> is the raw
+token. Without one, the type is <code>anonymous</code>. Other credentials, an API key for example,
+stay in <code>context.headers</code>.</p><p>The <code>action</code> is the HTTP method of the request.</p><p>The <code>resource</code> names the matched route: a policy applies to the route, not to a single
+request path. The <code>id</code> keeps the route placeholders, for example <code>/todos/{todoId}</code>. Without
+a matched route, for example in front of a <a href=/configuration/block/files/><code>files</code> block</a>, the
+type is <code>uri</code> and the <code>id</code> is the request path.</p><p><code>context.headers</code> holds all request headers with lower-case names and the first value of each
+header, like the <a href=/configuration/variables/#request><code>request.headers</code> variable</a>.</p><blockquote><p>Note: AuthZEN standardizes the structure of the tuple, not its values. Each decision
+point has its own vocabulary of types. The
+<a href=/configuration/block/beta_authzen/#shaping-the-evaluation-request><code>subject</code>, <code>action</code>, <code>resource</code> and <code>context</code> attributes</a>
+replace the defaults to match it, for example with validated claims of a preceding
+<code>jwt</code> access control.</p></blockquote><h2 id=shaping-the-evaluation-request>Shaping the evaluation request</h2><p>The <code>subject</code>, <code>action</code>, <code>resource</code> and <code>context</code> attributes shape the callout. Couper
+evaluates them for every request, so an access control in front of <code>beta_authzen</code> can
+name the subject. Access controls run in the order of the <code>access_control</code> list:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-hcl data-lang=hcl><span class=line><span class=cl><span class=k>api</span> {
+</span></span><span class=line><span class=cl>  <span class=k>endpoint</span> <span class=s2>&#34;/todos/{id}&#34;</span> {
+</span></span><span class=line><span class=cl><span class=n>    access_control</span> <span class=o>=</span> <span class=p>[</span><span class=s2>&#34;token&#34;, &#34;authz&#34;</span><span class=p>]</span><span class=c1>
+</span></span></span><span class=line><span class=cl><span class=c1>    # ...
+</span></span></span><span class=line><span class=cl>  }
+</span></span><span class=line><span class=cl>}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>definitions</span> {
+</span></span><span class=line><span class=cl>  <span class=k>jwt</span> <span class=s2>&#34;token&#34;</span> {
+</span></span><span class=line><span class=cl><span class=n>    signature_algorithm</span> <span class=o>=</span> <span class=s2>&#34;HS256&#34;</span>
+</span></span><span class=line><span class=cl><span class=n>    key</span>                 <span class=o>=</span> <span class=s2>&#34;...&#34;</span>
+</span></span><span class=line><span class=cl>  }
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>beta_authzen</span> <span class=s2>&#34;authz&#34;</span> {
+</span></span><span class=line><span class=cl><span class=n>    url</span> <span class=o>=</span> <span class=s2>&#34;https://pdp.example.com/access/v1/evaluation&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>    subject</span> <span class=o>=</span> {
+</span></span><span class=line><span class=cl><span class=n>      type</span> <span class=o>=</span> <span class=s2>&#34;identity&#34;</span>
+</span></span><span class=line><span class=cl><span class=n>      id</span>   <span class=o>=</span> <span class=k>request</span><span class=p>.</span><span class=k>context</span><span class=p>.</span><span class=k>token</span><span class=p>.</span><span class=k>sub</span>
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>    action</span> <span class=o>=</span> {
+</span></span><span class=line><span class=cl><span class=n>      name</span> <span class=o>=</span><span class=n> request.method</span> <span class=o>==</span> <span class=s2>&#34;GET&#34; ? &#34;can_read&#34; : &#34;can_write&#34;</span>
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>    context</span> <span class=o>=</span> {
+</span></span><span class=line><span class=cl><span class=n>      tenant</span> <span class=o>=</span> <span class=k>request</span><span class=p>.</span><span class=k>context</span><span class=p>.</span><span class=k>token</span><span class=p>.</span><span class=k>org</span>
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>  }
+</span></span><span class=line><span class=cl>}
+</span></span></code></pre></div><p><code>subject</code>, <code>action</code> and <code>resource</code> <strong>replace</strong> their default: each is a closed record, and
+a partial merge would make a confusing hybrid. A <code>subject</code> or a <code>resource</code> needs a <code>type</code>
+and an <code>id</code>; an <code>action</code> needs a <code>name</code>. An empty value denies the request. An optional
+<code>properties</code> object is passed through.</p><p><code>context</code> <strong>merges over</strong> the defaults: it is an open bag, and <code>headers</code> and <code>tls</code> are
+additive. A configured key wins over a default of the same name.</p><h3 id=mtls>mTLS</h3><p><code>include_tls = true</code> adds the TLS connection state of the client request to <code>context.tls</code>.
+The state describes the connection, not the principal: the certificate can belong to a mesh
+sidecar while a bearer token identifies the caller. In a client-facing mTLS setup,
+<code>client_certificate</code> carries the fields an authorization service keys on. This is the full
+object:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;context&#34;</span><span class=p>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;tls&#34;</span><span class=p>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;version&#34;</span><span class=p>:</span> <span class=s2>&#34;TLS 1.3&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;cipher_suite&#34;</span><span class=p>:</span> <span class=s2>&#34;TLS_AES_128_GCM_SHA256&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;server_name&#34;</span><span class=p>:</span> <span class=s2>&#34;couper.example.com&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;client_certificate&#34;</span><span class=p>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&#34;subject&#34;</span><span class=p>:</span> <span class=s2>&#34;CN=my-client,O=Example&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&#34;issuer&#34;</span><span class=p>:</span> <span class=s2>&#34;CN=my-ca&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&#34;serial_number&#34;</span><span class=p>:</span> <span class=s2>&#34;1267&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&#34;fingerprint_sha256&#34;</span><span class=p>:</span> <span class=s2>&#34;9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&#34;not_before&#34;</span><span class=p>:</span> <span class=s2>&#34;2026-01-01T00:00:00Z&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&#34;not_after&#34;</span><span class=p>:</span> <span class=s2>&#34;2027-01-01T00:00:00Z&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&#34;dns_names&#34;</span><span class=p>:</span> <span class=p>[</span><span class=s2>&#34;client.example&#34;</span><span class=p>],</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&#34;uris&#34;</span><span class=p>:</span> <span class=p>[</span><span class=s2>&#34;spiffe://example.org/mcp-client&#34;</span><span class=p>],</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&#34;email_addresses&#34;</span><span class=p>:</span> <span class=p>[</span><span class=s2>&#34;mcp@example.org&#34;</span><span class=p>],</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&#34;ip_addresses&#34;</span><span class=p>:</span> <span class=p>[</span><span class=s2>&#34;10.0.0.7&#34;</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>      <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><blockquote><p>Tip: <code>serial_number</code> is hex-encoded and <code>fingerprint_sha256</code> is the hex SHA-256 of the DER
+certificate — use either for allow lists or pinning. The subject alternative names
+(<code>dns_names</code>, <code>uris</code>, <code>email_addresses</code>, <code>ip_addresses</code>) appear only when the certificate
+carries them and often hold the identity to authorize on, e.g. a SPIFFE ID in <code>uris</code>.</p></blockquote><h2 id=reaching-the-authorization-service>Reaching the authorization service</h2><p>The default path is the AuthZEN access evaluation endpoint <code>/access/v1/evaluation</code>, so an
+origin is enough to reach a conformant service. An explicit path in <code>url</code> is used as
+configured. Couper sends its request id as <code>X-Request-ID</code>; a decision point echoes it to
+tie both <a href=/observation/logging/>logs</a> together.</p><p>Couper calls the authorization service on the hot path of every protected request, so keep
+the connection persistent. Recommended: a (typically local) service behind a <code>backend</code> with
+<code>http2 = true</code> — callouts multiplex over one persistent HTTP/2 connection. HTTP/2 negotiates
+via TLS (ALPN), so <code>http2</code> applies to <code>https</code> origins. For a trusted cleartext (<code>http</code>)
+service, <code>http2_prior_knowledge = true</code> establishes the same connection without TLS (h2c).
+Without either, Couper still reuses connections (HTTP/1.1 keep-alive), just without
+multiplexing.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-hcl data-lang=hcl><span class=line><span class=cl><span class=k>definitions</span> {
+</span></span><span class=line><span class=cl>  <span class=k>beta_authzen</span> <span class=s2>&#34;authz&#34;</span> {
+</span></span><span class=line><span class=cl>    <span class=k>backend</span> {
+</span></span><span class=line><span class=cl><span class=n>      origin</span> <span class=o>=</span> <span class=s2>&#34;https://localhost:4000&#34;</span><span class=c1> # callout to /access/v1/evaluation
+</span></span></span><span class=line><span class=cl><span class=n>      http2</span>  <span class=o>=</span> <span class=kt>true</span>
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>  }
+</span></span><span class=line><span class=cl>}
+</span></span></code></pre></div><blockquote><p>Note: Couper does not cache decisions. Only the authorization service knows whether a
+decision may be reused, and it can cache internally.</p></blockquote><h2 id=auto-discovery>Auto discovery</h2><p>With <code>configuration_url</code> Couper reads the endpoint from the AuthZEN configuration document of
+the authorization service instead. <code>configuration_url</code> and <code>url</code> are mutually exclusive.</p><blockquote><p>Specification: <a href=https://openid.net/specs/authorization-api-1_0.html>Policy Decision Point Metadata</a></p></blockquote><div class=highlight><pre tabindex=0 class=chroma><code class=language-hcl data-lang=hcl><span class=line><span class=cl><span class=k>definitions</span> {
+</span></span><span class=line><span class=cl>  <span class=k>beta_authzen</span> <span class=s2>&#34;authz&#34;</span> {
+</span></span><span class=line><span class=cl><span class=n>    configuration_url</span> <span class=o>=</span> <span class=s2>&#34;https://pdp.example.com/.well-known/authzen-configuration&#34;</span>
+</span></span><span class=line><span class=cl><span class=n>    configuration_ttl</span> <span class=o>=</span> <span class=s2>&#34;10m&#34;</span>
+</span></span><span class=line><span class=cl>  }
+</span></span><span class=line><span class=cl>}
+</span></span></code></pre></div><p>Couper takes <code>access_evaluation_endpoint</code> from the document, or
+<code>access_evaluations_endpoint</code> with <code>evaluate_permissions</code>. It caches the document for
+<code>configuration_ttl</code> and keeps a stale copy for <code>configuration_max_stale</code> while the service is
+unreachable.</p><p>Two checks protect the callout; each failure denies the request. The document must claim
+the <code>policy_decision_point</code> Couper asked — <code>configuration_url</code> without the well-known
+suffix — which prevents a mix-up between decision points. The endpoint must stay on the
+origin of the document: a <code>backend</code> pins scheme and host, so a foreign endpoint would
+receive the client credentials on the configured host.</p><blockquote><p>Note: A multi-tenant decision point may root its identifiers under a path of its own —
+OpenFGA claims <code>&lt;origin>/stores/&lt;store_id></code> for
+<code>/.well-known/authzen-configuration/&lt;store_id></code>. Couper accepts that as long as the
+origin and the tenant of <code>configuration_url</code> stay pinned.</p></blockquote><h2 id=the-decision>The decision</h2><p>The decision is in the response body, not in the response status code. The authorization
+service answers <code>200</code> with a <code>decision</code> and an optional free-form <code>context</code>:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;decision&#34;</span><span class=p>:</span> <span class=kc>false</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;context&#34;</span><span class=p>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;reason&#34;</span><span class=p>:</span> <span class=s2>&#34;the subject is a viewer of the resource&#34;</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><table><thead><tr><th style=text-align:left>Response</th><th style=text-align:left>Result</th></tr></thead><tbody><tr><td style=text-align:left><code>200</code>, <code>"decision": true</code></td><td style=text-align:left>The request is allowed.</td></tr><tr><td style=text-align:left><code>200</code>, <code>"decision": false</code> with a <code>www_authenticate</code> challenge</td><td style=text-align:left>Denied with error type <code>authzen_invalid_credentials</code>, default response status <code>401</code>.</td></tr><tr><td style=text-align:left><code>200</code>, <code>"decision": false</code></td><td style=text-align:left>Denied with error type <code>authzen_insufficient_permissions</code>, default response status <code>403</code>.</td></tr><tr><td style=text-align:left><code>200</code> without a <code>decision</code>, or a malformed body</td><td style=text-align:left>Denied with error type <code>authzen</code>, default response status <code>403</code>.</td></tr><tr><td style=text-align:left>any other status, or a callout failure</td><td style=text-align:left>Denied with error type <code>authzen</code>, default response status <code>403</code>.</td></tr></tbody></table><p>An error status reports a problem between Couper and the service, not a denied client. A
+<code>401</code>, for example, says Couper failed to authenticate to the service. Couper copies
+nothing from such a response — its challenge would mislead the client. An
+<a href=/configuration/error-handling/><code>error_handler</code> block</a> for the <code>authzen</code> type catches
+every such rejection: a <code>400</code> for an action unknown to the decision point&rsquo;s model, for
+example, stays a plain denial with a body of your choosing.</p><p>The response <code>context</code> is exposed as the
+<a href=/configuration/variables/#context><code>request.context.&lt;label></code> variable</a> — the place for
+validated claims, the resolved identity or granted permissions. Couper adds two members:
+<code>decision</code>, and <code>headers</code> with the callout response headers (lower-cased names, first value,
+like <code>request.headers</code>). Both shadow a response context property of the same name. Couper
+exposes the <code>context</code> of a denial as well, so an <code>error_handler</code> can read the reason.</p><p>The authorization service can return a resolved identity or a re-signed internal token
+(created with <a href=/configuration/functions/><code>jwt_sign()</code></a>) as a header. Copy it onto the
+upstream request with <code>set_request_headers</code>; this overwrites any client-provided value:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-hcl data-lang=hcl><span class=line><span class=cl><span class=k>api</span> {
+</span></span><span class=line><span class=cl>  <span class=k>endpoint</span> <span class=s2>&#34;/**&#34;</span> {
+</span></span><span class=line><span class=cl><span class=n>    access_control</span> <span class=o>=</span> <span class=p>[</span><span class=s2>&#34;authz&#34;</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>proxy</span> {
+</span></span><span class=line><span class=cl><span class=n>      backend</span> <span class=o>=</span> <span class=s2>&#34;protected_api&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>      set_request_headers</span> <span class=o>=</span> {
+</span></span><span class=line><span class=cl><span class=n>        x-resolved-identity</span> <span class=o>=</span> <span class=k>request</span><span class=p>.</span><span class=k>context</span><span class=p>.</span><span class=k>authz</span><span class=p>.</span><span class=k>headers</span><span class=p>[</span><span class=s2>&#34;x-resolved-identity&#34;</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>      }
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>  }
+</span></span><span class=line><span class=cl>}
+</span></span></code></pre></div><h3 id=denials-and-the-challenge>Denials and the challenge</h3><p>AuthZEN denies a request with a flat <code>"decision": false</code> and leaves the response <code>context</code>
+free-form. To keep an OAuth 2.0 protected resource workable, Couper reads one property of
+that context by convention. The convention is Couper&rsquo;s, not part of the specification:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;decision&#34;</span><span class=p>:</span> <span class=kc>false</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;context&#34;</span><span class=p>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;www_authenticate&#34;</span><span class=p>:</span> <span class=s2>&#34;Bearer resource_metadata=\&#34;https://couper.example.com/.well-known/oauth-protected-resource\&#34;&#34;</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><p>A challenge in <code>context.www_authenticate</code> means invalid credentials: it tells the client
+how to authenticate, for example with an RFC 9728 <code>resource_metadata</code> pointer. Couper then
+answers <code>401</code> and a default <code>error_handler</code> forwards the challenge to the client. Without a
+challenge the denial is an authorization decision and Couper answers <code>403</code> — new credentials
+would not help. A service that sends only <code>{"decision": false}</code> works without
+Couper-specific configuration.</p><p>The challenge is available to custom handlers as
+<code>request.context.&lt;label>.www_authenticate</code>. An
+<a href=/configuration/error-handling/><code>error_handler</code> block</a> for
+<code>authzen_invalid_credentials</code> replaces the default:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-hcl data-lang=hcl><span class=line><span class=cl><span class=k>definitions</span> {
+</span></span><span class=line><span class=cl>  <span class=k>beta_authzen</span> <span class=s2>&#34;authz&#34;</span> {
+</span></span><span class=line><span class=cl><span class=n>    url</span> <span class=o>=</span> <span class=s2>&#34;https://authz.example.com/check&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>error_handler</span> <span class=s2>&#34;authzen_invalid_credentials&#34;</span> {
+</span></span><span class=line><span class=cl><span class=n>      set_response_headers</span> <span class=o>=</span> {
+</span></span><span class=line><span class=cl><span class=n>        www-authenticate</span> <span class=o>=</span><span class=n> &#34;Bearer resource_metadata</span><span class=o>=</span><span class=err>\</span><span class=s2>&#34;https://couper.example.com/.well-known/oauth-protected-resource\&#34;&#34;</span>
+</span></span><span class=line><span class=cl>      }
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>  }
+</span></span><span class=line><span class=cl>}
+</span></span></code></pre></div><h2 id=batch-decisions-and-permissions>Batch decisions and permissions</h2><p>The authorization service can grant <a href=/configuration/error-handling/#permissions-related-error_handler>permissions</a>
+evaluated by <code>required_permission</code> in <a href=/configuration/block/api/><code>api</code></a> or <a href=/configuration/block/endpoint/><code>endpoint</code></a>
+blocks. Policy engines answer one question at a time, and <code>evaluate_permissions</code> asks them
+in their own terms: one batch callout to <code>/access/v1/evaluations</code> asks about the client
+request and about every candidate permission. Couper grants those the service allows.</p><blockquote><p>Specification: <a href=https://openid.net/specs/authorization-api-1_0.html>Access Evaluations API</a></p></blockquote><div class=highlight><pre tabindex=0 class=chroma><code class=language-hcl data-lang=hcl><span class=line><span class=cl><span class=k>definitions</span> {
+</span></span><span class=line><span class=cl>  <span class=k>beta_authzen</span> <span class=s2>&#34;authz&#34;</span> {
+</span></span><span class=line><span class=cl><span class=n>    backend</span>              <span class=o>=</span> <span class=s2>&#34;pdp&#34;</span><span class=c1> # callout to /access/v1/evaluations
+</span></span></span><span class=line><span class=cl><span class=n>    evaluate_permissions</span> <span class=o>=</span> <span class=p>[</span><span class=s2>&#34;can_read&#34;, &#34;can_write&#34;, &#34;can_delete&#34;</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>  }
+</span></span><span class=line><span class=cl>}
+</span></span></code></pre></div><p>The first entry of the <code>evaluations</code> array is the client request, the others follow the order
+of <code>evaluate_permissions</code>. Couper sends <code>options.evaluations_semantic = "execute_all"</code>, because
+a short-circuit semantic truncates the answers and would lose permissions. A response with
+fewer answers than questions denies the request.</p><blockquote><p>Note: A <code>url</code> with a path of its own is used as configured — with <code>evaluate_permissions</code> it
+must point to the access evaluations endpoint, not to the single-evaluation endpoint.</p></blockquote><p>A <a href=/configuration/block/endpoint/><code>required_permission</code></a> of the protected <code>endpoint</code> or
+<code>api</code> block replaces the candidates for that request. Couper resolves it at callout time —
+the expression sees everything a preceding access control provided — and asks about exactly
+the permission the endpoint will check. The declaration stays at the endpoint, and the
+batch stays small:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-hcl data-lang=hcl><span class=line><span class=cl><span class=k>api</span> {
+</span></span><span class=line><span class=cl>  <span class=k>endpoint</span> <span class=s2>&#34;/todos/{id}&#34;</span> {
+</span></span><span class=line><span class=cl><span class=n>    access_control</span>      <span class=o>=</span> <span class=p>[</span><span class=s2>&#34;authz&#34;</span><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=n>    required_permission</span> <span class=o>=</span><span class=n> { GET</span> <span class=o>=</span><span class=n> &#34;can_read&#34;, &#34;*&#34;</span> <span class=o>=</span> <span class=s2>&#34;can_write&#34;</span> }<span class=c1>
+</span></span></span><span class=line><span class=cl><span class=c1>    # a GET asks about the request and about can_read; nothing else
+</span></span></span><span class=line><span class=cl><span class=c1>    # ...
+</span></span></span><span class=line><span class=cl>  }
+</span></span><span class=line><span class=cl>}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>definitions</span> {
+</span></span><span class=line><span class=cl>  <span class=k>beta_authzen</span> <span class=s2>&#34;authz&#34;</span> {
+</span></span><span class=line><span class=cl><span class=n>    backend</span>              <span class=o>=</span> <span class=s2>&#34;pdp&#34;</span><span class=c1> # callout to /access/v1/evaluations
+</span></span></span><span class=line><span class=cl><span class=n>    evaluate_permissions</span> <span class=o>=</span> <span class=p>[</span><span class=s2>&#34;can_read&#34;, &#34;can_write&#34;, &#34;can_delete&#34;</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>  }
+</span></span><span class=line><span class=cl>}
+</span></span></code></pre></div><p>Endpoints without a required permission — and requests whose method has no entry in a
+required-permission map — keep the configured candidates.</p><h3 id=what-a-single-false-means>What a single <code>false</code> means</h3><p>Only the first decision of the batch allows or denies the request. Every further decision
+answers a permission question: <code>true</code> grants the candidate, <code>false</code> only withholds it — it
+does not deny the request by itself.</p><ul><li>With the configured candidates, a request passes as long as the first decision is <code>true</code>.
+A withheld permission surfaces only where a <code>required_permission</code> demands it: as a <code>403</code>
+with error type <code>insufficient_permissions</code>, raised by Couper&rsquo;s permission check, not by
+the access control.</li><li>With a <code>required_permission</code> override the batch carries exactly two questions. The first
+still gates the request; a <code>false</code> on the second withholds the one permission the endpoint
+checks, so the request ends in the same <code>403</code>.</li></ul><blockquote><p>Tip: The error type tells the two denials apart in logs and <code>error_handler</code> blocks:
+<code>insufficient_permissions</code> comes from the permission check, the <code>authzen_*</code> types from the
+access control itself.</p></blockquote><h2 id=connecting-openfga>Connecting OpenFGA</h2><p>OpenFGA implements AuthZEN, so it connects like any other decision point — no custom
+service required. Its endpoints are scoped to a store: <code>configuration_url</code> points at the
+store&rsquo;s well-known document. The tuple must speak the model&rsquo;s vocabulary: subject and
+resource use the model&rsquo;s types, and the action names a relation on the resource type. With
+<code>evaluate_permissions</code> the candidates are relations, too.</p><blockquote><p>Specification: <a href=https://openfga.dev/docs/interacting/authzen>OpenFGA AuthZEN API</a></p></blockquote><p>With all three tuple attributes set, one evaluation is exactly an OpenFGA check —
+user, relation, object. <code>GET /documents/42/share</code> asks whether the caller has <code>can_share</code>
+on <code>document:42</code>:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-hcl data-lang=hcl><span class=line><span class=cl><span class=k>api</span> {
+</span></span><span class=line><span class=cl>  <span class=k>endpoint</span> <span class=s2>&#34;/documents/{id}/{action}&#34;</span> {
+</span></span><span class=line><span class=cl><span class=n>    access_control</span> <span class=o>=</span> <span class=p>[</span><span class=s2>&#34;token&#34;, &#34;fga&#34;</span><span class=p>]</span><span class=c1>
+</span></span></span><span class=line><span class=cl><span class=c1>    # ...
+</span></span></span><span class=line><span class=cl>  }
+</span></span><span class=line><span class=cl>}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>definitions</span> {
+</span></span><span class=line><span class=cl>  <span class=k>beta_authzen</span> <span class=s2>&#34;fga&#34;</span> {
+</span></span><span class=line><span class=cl><span class=n>    configuration_url</span> <span class=o>=</span> <span class=s2>&#34;https://fga.example.com/.well-known/authzen-configuration/01ARZ3NDEKTSV4RRFFQ69G5FAV&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>    subject</span>  <span class=o>=</span><span class=n> { type</span> <span class=o>=</span><span class=n> &#34;user&#34;, id</span> <span class=o>=</span> <span class=k>request</span><span class=p>.</span><span class=k>context</span><span class=p>.</span><span class=k>token</span><span class=p>.</span><span class=k>sub</span> }<span class=c1>   # user
+</span></span></span><span class=line><span class=cl><span class=n>    action</span>   <span class=o>=</span><span class=n> { name</span> <span class=o>=</span> <span class=s2>&#34;can_${request.path_params.action}&#34;</span> }<span class=c1>      # relation
+</span></span></span><span class=line><span class=cl><span class=n>    resource</span> <span class=o>=</span><span class=n> { type</span> <span class=o>=</span><span class=n> &#34;document&#34;, id</span> <span class=o>=</span> <span class=k>request</span><span class=p>.</span><span class=k>path_params</span><span class=p>.</span><span class=k>id</span> }<span class=c1>  # object
+</span></span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>backend</span> {
+</span></span><span class=line><span class=cl><span class=n>      set_request_headers</span> <span class=o>=</span> {<span class=c1>
+</span></span></span><span class=line><span class=cl><span class=c1>        # Uses the model version that CI/CD wrote.
+</span></span></span><span class=line><span class=cl><span class=c1>        # Without it, OpenFGA uses the latest model.
+</span></span></span><span class=line><span class=cl><span class=n>        openfga-authorization-model-id</span> <span class=o>=</span> <span class=k>env</span><span class=p>.</span><span class=k>FGA_MODEL_ID</span>
+</span></span><span class=line><span class=cl>      }
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>  }
+</span></span><span class=line><span class=cl>}
+</span></span></code></pre></div><blockquote><p>Note: The AuthZEN API of OpenFGA is experimental and must be enabled with
+<code>--experimentals=authzen</code>. Checks that rely on contextual tuples need the native
+OpenFGA API.</p></blockquote><h2 id=listing-objects>Listing objects</h2><p>An access control answers one question: may this request pass. Which objects a subject may
+see is a data question, and it belongs to the application: the listing is filtered, sorted
+and paginated where the data lives. OpenFGA documents three options for this pattern —
+search then check, a local index from the changes feed, or list IDs then search — with
+guidance on when each fits:</p><blockquote><p>Specification: <a href=https://openfga.dev/docs/interacting/search-with-permissions>OpenFGA: Search With Permissions</a></p></blockquote><h2 id=naming-the-subject-from-a-preceding-access-control>Naming the subject from a preceding access control</h2><p>Access controls run in the order of the <code>access_control</code> list. Couper evaluates the
+<a href=/configuration/block/beta_authzen/#shaping-the-evaluation-request><code>subject</code> attribute</a> after the preceding controls ran.
+The default subject reads only a bearer token. Every other authentication resolves its
+identity into <code>request.context.&lt;label></code> — name the subject from there:</p><table><thead><tr><th style=text-align:left>Access control</th><th style=text-align:left>Identity in</th></tr></thead><tbody><tr><td style=text-align:left><code>jwt</code></td><td style=text-align:left><code>request.context.&lt;label></code> holds the token claims. The default subject already carries the token when the control reads it from the <code>Authorization</code> header (the default). With <code>cookie</code>, <code>header</code> or <code>token_value</code> set, name the subject from a claim.</td></tr><tr><td style=text-align:left><code>basic_auth</code></td><td style=text-align:left><code>request.context.&lt;label>.user</code></td></tr><tr><td style=text-align:left><code>saml</code></td><td style=text-align:left><code>request.context.&lt;label>.sub</code></td></tr><tr><td style=text-align:left><code>oidc</code></td><td style=text-align:left><code>request.context.&lt;label>.id_token_claims.sub</code></td></tr><tr><td style=text-align:left><code>beta_oauth2</code></td><td style=text-align:left>None. The token response does not have to carry an identity.</td></tr></tbody></table><div class=highlight><pre tabindex=0 class=chroma><code class=language-hcl data-lang=hcl><span class=line><span class=cl><span class=k>server</span> {
+</span></span><span class=line><span class=cl>  <span class=k>api</span> {
+</span></span><span class=line><span class=cl><span class=n>    access_control</span> <span class=o>=</span> <span class=p>[</span><span class=s2>&#34;ba&#34;, &#34;pdp&#34;</span><span class=p>]</span><span class=c1>
+</span></span></span><span class=line><span class=cl><span class=c1>    # ...
+</span></span></span><span class=line><span class=cl>  }
+</span></span><span class=line><span class=cl>}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>definitions</span> {
+</span></span><span class=line><span class=cl>  <span class=k>basic_auth</span> <span class=s2>&#34;ba&#34;</span> {
+</span></span><span class=line><span class=cl><span class=n>    htpasswd_file</span> <span class=o>=</span> <span class=s2>&#34;htpasswd&#34;</span>
+</span></span><span class=line><span class=cl>  }
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>beta_authzen</span> <span class=s2>&#34;pdp&#34;</span> {
+</span></span><span class=line><span class=cl><span class=n>    url</span> <span class=o>=</span> <span class=s2>&#34;https://authorization-service.example.com&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>    subject</span> <span class=o>=</span> {
+</span></span><span class=line><span class=cl><span class=n>      type</span> <span class=o>=</span> <span class=s2>&#34;identity&#34;</span>
+</span></span><span class=line><span class=cl><span class=n>      id</span>   <span class=o>=</span> <span class=k>request</span><span class=p>.</span><span class=k>context</span><span class=p>.</span><span class=k>ba</span><span class=p>.</span><span class=k>user</span>
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>  }
+</span></span><span class=line><span class=cl>}
+</span></span></code></pre></div><blockquote><p>Note: Without the <code>subject</code> attribute the evaluation asks about <code>"anonymous"</code>, although
+the chain authenticated a caller. Couper logs a warning at startup for such a
+configuration.</p></blockquote><div class=attributes><h3 id=attributes><a href=#attributes>Attributes</a></h3><table class=table-auto><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>action</code></td><td><div>object</div></td><td>-</td><td><div>Replaces the action of the access evaluation request. Requires a <code>name</code>; an optional <code>properties</code> object is passed through. Defaults to the request method.</div></td></tr><tr><td><code>backend</code></td><td><div>string</div></td><td>-</td><td><div>References a <a href=/configuration/block/backend/>backend</a> in <a href=/configuration/block/definitions/>definitions</a> for the authorization callout. Mutually exclusive with <code>backend</code> block.</div></td></tr><tr><td><code>configuration_max_stale</code></td><td><div>duration</div></td><td><code>"1h"</code></td><td><div>Time after the expiration of the AuthZEN configuration document during which Couper keeps using it. A zero value means no stale use.</div></td></tr><tr><td><code>configuration_ttl</code></td><td><div>duration</div></td><td><code>"1h"</code></td><td><div>Time to cache the AuthZEN configuration document.</div></td></tr><tr><td><code>configuration_url</code></td><td><div>string</div></td><td>-</td><td><div>URL of the AuthZEN configuration document (<code>/.well-known/authzen-configuration</code>) of the authorization service. Couper reads the callout endpoint from it. Mutually exclusive with <code>url</code>.</div></td></tr><tr><td><code>context</code></td><td><div>object</div></td><td>-</td><td><div>Merges into the context of the access evaluation request. Configured keys win over the <code>headers</code> and <code>tls</code> defaults.</div></td></tr><tr><td><code>custom_log_fields</code></td><td><div>object</div></td><td>-</td><td><div>Log fields for <a href=/observation/logging/#custom-logging>custom logging</a>. Inherited by nested blocks.</div></td></tr><tr><td><code>evaluate_permissions</code></td><td><div>tuple (string)</div></td><td><code>[]</code></td><td><div>Candidate permissions to resolve with one batch callout to the AuthZEN access evaluations endpoint. Couper asks the authorization service about the client request and about every listed permission, and grants those it allows. A <code>required_permission</code> of the protected endpoint or API replaces the candidates for that request.</div></td></tr><tr><td><code>include_tls</code></td><td><div>bool</div></td><td><code>false</code></td><td><div>Include TLS connection information of the client request in the authorization request.</div></td></tr><tr><td><code>resource</code></td><td><div>object</div></td><td>-</td><td><div>Replaces the resource of the access evaluation request. Requires a <code>type</code> and an <code>id</code>; an optional <code>properties</code> object is passed through. Defaults to the matched route.</div></td></tr><tr><td><code>subject</code></td><td><div>object</div></td><td>-</td><td><div>Replaces the subject of the access evaluation request. Requires a <code>type</code> and an <code>id</code>; an optional <code>properties</code> object is passed through. Defaults to the bearer token of the client request.</div></td></tr><tr><td><code>url</code></td><td><div>string</div></td><td><code>"/access/v1/evaluation"</code></td><td><div>URL of the authorization service. Relative URL references are resolved against the origin of a referenced or nested <code>backend</code> block. Without a path, or with only the root path <code>/</code>, the AuthZEN access evaluation endpoint <code>/access/v1/evaluation</code> is used — or <code>/access/v1/evaluations</code> with <code>evaluate_permissions</code>. An explicit path must point to the matching endpoint.</div></td></tr></tbody></table></div><div class=blocks><h3 id=blocks><a href=#blocks>Nested Blocks</a></h3><table class=table-auto><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td><code>backend</code></td><td><div>Configures a <a href=/configuration/block/backend/>backend</a> for the authorization callout (zero or one). Mutually exclusive with <code>backend</code> attribute.</div></td></tr><tr><td><code>error_handler</code></td><td><div>Configures an <a href=/configuration/block/error_handler/>error handler</a> (zero or more).</div></td></tr></tbody></table></div></main><nav class="pagetoc-nav p-4 pt-6"><h2 class="text-sm font-semibold text-amber-500 uppercase tracking-wide mb-3">On this Page</h2><div class=toc><nav id=TableOfContents><ul><li><a href=#enforcement-point-decision-point-and-the-tuple>Enforcement point, decision point and the tuple</a></li><li><a href=#shaping-the-evaluation-request>Shaping the evaluation request</a><ul><li><a href=#mtls>mTLS</a></li></ul></li><li><a href=#reaching-the-authorization-service>Reaching the authorization service</a></li><li><a href=#auto-discovery>Auto discovery</a></li><li><a href=#the-decision>The decision</a><ul><li><a href=#denials-and-the-challenge>Denials and the challenge</a></li></ul></li><li><a href=#batch-decisions-and-permissions>Batch decisions and permissions</a><ul><li><a href=#what-a-single-false-means>What a single <code>false</code> means</a></li></ul></li><li><a href=#connecting-openfga>Connecting OpenFGA</a></li><li><a href=#listing-objects>Listing objects</a></li><li><a href=#naming-the-subject-from-a-preceding-access-control>Naming the subject from a preceding access control</a></li></ul></nav></div></nav></div><footer class="site-footer text-sm leading-6 py-6 px-8 border-t border-slate-200 text-slate-500"><div class="flex justify-between items-center"><p>&copy; couper.io</p><div class="flex gap-4"><a href=https://github.com/coupergateway/couper class="footer-link transition-colors">GitHub</a>
+<a href=https://docs.couper.io class="footer-link transition-colors">docs.couper.io</a></div></div></footer></div><script>(function(){const t=document.getElementById("dark-mode-toggle"),e=document.documentElement,o=t.querySelector(".sun-icon"),i=t.querySelector(".moon-icon"),n=t.querySelector(".theme-label");function a(){const e=localStorage.getItem("theme");return e?e:window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}function s(t){t==="dark"?(e.classList.add("dark"),e.classList.remove("light"),o.classList.remove("hidden"),i.classList.add("hidden"),n&&(n.textContent="Light theme")):(e.classList.remove("dark"),e.classList.add("light"),o.classList.add("hidden"),i.classList.remove("hidden"),n&&(n.textContent="Dark theme")),localStorage.setItem("theme",t)}const r=a();s(r),t.addEventListener("click",function(){const t=e.classList.contains("dark")?"light":"dark";s(t)}),window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",function(e){localStorage.getItem("theme")||s(e.matches?"dark":"light")})})()</script><script>document.querySelectorAll(".sidebar-section-toggle").forEach(function(e){e.addEventListener("click",function(){var t=e.nextElementSibling,n=e.querySelector(".sidebar-chevron"),s=e.getAttribute("aria-expanded")==="true";s?(t.classList.add("hidden"),e.setAttribute("aria-expanded","false"),n.classList.remove("rotate-180")):(t.classList.remove("hidden"),e.setAttribute("aria-expanded","true"),n.classList.add("rotate-180"))})})</script><script>document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".highlight").forEach(function(e){var t,n=e.querySelector("pre");if(!n)return;t=document.createElement("button"),t.className="copy-btn",t.setAttribute("aria-label","Copy code"),t.innerHTML='<svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>',e.appendChild(t),t.addEventListener("click",function(){var e=n.querySelector("code");e&&navigator.clipboard.writeText(e.textContent).then(function(){t.classList.add("copied"),setTimeout(function(){t.classList.remove("copied")},2e3)})})})})</script><script>document.addEventListener("DOMContentLoaded",function(){var t,n,e=window.__couper_syntax;if(!e)return;n=new RegExp("^"+e.varPattern.replace(/\\b/g,"")+"$"),t=new RegExp(e.varPattern.replace(/\\b/g,"")),document.querySelectorAll(".highlight code").forEach(function(e){e.querySelectorAll("span.err").forEach(function(e){if(e.textContent.trim().indexOf("//")===0){e.classList.remove("err"),e.classList.add("c1");for(var t=e.nextSibling;t&&(t.nodeType!==3||t.textContent.indexOf(`
+`)===-1);)t.nodeType===1&&t.classList.add("c1"),t=t.nextSibling}});for(var s,o,i,a,c,d,l=e.querySelectorAll("span"),r=0;r<l.length;r++){if(s=l[r],s.children.length>0)continue;if(d=s.textContent,n.test(d))c=s.nextElementSibling,c&&c.textContent==="."&&s.classList.add("couper-var");else{for(o=s.nextSibling;o&&o.nodeType===3&&o.textContent.trim()==="";)o=o.nextSibling;o&&(o.textContent||"").charAt(0)==="("&&s.classList.add("couper-fn"),i=s.previousElementSibling,i&&i.textContent==="."&&(a=i.previousElementSibling,a&&(a.classList.contains("couper-var")||a.classList.contains("couper-prop"))&&s.classList.add("couper-prop"))}}e.querySelectorAll("span.s2, span.s, span.s1, span.sh, span.n, span.k").forEach(function(e){if(e.children.length>0||e.innerHTML.indexOf("${")===-1)return;e.innerHTML=e.innerHTML.replace(/\$\{(~?)([\w.-]+)(~?)\}/g,function(e,n,s,o){var i=s.split("."),a=i.map(function(e,n){return n===0&&t.test(e)?'<span class="couper-var">'+e+"</span>":n>0&&i[0].match(t)?'<span class="couper-prop">'+e+"</span>":e}).join(".");return'<span class="couper-interp">${'+n+"</span>"+a+'<span class="couper-interp">'+o+"}</span>"})})})})</script><script>document.querySelectorAll(".prose blockquote").forEach(function(e){var t=e.querySelector("p");t&&t.textContent.trimStart().indexOf("Note:")===0&&(e.classList.add("note-blockquote"),t.innerHTML=t.innerHTML.replace(/^(\s*)Note:/,"$1<strong>Note:</strong>"))})</script><script>const ALGOLIA_APP_ID="MSIN2HU7WH",ALGOLIA_SEARCH_KEY="5551c3e4dfb61914988abf95fd9b762f",ALGOLIA_INDEX="docs";if(typeof algoliasearch!="undefined"&&typeof instantsearch!="undefined"){const s=algoliasearch(ALGOLIA_APP_ID,ALGOLIA_SEARCH_KEY),o={...s,search(e){return e.every(({params:e})=>!e.query||e.query==="")?Promise.resolve({results:e.map(()=>({hits:[],nbHits:0,nbPages:0,page:0,processingTimeMS:0}))}):s.search(e)}},t=instantsearch({indexName:ALGOLIA_INDEX,searchClient:o,stalledSearchDelay:150});t.addWidgets([instantsearch.widgets.searchBox({container:"#searchbox",placeholder:"Search documentation...",cssClasses:{root:"w-full",form:"w-full relative",input:"block p-2.5 pl-10 w-full text-sm text-gray-900 rounded-lg border border-slate-300 focus:ring-sky-500 focus:border-sky-500 bg-white",submit:"hidden",reset:""}})]);const i=(e)=>{const{hits:n,widgetParams:s}=e;if(n.length===0){s.container.innerHTML="";return}const o=n.map(e=>(e._highlightResult&&e._highlightResult.attributes&&e._highlightResult.attributes.forEach(e=>{if(e.description&&!e.transformed){let t=e.description.value;t=t.replace(/\b_(.*?)_\b/g,"$1"),t=t.replace(/\[(.*?)\]\(.*?\)/g,"$1"),t=t.replace(/`(.*?)`/g,"<code>$1</code>"),e.description.value=t,e.transformed=!0}}),e)),i=o.filter(e=>e._highlightResult!==0[0]).sort((e,t)=>e.__position>t.__position?1:-1);s.container.innerHTML=i.map(e=>{const s=e._highlightResult?.name?.value||e.name||"",t=e._highlightResult?.description?.value||e.description||"",o=(e.url||"").toLowerCase(),n=(e._highlightResult?.attributes||[]).filter(e=>e.name?.matchedWords?.length>0||e.description?.matchedWords?.length>0).map(e=>({name:e.name?.value||"",desc:e.description?.value||""})),i=n.length>0?`<table class="table-auto w-full mt-1 text-sm">
+                            <tbody>
+                                ${n.map(e=>`
+                                    <tr class="align-top">
+                                        <td class="font-semibold search-attr-name w-1/3 py-0.5">${e.name}</td>
+                                        <td class="py-0.5">${e.desc}</td>
+                                    </tr>
+                                `).join("")}
+                            </tbody>
+                           </table>`:"";return`
+                        <div class="search-card rounded-md w-full mt-1.5">
+                            <a href="${o}" class="block">
+                                <div class="px-4 py-2.5 cursor-pointer search-card-inner rounded-md">
+                                    <div class="search-result text-base">
+                                        <h3 class="uppercase blockTitle text-base font-bold mb-0.5">${s}</h3>
+                                        ${t?`<p class="text-sm leading-snug opacity-70 mb-1 line-clamp-2">${t}</p>`:""}
+                                        ${i}
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    `}).join("")},a=instantsearch.connectors.connectHits(i);t.addWidgets([a({container:document.querySelector("#search-results")})]),t.start();const n=document.getElementById("search-backdrop"),e=document.getElementById("search-results");n&&e&&(new MutationObserver(()=>{n.classList.toggle("active",e.innerHTML.trim()!=="")}).observe(e,{childList:!0,subtree:!0}),n.addEventListener("click",()=>{const t=document.querySelector(".ais-SearchBox-input");t&&(t.value=""),e.innerHTML=""})),document.addEventListener("click",e=>{const t=document.querySelector("#searchbox"),n=document.querySelector("#search-results");t&&!t.contains(e.target)&&n&&!e.target.closest("#search-backdrop")&&setTimeout(()=>{const e=document.querySelector(".ais-SearchBox-input");e&&(e.value=""),n.innerHTML=""},200)})}</script></body></html>
